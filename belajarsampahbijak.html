@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Menuju Generasi Pintar Sampah Bijak | Sampah Bijak</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png">
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+         ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #6bcc0e;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #56bef9;
+        }
+        
+        .custom-carousel-container {
+            max-width: 1150px;
+            margin: 40px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            background: transparent;
+            padding: 0;
+        }
+        
+        #customCarousel,
+        #customCarousel .carousel-inner,
+        #customCarousel .carousel-item {
+            background: transparent !important;
+        }
+        
+        #customCarousel .carousel-item {
+            min-height: 600px;
+            transition: transform 0.6s ease-in-out;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .custom-carousel-container img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        @media (max-width: 768px) {
+            .custom-carousel-container {
+                border-radius: 12px;
+                margin: 20px;
+            }
+            #customCarousel .carousel-item {
+                min-height: 200px;
+            }
+            .custom-carousel-container img {
+                height: 200px;
+            }
+            .hero-image-block {
+                display: none;
+            }
+        }
+        
+        .custom-control {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            opacity: 1 !important;
+            transition: background 0.3s ease;
+        }
+        
+        .custom-control:hover {
+            background: rgba(0, 0, 0, 0.65);
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 70% 70%;
+        }
+        
+        .header {
+            position: fixed;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hilang {
+                display: none;
+            }
+            .hero-banner {
+                margin-top: 15px;
+                margin-bottom: -15px;
+            }
+        }
+        
+        .steps-section {
+            background: #ffffff;
+        }
+        
+        .step-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-6px);
+        }
+        
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .quiz-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 1500px;
+            animation: fadeIn 0.6s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .question-box {
+            background: #f7941d;
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .option-btn {
+            background: #fff;
+            border: 2px solid #ced4da;
+            border-radius: 15px;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+            text-align: center;
+        }
+        
+        .option-btn:hover {
+            background: #e9ecef;
+            border-color: #198754;
+        }
+        
+        .option-btn.correct {
+            background: #198754 !important;
+            color: #fff;
+            border-color: #198754;
+        }
+        
+        .explanation {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .result-box {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.6s ease;
+        }
+        
+        .answer-review {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #dee2e6;
+            text-align: left;
+        }
+        
+        @media (max-width: 600px) {
+            .options {
+                grid-template-columns: 1fr;
+            }
+            .question-box {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="book">
+            <div class="inner">
+                <div class="left"></div>
+                <div class="middle"></div>
+                <div class="right"></div>
+            </div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div id="particles-js" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;">
+    </div>
+    <header class="header">
+        <div class="container-fluid">
+            <nav class="navigation d-flex align-items-center justify-content-between">
+                <a href="index.html" class="d-flex align-items-center">
+                    <img src="assets/media/logo.png" alt="/logo" class="header-logo">
+                </a>
+                <div class="menu-button-right">
+                    <div class="main-menu__nav">
+                        <ul class="main-menu__list">
+                            <li>
+                                <a href="index.html">Beranda</a>
+                            </li>
+                            <li>
+                                <a href="belajarSampah Bijak.html" class="active">Mulai Belajar</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Tentang Kami</a>
+                            </li>
+                            <li>
+                                <a href="belajarSampah Bijak.html#fitur&ebook" class="active">Fitur & E-Book</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">Faq</a>
+                            </li>
+                            <li>
+                                <a href="artikel-1.html">Artikel</a>
+                            </li>
+                            <li>
+                                <a href="kontak.html">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-menu__right">
+                    <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
+                        <a href="register.html" class="cus-btn">
+                            <span class="btn-text">Mulai Belajar</span>
+                            <span>Mulai Belajar</span>
+                        </a>
+                    </div>
+                    <a href="#" class="d-xl-none d-flex main-menu__toggler mobile-nav__toggler">
+                        <img src="assets/media/icons/menu-2.png" alt="">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-banner">
+        <div class="container-fluid">
+            <div class="mt-80">
+                <div class="row align-items-center row-gap-4 justify-content-between">
+                    <div class="col-xl-5 order-xl-1 order-1">
+                        <div class="hero-content">
+                            <div class="hero-text mb-48">
+                                <p class="eyebrow">Belajar Sampah Bijak dengan Cara Seru</p>
+                                <h1 class="dark-gray mb-16 text-xl-start text-center fw-700 tex">
+                                    Apa itu Sampah Bijak?<br class="d-sm-block">
+                                    <span class="color-sec fw-700">Yuk simak</span>
+                                </h1>
+                                <p class="text-xl-start text-center light-gray fw-400">
+                                    Sampah Bijak adalah cara kita mengelola uang, mulai dari pemasukan, pengeluaran, tabungan, hingga investasi. Dengan memahami Sampah Bijak, kita bisa lebih bijak dalam membuat keputusan dan meraih tujuan di masa depan. </p>
+                            </div>
+                            <div class="hero-buttons d-flex gap-16 mb-48">
+                                <a href="belajarSampah Bijak.html#quiz" class="cus-btn">
+                                    <span class="btn-text">Ikuti Quiz</span>
+                                    <span>Ikuti QUiz</span>
+                                </a>
+                                <a href="belajarSampah Bijak.html#mulai" class="cus-btn-2">
+                                    <span class="btn-text">
+        Scroll Ke bawah <i class="fa-solid fa-chevron-down ms-1"></i>
+    </span>
+                                    <span>
+        Scroll ke bawah <i class="fa-solid fa-chevron-down ms-1"></i>
+    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 order-xl-2 order-2">
+                        <div class="hero-image-block text-xl-start text-center">
+                            <img src="assets/media/hero/hero.png" alt="Hero Image" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="custom-carousel-container">
+        <div id="customCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/media/slide2/1.png" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/2.png" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/3.png" class="d-block w-100" alt="Slide 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/4.png" class="d-block w-100" alt="Slide 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/5.png" class="d-block w-100" alt="Slide 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/6.png" class="d-block w-100" alt="Slide 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/7.png" class="d-block w-100" alt="Slide 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/8.png" class="d-block w-100" alt="Slide 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/media/slide2/9.png" class="d-block w-100" alt="Slide 4">
+                </div>
+            </div>
+            <button class="carousel-control-prev custom-control" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+            <button class="carousel-control-next custom-control" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+        </div>
+    </div>
+    <section class="why-financial py-100" style="margin-top: 70px; background-color: white;" id="mulai">
+        <div class="container">
+            <div class="text-center mb-60">
+                <h2 class="fw-700 dark-gray">
+                    Kenapa Harus <span class="color-sec">Belajar Sampah Bijak?</span>
+                </h2>
+                <p class="light-gray">
+                    Dengan memahami Sampah Bijak, kita bisa hidup lebih teratur, bebas dari masalah uang, dan siap menghadapi masa depan.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center" style="margin-top: 10px;">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm p-4 text-center rounded-4">
+                        <div class="icon mb-3">
+                            <i class="fas fa-wallet fa-2x" style="color:#56bef9;"></i>
+                        </div>
+                        <h5 class="fw-600 dark-gray mb-2">Mengatur Uang Jajan</h5>
+                        <p class="light-gray">Bisa mengelola pemasukan & pengeluaran dengan lebih bijak sejak dini.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm p-4 text-center rounded-4">
+                        <div class="icon mb-3">
+                            <i class="fas fa-chart-line fa-2x" style="color:#0d927e;"></i>
+                        </div>
+                        <h5 class="fw-600 dark-gray mb-2">Belajar Investasi</h5>
+                        <p class="light-gray">Paham dasar investasi supaya uang yang ditabung bisa berkembang.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm p-4 text-center rounded-4">
+                        <div class="icon mb-3">
+                            <i class="fas fa-user-shield fa-2x" style="color:#2196f3;"></i>
+                        </div>
+                        <h5 class="fw-600 dark-gray mb-2">Masa Depan Aman</h5>
+                        <p class="light-gray">Lebih siap menghadapi kebutuhan darurat dan tujuan jangka panjang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="service py-80">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="img-service">
+                    <img src="assets/media/user/bulb.png" alt="Ilustrasi Ide Sampah Bijak">
+                </div>
+                <div class="col-xl-10 ">
+                    <div class="row align-items-center">
+                        <div class="col-xl-5">
+                            <div class="eyebrow">Manfaat</div>
+                            <h2 class="dark-gray fw-800 mb-16">
+                                Manfaat <span class="color-sec">Pintar Sampah Bijak</span>
+                            </h2>
+                            <p class="light-gray mb-32">
+                                Dengan menjadi pintar Sampah Bijak, kita bisa mengelola uang dengan lebih cerdas, mencapai tujuan hidup, dan menikmati masa depan yang lebih aman. Sampah Bijak pintar = hidup lebih tenang.
+                            </p>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="row row-gap-3">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="service-wrapper-1">
+                                        <div class="service-card mb-24">
+                                            <i class="fas fa-hand-holding-heart fa-3x mb-24" style="color:#FF9800;"></i>
+                                            <h5 class="dark-gray fw-800 mb-24">Manfaat</h5>
+                                            <p class="light-gray">Punya simpanan yang bisa dipakai saat kondisi tak terduga tanpa panik.</p>
+                                        </div>
+                                        <div class="service-card">
+                                            <i class="fas fa-graduation-cap fa-3x mb-24" style="color:#3F51B5;"></i>
+                                            <h5 class="dark-gray fw-800 mb-24">Cerdas Sejak Dini</h5>
+                                            <p class="light-gray">Belajar mengelola uang sejak muda bikin kebiasaan Sampah Bijak sehat terbentuk.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="service-wrapper-2">
+                                        <div class="service-card mb-24">
+                                            <i class="fas fa-hand-holding-usd fa-3x mb-24" style="color:#4CAF50;"></i>
+                                            <h5 class="dark-gray fw-800 mb-24">Bebas Sampah Bijak</h5>
+                                            <p class="light-gray">Bisa memenuhi kebutuhan tanpa khawatir kekurangan atau terjerat hutang.</p>
+                                        </div>
+                                        <div class="service-card">
+                                            <i class="fas fa-bullseye fa-3x mb-24" style="color:#E91E63;"></i>
+                                            <h5 class="dark-gray fw-800 mb-24">Tujuan Lebih Jelas</h5>
+                                            <p class="light-gray">Rencana besar seperti kuliah, rumah, atau usaha bisa dicapai lebih terarah.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="steps-section py-100" style="margin-top: 70px; background-color: white;">
+        <div class="container">
+            <div class="text-center mb-48">
+                <h2 class="dark-gray fw-800 mb-16">
+                    Langkah Cerdas Menuju <span class="color-sec">Sampah Bijak Sukses</span>
+                </h2>
+                <p class="light-gray mb-32">
+                    Ikuti langkah demi langkah ini untuk membangun kebiasaan Sampah Bijak yang sehat dan mencapai tujuan keuanganmu.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-box p-4 text-left shadow-sm rounded-3">
+                        <div class="icon mb-3" style="font-size:40px; color:#4CAF50;">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h5 class="fw-700 mb-2">1. Tentukan Tujuan</h5>
+                        <p class="light-gray">
+                            Mulai dengan tujuan keuangan yang jelas, seperti dana darurat, tabungan sekolah, atau rencana pensiun.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-box p-4 text-left shadow-sm rounded-3">
+                        <div class="icon mb-3" style="font-size:40px; color:#4CAF50;">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h5 class="fw-700 mb-2">2. Catat Pemasukan & Pengeluaran</h5>
+                        <p class="light-gray">
+                            Buat catatan rutin agar tahu alur uangmu, sehingga bisa lebih bijak dalam mengatur keuangan.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-box p-4 text-left shadow-sm rounded-3">
+                        <div class="icon mb-3" style="font-size:40px; color:#4CAF50;">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h5 class="fw-700 mb-2">3. Kelola Anggaran</h5>
+                        <p class="light-gray">
+                            Gunakan metode sederhana seperti 50-30-20 untuk kebutuhan, keinginan, dan tabungan.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-box p-4 text-left shadow-sm rounded-3">
+                        <div class="icon mb-3" style="font-size:40px; color:#FF9800;">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <h5 class="fw-700 mb-2">4. Bangun Dana Darurat</h5>
+                        <p class="light-gray">
+                            Sisihkan tabungan darurat minimal 3–6 bulan biaya hidup untuk keamanan Sampah Bijakmu.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-box p-4 text-left shadow-sm rounded-3">
+                        <div class="icon mb-3" style="font-size:40px; color:#FF9800;;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h5 class="fw-700 mb-2">5. Mulai Investasi</h5>
+                        <p class="light-gray">
+                            Kembangkan uangmu lewat investasi sesuai profil risiko, mulai dari reksadana hingga saham.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-box p-4 text-left shadow-sm rounded-3">
+                        <div class="icon mb-3" style="font-size:40px; color:#FF9800;;">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h5 class="fw-700 mb-2">6. Edukasi Diri</h5>
+                        <p class="light-gray">
+                            Terus belajar tentang keuangan agar makin cerdas dalam mengambil keputusan Sampah Bijak.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="myth-fact-section py-100" style="margin-top: 70px; background-color: white;">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-48">
+                <div class="col-lg-8">
+                    <h2 class="dark-gray fw-800 mb-16">
+                        Mitos vs <span class="color-sec">Fakta Sampah Bijak</span>
+                    </h2>
+                    <p class="light-gray mb-32">
+                        Banyak orang salah kaprah soal Sampah Bijak. Yuk, bedain mana yang cuma mitos dan mana yang fakta biar nggak salah langkah dalam mengelola keuangan.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="myth-fact-box p-4 rounded-3 shadow-sm d-flex flex-column gap-2">
+                        <h5 class="fw-700 color-danger">❌ Mitos:</h5>
+                        <p class="light-gray mb-2">Investasi itu hanya untuk orang kaya.</p>
+                        <h5 class="fw-700 color-success">✅ Fakta:</h5>
+                        <p class="dark-gray">
+                            Semua orang bisa mulai investasi dengan modal kecil, bahkan dari puluhan ribu rupiah.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myth-fact-box p-4 rounded-3 shadow-sm d-flex flex-column gap-2">
+                        <h5 class="fw-700 color-danger">❌ Mitos:</h5>
+                        <p class="light-gray mb-2">Menabung di bank bikin cepat kaya.</p>
+                        <h5 class="fw-700 color-success">✅ Fakta:</h5>
+                        <p class="dark-gray">
+                            Menabung penting untuk darurat, tapi untuk berkembang perlu investasi agar nilai uang tidak terkikis inflasi.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myth-fact-box p-4 rounded-3 shadow-sm d-flex flex-column gap-2">
+                        <h5 class="fw-700 color-danger">❌ Mitos:</h5>
+                        <p class="light-gray mb-2">Mengatur keuangan itu ribet dan hanya untuk orang kantoran.</p>
+                        <h5 class="fw-700 color-success">✅ Fakta:</h5>
+                        <p class="dark-gray">
+                            Semua orang butuh atur keuangan, baik pelajar, freelancer, sampai pebisnis.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myth-fact-box p-4 rounded-3 shadow-sm d-flex flex-column gap-2">
+                        <h5 class="fw-700 color-danger">❌ Mitos:</h5>
+                        <p class="light-gray mb-2">Utang selalu buruk dan harus dihindari.</p>
+                        <h5 class="fw-700 color-success">✅ Fakta:</h5>
+                        <p class="dark-gray">
+                            Utang produktif (seperti modal usaha) bisa membantu berkembang, asalkan dikelola dengan bijak.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-page py-5" id="quiz" style="margin-top: 50px; background-color: white;">
+        <div class="container-fluid">
+            <div class="budget-app mx-auto p-4 rounded shadow-lg">
+                <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;">
+                    <span>Quiz Edukasi Sampah Bijak
+</span>
+                </h2>
+                <div class="quiz-container">
+                    <div class="quiz-header" id="quiz-header">
+                        <span>Skor: <span id="score">0</span> / <span id="total-questions"></span></span>
+                        <span>Pertanyaan: <span id="question-number">1</span> / <span id="total-questions">5</span></span>
+                    </div>
+                    <div class="question-box" id="display-question">Loading...</div>
+                    <div class="options" id="options-container"></div>
+                    <div class="explanation" id="explanation" style="display:none;"></div>
+                    <button class="btn btn-primary w-100 mt-2" style="background-color: #f7941d;" id="next-btn" onclick="nextQuestion()">Pertanyaan Selanjutnya</button>
+                    <div class="result-box" id="result-box">
+                        <h2 class="mb-3">🎉 Kuis Selesai!</h2>
+                        <div id="answers-summary"></div>
+                        <button class="btn btn-success mt-3" onclick="restartQuiz()">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="inspirasi-sec pt-120 pb-120" style="margin-top: 70px; margin-bottom: 50px;">
+        <div class="container">
+            <div class="text-center mb-48">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg p-5 text-center">
+                        <h2 class="dark-gray fw-800 mb-16" style="margin-bottom: 30px;">
+                            Inspirasi <span class="color-sec">Sampah Bijak</span>
+                        </h2>
+                        <p class="fw-600 fs-4 mb-24">
+                            <em>“Bukan seberapa besar penghasilanmu yang membuatmu kaya, tapi seberapa bijak kamu mengelola uangmu.”</em>
+                        </p>
+                        <span class="fw-700 color-sec">– SampahBijak</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="course-section py-80" id="fitur&ebook">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between mb-48 flex-wrap">
+                <div>
+                    <div class="eyebrow-2">Fitur Kami</div>
+                    <h2 class="dark-gray fw-800 mb-16">Nikmati <span class="color-primary">Fitur</span>& <span class="color-primary">E-Book</span> GRATIS!</h2>
+                </div>
+                <ul class="nav unstyled nav-pills d-flex gap-24 align-items-center" id="pills-all" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-recommended-tab" data-bs-toggle="pill" data-bs-target="#pills-recommended" type="button" role="tab" aria-controls="pills-recommended" aria-selected="true">
+                                <span class="fw-800 dark  gray">Fitur</span>
+                            </button>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="29" viewBox="0 0 2 29" fill="none">
+                                <path d="M1 0.5L0.999999 28.5" stroke="#92949F" stroke-width="2" />
+                            </svg>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link " id="pills-activity-tab" data-bs-toggle="pill" data-bs-target="#pills-activity" type="button" role="tab" aria-controls="pills-activity" aria-selected="true">
+                                <span class="fw-800 dark gray">E-Book</span>
+                            </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-recommended" role="tabpanel" aria-labelledby="pills-recommended-tab">
+                    <div class="mb-48">
+                        <div class="row row-gap-4">
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="fitur-detail-1.html" class="klik-disini-btn">KLIK DISINI</a>
+
+
+
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="fitur-detail-1.html"><img src="assets/media/fitur&ebook/fitur-1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="fitur-detail-1.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16 ">Kalkulator Perencanaan
+                                                <br>Anggaran Pintar</div>
+                                            <p class="light-gray mb-24">Bantu atur pendapatan dan pengeluaranmu secara otomatis, lengkap dengan saran pengelolaan keuangan yang lebih baik.</p>
+                                            <div class="hr-line mb-24"></div>
+                                            <div class="d-flex gap-24 align-items-center">
+                                                <div class="d-flex align-items-center gap-12 flex-wrap">
+                                                    <img src="assets/media/fitur&ebook/user.png" alt="">
+                                                    <div>
+                                                        <p class="subtitle light-gray">Di Review Oleh</p>
+                                                        <p class="fw-600 light-gray">Sayidina</p>
+                                                    </div>
+                                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="48" viewBox="0 0 2 48" fill="none">
+                                                        <path d="M1 0V48" stroke="#92949F" stroke-width="0.5" />
+                                                    </svg>
+                                                <div>
+                                                    <div class="d-flex star">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="fitur-detail-2.html" class="klik-disini-btn">KLIK DISINI</a>
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="fitur-detail-2.html"><img src="assets/media/fitur&ebook/fitur-2.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="fitur-detail-2.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16">Tabungan Tujuan Impian</div>
+                                            <p class="light-gray mb-24">Rencanakan tabungan untuk rumah, liburan, atau impian lainnya dengan simulasi target dana yang realistis.</p>
+                                            <div class="hr-line mb-24"></div>
+                                            <div class="d-flex gap-24 align-items-center">
+                                                <div class="d-flex align-items-center gap-12 flex-wrap">
+                                                    <img src="assets/media/fitur&ebook/user.png" alt="">
+                                                    <div>
+                                                        <p class="subtitle light-gray">Di review Oleh</p>
+                                                        <p class="fw-600 light-gray">Barani</p>
+                                                    </div>
+                                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="48" viewBox="0 0 2 48" fill="none">
+                                                        <path d="M1 0V48" stroke="#92949F" stroke-width="0.5" />
+                                                    </svg>
+                                                <div>
+                                                    <div class="d-flex star">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="fitur-detail-3.html" class="klik-disini-btn">KLIK DISINI</a>
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="fitur-detail-3.html"><img src="assets/media/fitur&ebook/fitur-3.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="fitur-detail-3.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16">Quiz Edukasi Sampah Bijak
+                                            </div>
+                                            <p class="light-gray mb-24">Uji pengetahuan Sampah Bijakmu lewat kuis seru dengan penjelasan singkat di setiap jawaban. Belajar jadi lebih interaktif!</p>
+                                            <div class="hr-line mb-24"></div>
+                                            <div class="d-flex gap-24 align-items-center">
+                                                <div class="d-flex align-items-center gap-12 flex-wrap">
+                                                    <img src="assets/media/fitur&ebook/user.png" alt="">
+                                                    <div>
+                                                        <p class="subtitle light-gray">Di Review Oleh</p>
+                                                        <p class="fw-600 light-gray">Kenzie</p>
+                                                    </div>
+                                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="48" viewBox="0 0 2 48" fill="none">
+                                                        <path d="M1 0V48" stroke="#92949F" stroke-width="0.5" />
+                                                    </svg>
+                                                <div>
+                                                    <div class="d-flex star">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="fitur-detail-4.html" class="klik-disini-btn">KLIK DISINI</a>
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="fitur-detail-4.html"><img src="assets/media/fitur&ebook/fitur-4.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="fitur-detail-4.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16">Kalkulator Investasi Cerdas</div>
+                                            <p class="light-gray mb-24">Hitung hasil investasi berdasarkan modal, bunga, dan jangka waktu, plus rekomendasi strategi sesuai profil risiko.</p>
+                                            <div class="hr-line mb-24"></div>
+                                            <div class="d-flex gap-24 align-items-center">
+                                                <div class="d-flex align-items-center gap-12 flex-wrap">
+                                                    <img src="assets/media/fitur&ebook/user.png" alt="">
+                                                    <div>
+                                                        <p class="subtitle light-gray">Di Review Oleh</p>
+                                                        <p class="fw-600 light-gray">Abdullah</p>
+                                                    </div>
+                                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="48" viewBox="0 0 2 48" fill="none">
+                                                        <path d="M1 0V48" stroke="#92949F" stroke-width="0.5" />
+                                                    </svg>
+                                                <div>
+                                                    <div class="d-flex star">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                                <path
+                                                                    d="M16.477 6.66383C16.4219 6.49411 16.2752 6.37042 16.0987 6.3448L11.1386 5.62402L8.92034 1.12944C8.8414 0.969445 8.67843 0.868164 8.50003 0.868164C8.32159 0.868164 8.15865 0.969445 8.07968 1.12944L5.86132 5.62402L0.901338 6.3448C0.724808 6.37042 0.578089 6.49411 0.522965 6.6638C0.467809 6.83352 0.513808 7.0198 0.641589 7.14433L4.23057 10.6429L3.38345 15.5829C3.35327 15.7588 3.42558 15.9365 3.56992 16.0414C3.65158 16.1007 3.7483 16.1309 3.84548 16.1309C3.92011 16.1309 3.99498 16.1131 4.06354 16.0771L8.5 13.7446L12.9363 16.077C13.0942 16.1601 13.2856 16.1463 13.4299 16.0414C13.5743 15.9365 13.6466 15.7588 13.6164 15.5829L12.769 10.6429L16.3584 7.1443C16.4862 7.0198 16.5322 6.83352 16.477 6.66383Z"
+                                                                    fill="#ea982b" />
+                                                            </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-activity" role="tabpanel" aria-labelledby="pills-activity-tab">
+                    <div class="mb-48">
+                        <div class="row row-gap-4 justify-content-center">
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="ebook-1.html" class="klik-disini-btn">KLIK DISINI</a>
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="ebook-1.html"><img src="assets/media/fitur&ebook/ebook-1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="ebook-1.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16">Teori Keuangan dan
+                                                <br> Praktik nya</div>
+                                            <p class="light-gray mb-24">Pelajari dasar teori keuangan dan penerapannya dalam kehidupan nyata agar lebih bijak mengatur uang.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="ebook-2.html" class="klik-disini-btn">KLIK DISINI</a>
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="ebook-2.html"><img src="assets/media/fitur&ebook/ebook-2.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="ebook-2.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16">Materi Pendukung
+                                                <br> Literasi Sampah Bijak</div>
+                                            <p class="light-gray mb-24">Dilengkapi dengan materi tambahan yang membantu memahami konsep literasi Sampah Bijak secara lebih dalam</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="ebook-3.html" class="klik-disini-btn">KLIK DISINI</a>
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="ebook-3.html"><img src="assets/media/fitur&ebook/ebook-3.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="ebook-3.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16">Literasi Keuangan
+                                            </div>
+                                            <p class="light-gray mb-24">Membantu memahami cara mengelola keuangan pribadi, mulai dari menabung, investasi, hingga perencanaan masa depan.</p>
+                                        </div>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6">
+                                <div class="teacher-block bg-white br-12">
+                                    <a href="ebook-4.html" class="klik-disini-btn">KLIK DISINI</a>
+
+                                    <div class="teacher-image text-center shine">
+                                        <a href="ebook-4.html"><img src="assets/media/fitur&ebook/ebook-4.png" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="ebook-4.html">
+                                        <div class="teacher-content">
+                                            <div class="h5 fw-700 mb-16">Cerdas Mengelola Uang
+                                            </div>
+                                            <p class="light-gray mb-24">Belajar strategi praktis dalam mengatur pemasukan dan pengeluaran agar keuangan tetap sehat dan stabil.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="article-section py-80">
+        <div class="eyebrow heading">Artikel</div>
+        <h2 class="dark-gray fw-800 heading mb-48">Wawasan dan &nbsp;<span class="color-sec">Artikel</span>
+        </h2>
+        <div class="container-fluid">
+            <div class="article-wrapper">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="row row-gap-4 justify-content-center">
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <a href="https://www.Sampah Bijakku.com/perencana-keuangan/kode-etik-profesi-perencana-keuangan/" class="article-block br-12">
+                                    <div class="article-image shine">
+                                        <img src="assets/media/blog/blog-10.png" alt="">
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="d-flex align-items-center gap-32 mb-24">
+                                            <div class="d-flex align-items-center gap-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M17.0711 3.42892C15.1823 1.54019 12.6711 0.5 10 0.5C7.32895 0.5 4.81766 1.54019 2.92892 3.42892C1.04019 5.31766 0 7.82895 0 10.5C0 13.1711 1.04019 15.6823 2.92892 17.5711C4.81766 19.4598 7.32895 20.5 10 20.5C12.6711 20.5 15.1823 19.4598 17.0711 17.5711C18.9598 15.6823 20 13.1711 20 10.5C20 7.82895 18.9598 5.31766 17.0711 3.42892ZM4.34006 17.2694C4.67026 14.4282 7.11304 12.2346 10 12.2346C11.5219 12.2346 12.953 12.8276 14.0295 13.9039C14.939 14.8135 15.5125 16.0011 15.6601 17.2693C14.1266 18.5536 12.1521 19.3281 10 19.3281C7.8479 19.3281 5.87357 18.5537 4.34006 17.2694ZM10 11.0276C8.32535 11.0276 6.96274 9.66504 6.96274 7.99039C6.96274 6.31558 8.32535 4.95312 10 4.95312C11.6747 4.95312 13.0373 6.31558 13.0373 7.99039C13.0373 9.66504 11.6747 11.0276 10 11.0276ZM16.6687 16.2787C16.3701 15.0747 15.7474 13.9647 14.8581 13.0754C14.1379 12.3552 13.2858 11.8148 12.3566 11.4763C13.4737 10.7187 14.2091 9.43875 14.2091 7.99039C14.2091 5.66953 12.3209 3.78125 10 3.78125C7.67914 3.78125 5.79086 5.66953 5.79086 7.99039C5.79086 9.43951 6.52695 10.7199 7.64496 11.4773C6.79001 11.7889 5.99884 12.2706 5.31815 12.9048C4.33243 13.8228 3.64792 14.9933 3.33054 16.2777C1.98639 14.7282 1.17188 12.7075 1.17188 10.5C1.17188 5.63214 5.13214 1.67188 10 1.67188C14.8679 1.67188 18.8281 5.63214 18.8281 10.5C18.8281 12.7079 18.0133 14.7291 16.6687 16.2787Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                <p class="light-gray fw-500">Sampah Bijakku</p>
+                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="29" viewBox="0 0 2 29" fill="none">
+                                                    <path d="M1 0V29" stroke="#92949F" />
+                                                </svg>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M5.84766 10.2266H4.59766C4.27406 10.2266 4.01172 10.4889 4.01172 10.8125C4.01172 11.1361 4.27406 11.3984 4.59766 11.3984H5.84766C6.17125 11.3984 6.43359 11.1361 6.43359 10.8125C6.43359 10.4889 6.17125 10.2266 5.84766 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 12.7266H4.59766C4.27406 12.7266 4.01172 12.9889 4.01172 13.3125C4.01172 13.6361 4.27406 13.8984 4.59766 13.8984H5.84766C6.17125 13.8984 6.43359 13.6361 6.43359 13.3125C6.43359 12.9889 6.17125 12.7266 5.84766 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 15.2266H4.59766C4.27406 15.2266 4.01172 15.4889 4.01172 15.8125C4.01172 16.1361 4.27406 16.3984 4.59766 16.3984H5.84766C6.17125 16.3984 6.43359 16.1361 6.43359 15.8125C6.43359 15.4889 6.17125 15.2266 5.84766 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 10.2266H9.59766C9.27406 10.2266 9.01172 10.4889 9.01172 10.8125C9.01172 11.1361 9.27406 11.3984 9.59766 11.3984H10.8477C11.1713 11.3984 11.4336 11.1361 11.4336 10.8125C11.4336 10.4889 11.1713 10.2266 10.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 12.7266H9.59766C9.27406 12.7266 9.01172 12.9889 9.01172 13.3125C9.01172 13.6361 9.27406 13.8984 9.59766 13.8984H10.8477C11.1713 13.8984 11.4336 13.6361 11.4336 13.3125C11.4336 12.9889 11.1713 12.7266 10.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 15.2266H9.59766C9.27406 15.2266 9.01172 15.4889 9.01172 15.8125C9.01172 16.1361 9.27406 16.3984 9.59766 16.3984H10.8477C11.1713 16.3984 11.4336 16.1361 11.4336 15.8125C11.4336 15.4889 11.1713 15.2266 10.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 10.2266H14.5977C14.2741 10.2266 14.0117 10.4889 14.0117 10.8125C14.0117 11.1361 14.2741 11.3984 14.5977 11.3984H15.8477C16.1713 11.3984 16.4336 11.1361 16.4336 10.8125C16.4336 10.4889 16.1713 10.2266 15.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 12.7266H14.5977C14.2741 12.7266 14.0117 12.9889 14.0117 13.3125C14.0117 13.6361 14.2741 13.8984 14.5977 13.8984H15.8477C16.1713 13.8984 16.4336 13.6361 16.4336 13.3125C16.4336 12.9889 16.1713 12.7266 15.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 15.2266H14.5977C14.2741 15.2266 14.0117 15.4889 14.0117 15.8125C14.0117 16.1361 14.2741 16.3984 14.5977 16.3984H15.8477C16.1713 16.3984 16.4336 16.1361 16.4336 15.8125C16.4336 15.4889 16.1713 15.2266 15.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M18.4648 3.03906H17.0586V2.0625C17.0586 1.73891 16.7962 1.47656 16.4727 1.47656C16.1491 1.47656 15.8867 1.73891 15.8867 2.0625V3.03906H10.8086V2.0625C10.8086 1.73891 10.5463 1.47656 10.2227 1.47656C9.89906 1.47656 9.63672 1.73891 9.63672 2.0625V3.03906H4.55859V2.0625C4.55859 1.73891 4.29625 1.47656 3.97266 1.47656C3.64906 1.47656 3.38672 1.73891 3.38672 2.0625V3.03906H1.98047C1.01121 3.03906 0.222656 3.82762 0.222656 4.79688V17.7656C0.222656 18.7349 1.01121 19.5234 1.98047 19.5234H18.4648C19.4341 19.5234 20.2227 18.7349 20.2227 17.7656C20.2227 17.3874 20.2227 5.12598 20.2227 4.79688C20.2227 3.82762 19.4341 3.03906 18.4648 3.03906ZM1.39453 4.79688C1.39453 4.47379 1.65738 4.21094 1.98047 4.21094H3.38672V5.1875C3.38672 5.51109 3.64906 5.77344 3.97266 5.77344C4.29625 5.77344 4.55859 5.51109 4.55859 5.1875V4.21094H9.63672V5.1875C9.63672 5.51109 9.89906 5.77344 10.2227 5.77344C10.5463 5.77344 10.8086 5.51109 10.8086 5.1875V4.21094H15.8867V5.1875C15.8867 5.51109 16.1491 5.77344 16.4727 5.77344C16.7962 5.77344 17.0586 5.51109 17.0586 5.1875V4.21094H18.4648C18.7879 4.21094 19.0508 4.47379 19.0508 4.79688V7.10156H1.39453V4.79688ZM18.4648 18.3516H1.98047C1.65738 18.3516 1.39453 18.0887 1.39453 17.7656V8.27344H19.0508V17.7656C19.0508 18.0887 18.7879 18.3516 18.4648 18.3516Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                <p class="light-gray fw-500">7 Agust 2025</p>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-800 mb-16 course__card__wrapper article-title">8 Prinsip Kode Etik Perencana Keuangan, Pahami Yuk!</h6>
+                                        <p class="light-gray mb-32">Kode etik perencana keuangan jadi pedoman penting agar setiap layanan tetap profesional dan bisa dipercaya. Dengan memahami prinsip-prinsip ini, nasabah mendapat jaminan bahwa kepentingan mereka selalu diutamakan.
+                                            Makanya, penting banget tahu delapan prinsip utama biar lebih paham dunia perencanaan keuangan.</p>
+                                        <div class="cus-arrow-btn d-flex align-items-center">
+                                            <p class="fw-700 color-sec">Baca selengkapnya</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M19.6212 17.6941C18.2339 15.2911 18.6268 10.7924 21.1899 9.3126M21.1899 9.3126C19.7215 10.1604 15.9217 11.2863 13.147 6.48045M21.1899 9.3126L5.97147 18.099"
+                                                        stroke="#56bef9" stroke-width="1.84977" />
+                                                </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <a href="https://www.Sampah Bijakku.com/perencana-keuangan/berapa-persen-gaji-untuk-orang-tua/" class="article-block br-12">
+                                    <div class="article-image shine">
+                                        <img src="assets/media/blog/blog-11.png" alt="">
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="d-flex align-items-center gap-32 mb-24">
+                                            <div class="d-flex align-items-center gap-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M17.0711 3.42892C15.1823 1.54019 12.6711 0.5 10 0.5C7.32895 0.5 4.81766 1.54019 2.92892 3.42892C1.04019 5.31766 0 7.82895 0 10.5C0 13.1711 1.04019 15.6823 2.92892 17.5711C4.81766 19.4598 7.32895 20.5 10 20.5C12.6711 20.5 15.1823 19.4598 17.0711 17.5711C18.9598 15.6823 20 13.1711 20 10.5C20 7.82895 18.9598 5.31766 17.0711 3.42892ZM4.34006 17.2694C4.67026 14.4282 7.11304 12.2346 10 12.2346C11.5219 12.2346 12.953 12.8276 14.0295 13.9039C14.939 14.8135 15.5125 16.0011 15.6601 17.2693C14.1266 18.5536 12.1521 19.3281 10 19.3281C7.8479 19.3281 5.87357 18.5537 4.34006 17.2694ZM10 11.0276C8.32535 11.0276 6.96274 9.66504 6.96274 7.99039C6.96274 6.31558 8.32535 4.95312 10 4.95312C11.6747 4.95312 13.0373 6.31558 13.0373 7.99039C13.0373 9.66504 11.6747 11.0276 10 11.0276ZM16.6687 16.2787C16.3701 15.0747 15.7474 13.9647 14.8581 13.0754C14.1379 12.3552 13.2858 11.8148 12.3566 11.4763C13.4737 10.7187 14.2091 9.43875 14.2091 7.99039C14.2091 5.66953 12.3209 3.78125 10 3.78125C7.67914 3.78125 5.79086 5.66953 5.79086 7.99039C5.79086 9.43951 6.52695 10.7199 7.64496 11.4773C6.79001 11.7889 5.99884 12.2706 5.31815 12.9048C4.33243 13.8228 3.64792 14.9933 3.33054 16.2777C1.98639 14.7282 1.17188 12.7075 1.17188 10.5C1.17188 5.63214 5.13214 1.67188 10 1.67188C14.8679 1.67188 18.8281 5.63214 18.8281 10.5C18.8281 12.7079 18.0133 14.7291 16.6687 16.2787Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                <p class="light-gray fw-500">Sampah Bijakku</p>
+                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="29" viewBox="0 0 2 29" fill="none">
+                                                    <path d="M1 0V29" stroke="#92949F" />
+                                                </svg>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M5.84766 10.2266H4.59766C4.27406 10.2266 4.01172 10.4889 4.01172 10.8125C4.01172 11.1361 4.27406 11.3984 4.59766 11.3984H5.84766C6.17125 11.3984 6.43359 11.1361 6.43359 10.8125C6.43359 10.4889 6.17125 10.2266 5.84766 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 12.7266H4.59766C4.27406 12.7266 4.01172 12.9889 4.01172 13.3125C4.01172 13.6361 4.27406 13.8984 4.59766 13.8984H5.84766C6.17125 13.8984 6.43359 13.6361 6.43359 13.3125C6.43359 12.9889 6.17125 12.7266 5.84766 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 15.2266H4.59766C4.27406 15.2266 4.01172 15.4889 4.01172 15.8125C4.01172 16.1361 4.27406 16.3984 4.59766 16.3984H5.84766C6.17125 16.3984 6.43359 16.1361 6.43359 15.8125C6.43359 15.4889 6.17125 15.2266 5.84766 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 10.2266H9.59766C9.27406 10.2266 9.01172 10.4889 9.01172 10.8125C9.01172 11.1361 9.27406 11.3984 9.59766 11.3984H10.8477C11.1713 11.3984 11.4336 11.1361 11.4336 10.8125C11.4336 10.4889 11.1713 10.2266 10.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 12.7266H9.59766C9.27406 12.7266 9.01172 12.9889 9.01172 13.3125C9.01172 13.6361 9.27406 13.8984 9.59766 13.8984H10.8477C11.1713 13.8984 11.4336 13.6361 11.4336 13.3125C11.4336 12.9889 11.1713 12.7266 10.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 15.2266H9.59766C9.27406 15.2266 9.01172 15.4889 9.01172 15.8125C9.01172 16.1361 9.27406 16.3984 9.59766 16.3984H10.8477C11.1713 16.3984 11.4336 16.1361 11.4336 15.8125C11.4336 15.4889 11.1713 15.2266 10.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 10.2266H14.5977C14.2741 10.2266 14.0117 10.4889 14.0117 10.8125C14.0117 11.1361 14.2741 11.3984 14.5977 11.3984H15.8477C16.1713 11.3984 16.4336 11.1361 16.4336 10.8125C16.4336 10.4889 16.1713 10.2266 15.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 12.7266H14.5977C14.2741 12.7266 14.0117 12.9889 14.0117 13.3125C14.0117 13.6361 14.2741 13.8984 14.5977 13.8984H15.8477C16.1713 13.8984 16.4336 13.6361 16.4336 13.3125C16.4336 12.9889 16.1713 12.7266 15.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 15.2266H14.5977C14.2741 15.2266 14.0117 15.4889 14.0117 15.8125C14.0117 16.1361 14.2741 16.3984 14.5977 16.3984H15.8477C16.1713 16.3984 16.4336 16.1361 16.4336 15.8125C16.4336 15.4889 16.1713 15.2266 15.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M18.4648 3.03906H17.0586V2.0625C17.0586 1.73891 16.7962 1.47656 16.4727 1.47656C16.1491 1.47656 15.8867 1.73891 15.8867 2.0625V3.03906H10.8086V2.0625C10.8086 1.73891 10.5463 1.47656 10.2227 1.47656C9.89906 1.47656 9.63672 1.73891 9.63672 2.0625V3.03906H4.55859V2.0625C4.55859 1.73891 4.29625 1.47656 3.97266 1.47656C3.64906 1.47656 3.38672 1.73891 3.38672 2.0625V3.03906H1.98047C1.01121 3.03906 0.222656 3.82762 0.222656 4.79688V17.7656C0.222656 18.7349 1.01121 19.5234 1.98047 19.5234H18.4648C19.4341 19.5234 20.2227 18.7349 20.2227 17.7656C20.2227 17.3874 20.2227 5.12598 20.2227 4.79688C20.2227 3.82762 19.4341 3.03906 18.4648 3.03906ZM1.39453 4.79688C1.39453 4.47379 1.65738 4.21094 1.98047 4.21094H3.38672V5.1875C3.38672 5.51109 3.64906 5.77344 3.97266 5.77344C4.29625 5.77344 4.55859 5.51109 4.55859 5.1875V4.21094H9.63672V5.1875C9.63672 5.51109 9.89906 5.77344 10.2227 5.77344C10.5463 5.77344 10.8086 5.51109 10.8086 5.1875V4.21094H15.8867V5.1875C15.8867 5.51109 16.1491 5.77344 16.4727 5.77344C16.7962 5.77344 17.0586 5.51109 17.0586 5.1875V4.21094H18.4648C18.7879 4.21094 19.0508 4.47379 19.0508 4.79688V7.10156H1.39453V4.79688ZM18.4648 18.3516H1.98047C1.65738 18.3516 1.39453 18.0887 1.39453 17.7656V8.27344H19.0508V17.7656C19.0508 18.0887 18.7879 18.3516 18.4648 18.3516Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                <p class="light-gray fw-500">6 Agust 2025</p>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-800 mb-16">Berapa Persen Gaji yang Pantas untuk Jatah Bulanan Orang Tua?</h6>
+                                        <p class="light-gray mb-32">Memberi jatah bulanan untuk orang tua adalah bentuk tanggung jawab sekaligus rasa terima kasih anak. Besaran persentasenya bisa disesuaikan dengan kondisi Sampah Bijak, biasanya antara 5% sampai 20% dari gaji. Yang
+                                            terpenting, pemberian ini dilakukan dengan ikhlas tanpa mengganggu kebutuhan pribadi.</p>
+                                        <div class="cus-arrow-btn d-flex align-items-center">
+                                            <p class="fw-700 color-sec">Baca Selengkapnya</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M19.6212 17.6941C18.2339 15.2911 18.6268 10.7924 21.1899 9.3126M21.1899 9.3126C19.7215 10.1604 15.9217 11.2863 13.147 6.48045M21.1899 9.3126L5.97147 18.099"
+                                                        stroke="#56bef9" stroke-width="1.84977" />
+                                                </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <a href="https://www.Sampah Bijakku.com/perencana-keuangan/laporan-keuangan-pribadi/" class="article-block br-12">
+                                    <div class="article-image shine">
+                                        <img src="assets/media/blog/blog-12.png" alt="">
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="d-flex align-items-center gap-32 mb-24">
+                                            <div class="d-flex align-items-center gap-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M17.0711 3.42892C15.1823 1.54019 12.6711 0.5 10 0.5C7.32895 0.5 4.81766 1.54019 2.92892 3.42892C1.04019 5.31766 0 7.82895 0 10.5C0 13.1711 1.04019 15.6823 2.92892 17.5711C4.81766 19.4598 7.32895 20.5 10 20.5C12.6711 20.5 15.1823 19.4598 17.0711 17.5711C18.9598 15.6823 20 13.1711 20 10.5C20 7.82895 18.9598 5.31766 17.0711 3.42892ZM4.34006 17.2694C4.67026 14.4282 7.11304 12.2346 10 12.2346C11.5219 12.2346 12.953 12.8276 14.0295 13.9039C14.939 14.8135 15.5125 16.0011 15.6601 17.2693C14.1266 18.5536 12.1521 19.3281 10 19.3281C7.8479 19.3281 5.87357 18.5537 4.34006 17.2694ZM10 11.0276C8.32535 11.0276 6.96274 9.66504 6.96274 7.99039C6.96274 6.31558 8.32535 4.95312 10 4.95312C11.6747 4.95312 13.0373 6.31558 13.0373 7.99039C13.0373 9.66504 11.6747 11.0276 10 11.0276ZM16.6687 16.2787C16.3701 15.0747 15.7474 13.9647 14.8581 13.0754C14.1379 12.3552 13.2858 11.8148 12.3566 11.4763C13.4737 10.7187 14.2091 9.43875 14.2091 7.99039C14.2091 5.66953 12.3209 3.78125 10 3.78125C7.67914 3.78125 5.79086 5.66953 5.79086 7.99039C5.79086 9.43951 6.52695 10.7199 7.64496 11.4773C6.79001 11.7889 5.99884 12.2706 5.31815 12.9048C4.33243 13.8228 3.64792 14.9933 3.33054 16.2777C1.98639 14.7282 1.17188 12.7075 1.17188 10.5C1.17188 5.63214 5.13214 1.67188 10 1.67188C14.8679 1.67188 18.8281 5.63214 18.8281 10.5C18.8281 12.7079 18.0133 14.7291 16.6687 16.2787Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                <p class="light-gray fw-500">Sampah Bijakku</p>
+                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="29" viewBox="0 0 2 29" fill="none">
+                                                    <path d="M1 0V29" stroke="#92949F" />
+                                                </svg>
+                                            <div class="d-flex align-items-center gap-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M5.84766 10.2266H4.59766C4.27406 10.2266 4.01172 10.4889 4.01172 10.8125C4.01172 11.1361 4.27406 11.3984 4.59766 11.3984H5.84766C6.17125 11.3984 6.43359 11.1361 6.43359 10.8125C6.43359 10.4889 6.17125 10.2266 5.84766 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 12.7266H4.59766C4.27406 12.7266 4.01172 12.9889 4.01172 13.3125C4.01172 13.6361 4.27406 13.8984 4.59766 13.8984H5.84766C6.17125 13.8984 6.43359 13.6361 6.43359 13.3125C6.43359 12.9889 6.17125 12.7266 5.84766 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 15.2266H4.59766C4.27406 15.2266 4.01172 15.4889 4.01172 15.8125C4.01172 16.1361 4.27406 16.3984 4.59766 16.3984H5.84766C6.17125 16.3984 6.43359 16.1361 6.43359 15.8125C6.43359 15.4889 6.17125 15.2266 5.84766 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 10.2266H9.59766C9.27406 10.2266 9.01172 10.4889 9.01172 10.8125C9.01172 11.1361 9.27406 11.3984 9.59766 11.3984H10.8477C11.1713 11.3984 11.4336 11.1361 11.4336 10.8125C11.4336 10.4889 11.1713 10.2266 10.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 12.7266H9.59766C9.27406 12.7266 9.01172 12.9889 9.01172 13.3125C9.01172 13.6361 9.27406 13.8984 9.59766 13.8984H10.8477C11.1713 13.8984 11.4336 13.6361 11.4336 13.3125C11.4336 12.9889 11.1713 12.7266 10.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 15.2266H9.59766C9.27406 15.2266 9.01172 15.4889 9.01172 15.8125C9.01172 16.1361 9.27406 16.3984 9.59766 16.3984H10.8477C11.1713 16.3984 11.4336 16.1361 11.4336 15.8125C11.4336 15.4889 11.1713 15.2266 10.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 10.2266H14.5977C14.2741 10.2266 14.0117 10.4889 14.0117 10.8125C14.0117 11.1361 14.2741 11.3984 14.5977 11.3984H15.8477C16.1713 11.3984 16.4336 11.1361 16.4336 10.8125C16.4336 10.4889 16.1713 10.2266 15.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 12.7266H14.5977C14.2741 12.7266 14.0117 12.9889 14.0117 13.3125C14.0117 13.6361 14.2741 13.8984 14.5977 13.8984H15.8477C16.1713 13.8984 16.4336 13.6361 16.4336 13.3125C16.4336 12.9889 16.1713 12.7266 15.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 15.2266H14.5977C14.2741 15.2266 14.0117 15.4889 14.0117 15.8125C14.0117 16.1361 14.2741 16.3984 14.5977 16.3984H15.8477C16.1713 16.3984 16.4336 16.1361 16.4336 15.8125C16.4336 15.4889 16.1713 15.2266 15.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M18.4648 3.03906H17.0586V2.0625C17.0586 1.73891 16.7962 1.47656 16.4727 1.47656C16.1491 1.47656 15.8867 1.73891 15.8867 2.0625V3.03906H10.8086V2.0625C10.8086 1.73891 10.5463 1.47656 10.2227 1.47656C9.89906 1.47656 9.63672 1.73891 9.63672 2.0625V3.03906H4.55859V2.0625C4.55859 1.73891 4.29625 1.47656 3.97266 1.47656C3.64906 1.47656 3.38672 1.73891 3.38672 2.0625V3.03906H1.98047C1.01121 3.03906 0.222656 3.82762 0.222656 4.79688V17.7656C0.222656 18.7349 1.01121 19.5234 1.98047 19.5234H18.4648C19.4341 19.5234 20.2227 18.7349 20.2227 17.7656C20.2227 17.3874 20.2227 5.12598 20.2227 4.79688C20.2227 3.82762 19.4341 3.03906 18.4648 3.03906ZM1.39453 4.79688C1.39453 4.47379 1.65738 4.21094 1.98047 4.21094H3.38672V5.1875C3.38672 5.51109 3.64906 5.77344 3.97266 5.77344C4.29625 5.77344 4.55859 5.51109 4.55859 5.1875V4.21094H9.63672V5.1875C9.63672 5.51109 9.89906 5.77344 10.2227 5.77344C10.5463 5.77344 10.8086 5.51109 10.8086 5.1875V4.21094H15.8867V5.1875C15.8867 5.51109 16.1491 5.77344 16.4727 5.77344C16.7962 5.77344 17.0586 5.51109 17.0586 5.1875V4.21094H18.4648C18.7879 4.21094 19.0508 4.47379 19.0508 4.79688V7.10156H1.39453V4.79688ZM18.4648 18.3516H1.98047C1.65738 18.3516 1.39453 18.0887 1.39453 17.7656V8.27344H19.0508V17.7656C19.0508 18.0887 18.7879 18.3516 18.4648 18.3516Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                <p class="light-gray fw-500">5 Agust 2025</p>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-800 mb-16">7 Cara Membuat Laporan Keuangan Pribadi, Jenis dan Tujuannya, Penting!</h6>
+                                        <p class="light-gray mb-32">Laporan keuangan pribadi membantu kamu lebih paham kondisi Sampah Bijak secara menyeluruh. Dengan mencatat pemasukan, pengeluaran, aset, dan kewajiban, kamu bisa tahu arah aliran uangmu. Tujuannya jelas, biar keuangan
+                                            lebih terkontrol dan keputusan Sampah Bijak makin tepat.</p>
+                                        <div class="cus-arrow-btn d-flex align-items-center">
+                                            <p class="fw-700 color-sec">Baca Selengkapnya</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M19.6212 17.6941C18.2339 15.2911 18.6268 10.7924 21.1899 9.3126M21.1899 9.3126C19.7215 10.1604 15.9217 11.2863 13.147 6.48045M21.1899 9.3126L5.97147 18.099"
+                                                        stroke="#56bef9" stroke-width="1.84977" />
+                                                </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container-fluid">
+            <div class="footer-wrapper pb-40">
+                <div class="col-xl-4">
+                    <div class="logo-block">
+                        <img src="assets/media/logo-footer.png" alt="" class="ft-logo mb-16">
+                        <p class="mb-32" style="color: rgb(235, 235, 235)">
+                            Sampah Bijak adalah platform edukasi <br> yang membantu Anda belajar mengelola sampah <br> secara cerdas, mudah, dan menyenangkan. <br> Bersama Sampah Bijak, wujudkan lingkungan <br> yang lebih bersih, hijau, dan berkelanjutan.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="link-block popular">
+                        <h6 class="white fw-800 mb-24">Tautan Cepat</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Mulai Belajar Sampah Bijak</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="index.html#chatbot" style="color: rgb(235, 235, 235)">Tanya Chatbot AI</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="fitur-detail-1.html" style="color: rgb(235, 235, 235)">Fitur 1</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="fitur-detail-2.html" style="color: rgb(235, 235, 235)">Fitur 2</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="fitur-detail-3.html" style="color: rgb(235, 235, 235)">Fitur 3</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="fitur-detail-4.html" style="color: rgb(235, 235, 235)">Fitur 4</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="belajarSampah Bijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book 1, 2, 3 & 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="link-block quick-links">
+                        <h6 class="fw-800 mb-24" style="color: white;">Jelajahi</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="mb-12 fw-400">
+                                <a href="index.html " style="color: rgb(235, 235, 235)">Beranda</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="about.html" style="color: rgb(235, 235, 235)">Tentang Kami</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">Fitur</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Apa itu Literasi Sampah Bijak?</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="artikel-1.html" style="color: rgb(235, 235, 235)">Artikel</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="kontak.html" style="color: rgb(235, 235, 235)">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="link-block contact-block">
+                        <h6 class=" fw-800 mb-24" style="color: white;">Hubungi Kami</h6>
+                        <ul class="footer-list list-unstyled mb-32">
+                            <li class="mb-16 d-flex align-items-center gap-12">
+                                <a id="waLink" href="#" target="_blank" class="d-flex align-items-center gap-12" style="color: rgb(235, 235, 235)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M16.9149 16.3507L16.4978 15.6542C15.7477 14.4174 14.7124 12.9979 13.3545 12.9979C13.1029 12.9979 12.8538 13.0485 12.6072 13.151L11.8783 13.4635C11.8117 13.4911 11.7471 13.5225 11.6786 13.5558C11.492 13.6465 11.2805 13.7493 11.0629 13.7493C10.5262 13.7493 9.90436 13.0508 9.31217 11.7827C8.73098 10.5379 8.76806 9.88539 8.90147 9.55705C9.04868 9.19479 9.39101 9.03991 9.75877 8.90072C9.80992 8.88133 9.8561 8.86374 9.90102 8.84524L10.6391 8.53449C12.5619 7.73041 11.8465 4.92046 11.612 3.9992L11.4131 3.20712C11.2431 2.55431 10.7922 0.820312 9.29683 0.820312C9.02 0.820312 8.72467 0.884809 8.41933 1.01209C8.21898 1.09165 5.46198 2.21704 4.46315 4.19413C3.26939 6.54747 3.49012 9.70327 5.11857 13.5719C6.73485 17.4453 8.83075 19.8145 11.3481 20.6136C11.7799 20.7508 12.2679 20.8202 12.7987 20.8202H12.7989C14.5362 20.8202 16.251 20.0811 16.3902 20.0197C16.9892 19.766 17.3763 19.3804 17.5409 18.8735C17.8198 18.014 17.3519 17.0722 16.9149 16.3507ZM16.2537 18.4559C16.2155 18.5737 16.0825 18.6812 15.8588 18.7754C15.8551 18.777 15.8506 18.7789 15.8468 18.7806C15.8313 18.7875 14.2791 19.4673 12.7986 19.4672C12.4069 19.4672 12.0566 19.4191 11.7575 19.324C9.63672 18.6508 7.82326 16.5403 6.36637 13.0489C4.89866 9.56192 4.66412 6.78868 5.67026 4.80527C6.45152 3.25889 8.89741 2.27792 8.9214 2.26854C8.92628 2.26656 8.93106 2.26466 8.93584 2.26268C9.07511 2.20423 9.19996 2.17338 9.29683 2.17338C9.59496 2.17338 9.86629 2.63576 10.1021 3.54205L10.3001 4.33079C10.7273 6.00859 10.6623 7.05803 10.1153 7.28679L9.38082 7.59619C9.35159 7.60827 9.3174 7.62099 9.2797 7.63534C8.87396 7.78895 8.02965 8.10846 7.64781 9.04766C7.30134 9.89991 7.44476 10.9818 8.08584 12.3553C8.94928 14.2038 9.92303 15.1024 11.0628 15.1024C11.5917 15.1024 12.0163 14.8961 12.27 14.7728C12.3167 14.7501 12.3585 14.7293 12.4034 14.7107L13.1333 14.3977C13.2086 14.3663 13.281 14.351 13.3544 14.351C13.7057 14.351 14.3357 14.699 15.339 16.3528L15.7558 17.0488C16.2695 17.897 16.3101 18.2821 16.2537 18.4559Z"
+            fill="#fff" />
+    </svg> +6287877566677
+                                </a>
+                                <div class="free-label caption" style="color: white;">
+                                    KONSULTASI GRATIS
+                                </div>
+                            </li>
+                            <li class="mb-32">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
+            fill="#fff" />
+    </svg> sampahbijak@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="fw-600 mb-16" style="color: white;">Tanya Cepat Via WhatsApp</p>
+                        <form id="waForm">
+                            <input type="text" id="waMessage" class="form-input" placeholder="Ketik pertanyaan Anda di sini" style="border-color: white; color: white;">
+                            <style>
+                                #waMessage::placeholder {
+                                    color: white;
+                                    opacity: 1;
+                                }
+                            </style>
+                            <button type="submit" class="submit-arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+      <path
+        d="M19.8284 0.49196C19.6626 0.326179 19.414 0.275202 19.1965 0.362233L0.36834 7.89339C0.152911 7.97956 0.00865304 8.18472 0.00037181 8.41663C-0.00787036 8.64851 0.121504 8.86339 0.330254 8.96464L7.75477 12.5655L11.3556 19.99C11.4538 20.1925 11.6589 20.3202 11.8827 20.3202C11.8896 20.3202 11.8966 20.3201 11.9036 20.3199C12.1355 20.3116 12.3407 20.1674 12.4268 19.9519L19.9581 1.12391C20.0451 0.906256 19.9941 0.657702 19.8284 0.49196ZM2.0349 8.48894L16.9812 2.51047L8.07383 11.4178L2.0349 8.48894ZM11.8313 18.2854L8.90246 12.2464L17.8099 3.33906L11.8313 18.2854Z"
+        fill="#56bef9" />
+    </svg>
+  </button>
+                        </form>
+                        <script>
+                            document.getElementById("waForm").addEventListener("submit", function(e) {
+                                e.preventDefault();
+                                let message = document.getElementById("waMessage").value;
+                                let phone = "6287877566677";
+                                let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+                                window.open(url, "_blank");
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-line mb-24"></div>
+            <p class="bottom-bar text-center" style="color: white;">© 2025 All Rights Reserved <span class="fw-700 color-primary">Sampah Bijak.</span> Dibuat Oleh <span class="color-primary fw-700">SKINFA DEVELOPERS</span></p>
+        </div>
+    </footer>
+    <button class="scrollToTopBtn sembunyi"><i class="fa fa-arrow-up"></i></button>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/media/logo.png" alt=""></a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:syafiqbamazruk@gmail.com">syafiqbamazruk@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="https://wa.me/6287877566677?text=Halo%20saya%20mau%20tanya%20tentang..." target="_blank">
+    +6287877566677
+  </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <audio id="bg-music" autoplay loop>
+  <source src="assets/media/audio.mp3" type="audio/mpeg">
+</audio>
+
+    <div id="music-toggle">
+        <i id="music-icon" class="bi bi-volume-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        const questions = [{
+            question: "Apa langkah pertama yang penting dalam mengelola keuangan pribadi?",
+            options: [{
+                text: "Membuat anggaran bulanan",
+                explanation: "Dengan anggaran, kamu tahu persis pengeluaran dan pemasukan agar lebih terkontrol.",
+                category: "disiplin"
+            }, {
+                text: "Mulai investasi besar",
+                explanation: "Investasi penting, tapi harus diawali dengan pengelolaan dasar yang baik dulu.",
+                category: "aman"
+            }, {
+                text: "Membeli barang mewah untuk motivasi",
+                explanation: "Membeli barang mewah tanpa perencanaan bisa berisiko keuangan.",
+                category: "boros"
+            }, {
+                text: "Meminjam uang agar punya modal cepat",
+                explanation: "Pinjaman harus dipertimbangkan matang agar tidak menambah beban hutang.",
+                category: "boros"
+            }]
+        }, {
+            question: "Apa manfaat memiliki dana darurat?",
+            options: [{
+                text: "Menghadapi kebutuhan tak terduga tanpa stres",
+                explanation: "Dana darurat menjaga kestabilan keuangan saat keadaan darurat.",
+                category: "aman"
+            }, {
+                text: "Untuk membeli barang mahal kapan saja",
+                explanation: "Dana darurat sebaiknya tidak dipakai untuk pembelian konsumtif.",
+                category: "boros"
+            }, {
+                text: "Meminjam ke teman jadi tidak perlu dana darurat",
+                explanation: "Dana darurat lebih baik daripada harus meminjam dengan risiko konflik.",
+                category: "disiplin"
+            }, {
+                text: "Investasi dalam aset berisiko tinggi",
+                explanation: "Dana darurat harus aman dan mudah dicairkan, bukan berisiko tinggi.",
+                category: "aman"
+            }]
+        }, {
+            question: "Mengapa menabung secara rutin itu penting?",
+            options: [{
+                text: "Untuk mewujudkan tujuan Sampah Bijak jangka panjang",
+                explanation: "Menabung rutin membangun kebiasaan dan dana untuk masa depan.",
+                category: "disiplin"
+            }, {
+                text: "Agar bisa membeli gadget terbaru setiap bulan",
+                explanation: "Kebiasaan boros menghambat pencapaian tujuan keuangan.",
+                category: "boros"
+            }, {
+                text: "Supaya terlihat kaya di mata teman",
+                explanation: "Fokus pada tujuan keuangan lebih penting daripada penampilan.",
+                category: "boros"
+            }, {
+                text: "Agar tidak perlu kerja lagi",
+                explanation: "Menabung adalah langkah awal, tapi perencanaan keuangan menyeluruh diperlukan.",
+                category: "aman"
+            }]
+        }, {
+            question: "Apa risiko jika mengandalkan kartu kredit tanpa pengelolaan yang baik?",
+            options: [{
+                text: "Bisa menumpuk hutang dan bunga tinggi",
+                explanation: "Penggunaan kartu kredit tanpa kendali dapat membebani keuangan.",
+                category: "boros"
+            }, {
+                text: "Meningkatkan skor kredit jika bayar tepat waktu",
+                explanation: "Pemakaian bijak kartu kredit bisa memperbaiki kredit kamu.",
+                category: "disiplin"
+            }, {
+                text: "Dapat diskon dan promo menarik",
+                explanation: "Promo menarik tapi harus tetap dalam batas kemampuan bayar.",
+                category: "aman"
+            }, {
+                text: "Membuat gaya hidup lebih santai",
+                explanation: "Santai boleh, tapi pengelolaan kartu kredit harus tetap disiplin.",
+                category: "boros"
+            }]
+        }, {
+            question: "Investasi apa yang cocok untuk pemula dengan modal kecil?",
+            options: [{
+                text: "Reksa dana karena mudah dan terdiversifikasi",
+                explanation: "Reksa dana cocok untuk pemula dengan risiko terkelola.",
+                category: "aman"
+            }, {
+                text: "Trading saham setiap hari agar cepat untung",
+                explanation: "Trading harian berisiko tinggi untuk pemula.",
+                category: "boros"
+            }, {
+                text: "Membeli emas batangan sebagai investasi jangka panjang",
+                explanation: "Emas adalah aset aman dan nilai tahan inflasi.",
+                category: "aman"
+            }, {
+                text: "Meminjam uang untuk investasi besar",
+                explanation: "Pinjaman untuk investasi berisiko dan harus hati-hati.",
+                category: "boros"
+            }]
+        }];
+        let currentQuestion = 0;
+        let answersChosen = [];
+        let score = 0;
+        document.getElementById("total-questions").textContent = questions.length;
+        loadQuestion();
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById("display-question").textContent = q.question;
+            document.getElementById("question-number").textContent = currentQuestion + 1;
+            document.getElementById("options-container").innerHTML = "";
+            q.options.forEach(opt => {
+                const btn = document.createElement("div");
+                btn.classList.add("option-btn");
+                btn.textContent = opt.text;
+                btn.onclick = () => selectOption(btn, opt);
+                document.getElementById("options-container").appendChild(btn);
+            });
+            document.getElementById("explanation").style.display = "none";
+            document.getElementById("next-btn").style.display = "none";
+        }
+
+        function selectOption(element, opt) {
+            const options = document.querySelectorAll(".option-btn");
+            options.forEach(o => o.classList.remove("correct"));
+            element.classList.add("correct");
+            document.getElementById("explanation").textContent = opt.explanation;
+            document.getElementById("explanation").style.display = "block";
+            document.getElementById("next-btn").style.display = "block";
+            if (!answersChosen[currentQuestion]) {
+                score++;
+            }
+            answersChosen[currentQuestion] = {
+                question: questions[currentQuestion].question,
+                answer: opt.text,
+                explanation: opt.explanation,
+                category: opt.category
+            };
+            document.getElementById("score").textContent = score;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById("quiz-header").style.display = "none";
+            document.querySelector(".question-box").style.display = "none";
+            document.getElementById("options-container").style.display = "none";
+            document.getElementById("explanation").style.display = "none";
+            document.getElementById("next-btn").style.display = "none";
+            const resultBox = document.getElementById("result-box");
+            resultBox.style.display = "block";
+            const summary = document.getElementById("answers-summary");
+            summary.innerHTML = "";
+            answersChosen.forEach((ans, i) => {
+                const div = document.createElement("div");
+                div.classList.add("answer-review");
+                div.innerHTML = `
+                <h5>${i + 1}. ${ans.question}</h5>
+                <p><b>Jawabanmu:</b> ${ans.answer}</p>
+                <p><b>Penjelasan:</b> ${ans.explanation}</p>
+            `;
+                summary.appendChild(div);
+            });
+            const categoryCount = {};
+            answersChosen.forEach(ans => {
+                categoryCount[ans.category] = (categoryCount[ans.category] || 0) + 1;
+            });
+            let maxCategory = null;
+            let maxCount = 0;
+            for (const cat in categoryCount) {
+                if (categoryCount[cat] > maxCount) {
+                    maxCount = categoryCount[cat];
+                    maxCategory = cat;
+                }
+            }
+            let personalityMsg = "";
+            switch (maxCategory) {
+                case "hemat":
+                    personalityMsg = "Kamu adalah orang yang sangat hemat dan bijak dalam mengelola keuangan. Terus pertahankan kebiasaan baik ini untuk masa depan yang lebih cerah!";
+                    break;
+                case "disiplin":
+                    personalityMsg = "Kamu punya disiplin tinggi dalam mengatur keuangan. Ini adalah kunci kesuksesan Sampah Bijak jangka panjang!";
+                    break;
+                case "aman":
+                    personalityMsg = "Kamu cenderung memilih keamanan Sampah Bijak dan siap menghadapi risiko tak terduga dengan baik.";
+                    break;
+                case "boros":
+                    personalityMsg = "Perlu lebih bijak dalam mengelola pengeluaran agar keuanganmu lebih stabil dan terencana.";
+                    break;
+                default:
+                    personalityMsg = "Terima kasih sudah mengikuti kuis ini! Terus belajar dan perbaiki pengelolaan keuanganmu.";
+            }
+            const personalityDiv = document.createElement("div");
+            personalityDiv.style.marginTop = "20px";
+            personalityDiv.style.padding = "15px";
+            personalityDiv.style.background = "#d1ecf1";
+            personalityDiv.style.borderRadius = "10px";
+            personalityDiv.style.color = "#0c5460";
+            personalityDiv.style.fontWeight = "600";
+            personalityDiv.textContent = personalityMsg;
+            summary.appendChild(personalityDiv);
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            answersChosen = [];
+            score = 0;
+            document.getElementById("score").textContent = score;
+            document.getElementById("quiz-header").style.display = "flex";
+            document.querySelector(".question-box").style.display = "block";
+            document.getElementById("options-container").style.display = "grid";
+            document.getElementById("result-box").style.display = "none";
+            document.getElementById("explanation").style.display = "none";
+            loadQuestion();
+        }
+    </script>
+    <div class="mobile-bottom-nav">
+        <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
+        <a href="fitur-detail-1.html" data-name="fitur">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span>Fitur</span>
+        </a>
+        <a href="#" id="dashboard-link" data-name="dashboard">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dashboardLink = document.getElementById('dashboard-link');
+
+            dashboardLink.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+                if (loggedIn) {
+                    window.location.href = 'DASHBOARD/index.html';
+                } else {
+                    window.location.href = 'login.html';
+                }
+            });
+        });
+    </script>
+    <script>
+        const waNumber = "6287877566677";
+        let now = new Date();
+        let options = {
+            timeZone: "Asia/Jakarta",
+            hour: "numeric"
+        };
+        let hour = new Intl.DateTimeFormat("id-ID", options).format(now);
+        let greeting = "Halo";
+        if (hour >= 4 && hour < 11) {
+            greeting = "Selamat pagi";
+        } else if (hour >= 11 && hour < 15) {
+            greeting = "Selamat siang";
+        } else if (hour >= 15 && hour < 18) {
+            greeting = "Selamat sore";
+        } else {
+            greeting = "Selamat malam";
+        }
+        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        document.getElementById("waLink").addEventListener("click", function(e) {
+            e.preventDefault();
+            let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, "_blank");
+        });
+        document.getElementById("waLink").href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+    </script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

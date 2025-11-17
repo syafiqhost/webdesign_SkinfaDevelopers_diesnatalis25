@@ -1,0 +1,141 @@
+:root {
+    --primary: #00a0d0;
+    --muted: #6c757d;
+    --card-bg: #ffffff;
+    --accent: #56bef9;
+}
+
+#finance-widgets .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+#finance-widgets .form-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 12px
+}
+
+#finance-widgets label {
+    min-width: 140px;
+    font-weight: 600;
+    color: var(--accent)
+}
+
+#finance-widgets .form-input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e6e9ef
+}
+
+#finance-widgets .money {
+    text-align: right
+}
+
+#finance-widgets .btn {
+    background: #f3f4f6;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+#finance-widgets .btn.small {
+    padding: 6px 8px;
+    font-size: 13px
+}
+
+#finance-widgets .cus-btn {
+    background: linear-gradient(90deg, var(--primary), #007aa8);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none
+}
+
+#finance-widgets .remove-expense {
+    background: #ffebeb;
+    color: #b00020
+}
+
+#finance-widgets .result-line {
+    font-weight: 600;
+    margin-top: 8px
+}
+
+#finance-widgets .advice {
+    padding: 12px;
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px dashed #e6eef7
+}
+
+#finance-widgets .icons-row {
+    display: flex;
+    gap: 8px
+}
+
+#finance-widgets .icon-choice {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e9ef;
+    background: transparent;
+    cursor: pointer
+}
+
+#finance-widgets .icon-choice.active {
+    background: var(--primary);
+    color: #fff
+}
+
+#finance-widgets .progress {
+    background: #f1f5f9;
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden
+}
+
+#finance-widgets .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), #00c0ff);
+    width: 0%;
+    transition: width 1s ease
+}
+
+
+/* Quiz */
+
+#finance-widgets .choices {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.choice {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e9ef;
+    cursor: pointer
+}
+
+.choice.correct {
+    background: #e7fff2;
+    border-color: #7be4b7
+}
+
+.choice.wrong {
+    background: #fff1f1;
+    border-color: #f3b0b0
+}
+
+
+/* Responsive tweaks */
+
+@media (max-width:992px) {
+    #finance-widgets label {
+        min-width: 120px
+    }
+}

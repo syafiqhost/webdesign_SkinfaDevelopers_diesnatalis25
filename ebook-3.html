@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>E-Book 3 | Sampah Bijak</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png">
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/smoothScorllbar.css">
+    <link rel="stylesheet" href="assets/css/vendor/classic.css">
+    <link rel="stylesheet" href="assets/css/vendor/classic.date.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/finance-widgets.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        .header {
+            position: fixed;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pdf-section {
+            background: white;
+            padding: 5rem 0;
+        }
+        
+        .pdf-container {
+            margin-top: 70px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .pdf-container:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pdf-header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem 2rem;
+        }
+        
+        .pdf-title h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .pdf-wrapper {
+            position: relative;
+            background: #f8f9fa;
+        }
+        
+        .pdf-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            z-index: 10;
+            height: 800px;
+        }
+        
+        .loading-spinner p {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .pdf-error {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            z-index: 10;
+        }
+        
+        .error-content {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-content i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        iframe {
+            border-radius: 0 0 20px 20px;
+            transition: opacity 0.3s ease;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #6bcc0e;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #56bef9;
+        }
+    </style>
+</head>
+
+<body class="tt-smooth-scroll">
+    <div id="preloader">
+        <div class="book">
+            <div class="inner">
+                <div class="left"></div>
+                <div class="middle"></div>
+                <div class="right"></div>
+            </div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container-fluid">
+            <nav class="navigation d-flex align-items-center justify-content-between">
+                <a href="index.html" class="d-flex align-items-center">
+                    <img src="assets/media/logo.png" alt="/logo" class="header-logo">
+                </a>
+                <div class="menu-button-right">
+                    <div class="main-menu__nav">
+                        <ul class="main-menu__list">
+                            <li>
+                                <a href="index.html">Beranda</a>
+                            </li>
+                            <li>
+                                <a href="belajarsampahbijak.html">Mulai Belajar</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Tentang Kami</a>
+                            </li>
+                            <li>
+                                <a href="belajarsampahbijak.html#fitur&ebook">Fitur & E-Book</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">Faq</a>
+                            </li>
+                            <li>
+                                <a href="artikel-1.html">Artikel</a>
+                            </li>
+                            <li>
+                                <a href="kontak.html">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-menu__right">
+                    <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
+                        <a href="register.html" class="cus-btn">
+                            <span class="btn-text">Mulai Belajar</span>
+                            <span>Mulai Belajar</span>
+                        </a>
+                    </div>
+                    <a href="#" class="d-xl-none d-flex main-menu__toggler mobile-nav__toggler">
+                        <img src="assets/media/icons/menu-2.png" alt="">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section id="payment-info" class="pdf-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="pdf-container" data-aos="fade-up">
+                        <div class="pdf-header" style="background: #56bef9;">
+                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                <div class="pdf-title d-flex align-items-center">
+                                    <div>
+                                        <h3 class="mb-0 text-white">E-Book DLiterasi Keuangan
+                                        </h3>
+                                        <p class="mb-0 opacity-75" style="color: white;">Membantu memahami cara mengelola keuangan pribadi, mulai dari menabung, investasi, hingga perencanaan masa depan.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="pdf-actions mt-2 mt-md-0 d-flex align-items-center">
+                                    <button class="btn btn-light btn-sm me-2 d-flex align-items-center" onclick="refreshPDF()">
+        <i class="fa-solid fa-rotate-right me-1"></i> Refresh
+      </button>
+                                    <a href="https://drive.google.com/file/d/1q3TZ7iHSW1FMt6Ch2wZ0OPckyOxirhTj/preview
+" class="btn btn-light btn-sm d-flex align-items-center" target="_blank">
+                                        <i class="fa-solid fa-up-right-from-square me-1"></i> Buka di Tab Baru
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pdf-wrapper">
+                            <div class="pdf-loading" id="pdfLoading">
+                                <div class="loading-spinner text-center">
+                                    <div class="spinner-border" role="status" style="width: 3rem; height: 3rem; color: #56bef9;">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <p class="mt-3">Memuat dokumen PDF...</p>
+                                </div>
+                            </div>
+                            <iframe id="pdfFrame" src="https://drive.google.com/file/d/1q3TZ7iHSW1FMt6Ch2wZ0OPckyOxirhTj/preview
+" width="100%" height="800" frameborder="0" onload="hidePDFLoading()" onerror="showPDFError()"></iframe>
+                            <div class="pdf-error" id="pdfError" style="display: none;">
+                                <div class="error-content">
+                                    <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+                                    <h5 class="mt-2">Tidak dapat memuat dokumen</h5>
+                                    <p>Silakan coba refresh atau buka di tab baru</p>
+                                    <button class="btn btn-primary" onclick="refreshPDF()">Coba Lagi</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination mt-48">
+            <ul id="border-pagination" style="margin-top: 30px;">
+                <li>
+                    <a href="ebook-2.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                                                    <path d="M14.2246 26.8364C14.2246 23.4614 11.0746 18.9614 7.47461 18.9614M7.47461 18.9614C9.53711 18.9614 14.2246 17.8364 14.2246 11.0864M7.47461 18.9614H28.8496" stroke="white" stroke-width="2.25"/>
+                                                  </svg>
+                    </a>
+                </li>
+                <li><a href="ebook-1.html">1</a></li>
+                <li><a href="ebook-2.html">2</a></li>
+                <li><a href="ebook-3.html" style="background-color: #56bef9;">3</a></li>
+                <li><a href="ebook-4.html">4</a></li>
+                <li>
+                    <a href="ebook-4.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                                                    <path d="M21.7754 26.8364C21.7754 23.4614 24.9254 18.9614 28.5254 18.9614M28.5254 18.9614C26.4629 18.9614 21.7754 17.8364 21.7754 11.0864M28.5254 18.9614H7.15039" stroke="white" stroke-width="2.25"/>
+                                                  </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="container-fluid">
+            <div class="footer-wrapper pb-40">
+                <div class="col-xl-4">
+                    <div class="logo-block">
+                        <img src="assets/media/logo-footer.png" alt="" class="ft-logo mb-16">
+                        <p class="mb-32" style="color: rgb(235, 235, 235)">
+                            Sampah Bijak adalah platform edukasi <br> yang membantu Anda belajar mengelola sampah <br> secara cerdas, mudah, dan menyenangkan. <br> Bersama Sampah Bijak, wujudkan lingkungan <br> yang lebih bersih, hijau, dan berkelanjutan.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="link-block popular">
+                        <h6 class="white fw-800 mb-24">Tautan Cepat</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Mulai Belajar Sampah Bijak</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="index.html#chatbot" style="color: rgb(235, 235, 235)">Tanya Chatbot AI</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="fitur-detail-1.html" style="color: rgb(235, 235, 235)">Fitur 1</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="fitur-detail-2.html" style="color: rgb(235, 235, 235)">Fitur 2</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="fitur-detail-3.html" style="color: rgb(235, 235, 235)">Fitur 3</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="fitur-detail-4.html" style="color: rgb(235, 235, 235)">Fitur 4</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book 1, 2, 3 & 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="link-block quick-links">
+                        <h6 class="fw-800 mb-24" style="color: white;">Jelajahi</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="mb-12 fw-400">
+                                <a href="index.html " style="color: rgb(235, 235, 235)">Beranda</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="about.html" style="color: rgb(235, 235, 235)">Tentang Kami</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">Fitur</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Apa itu Literasi Sampah Bijak?</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="artikel-1.html" style="color: rgb(235, 235, 235)">Artikel</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="kontak.html" style="color: rgb(235, 235, 235)">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="link-block contact-block">
+                        <h6 class=" fw-800 mb-24" style="color: white;">Hubungi Kami</h6>
+                        <ul class="footer-list list-unstyled mb-32">
+                            <li class="mb-16 d-flex align-items-center gap-12">
+                                <a id="waLink" href="#" target="_blank" class="d-flex align-items-center gap-12" style="color: rgb(235, 235, 235)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M16.9149 16.3507L16.4978 15.6542C15.7477 14.4174 14.7124 12.9979 13.3545 12.9979C13.1029 12.9979 12.8538 13.0485 12.6072 13.151L11.8783 13.4635C11.8117 13.4911 11.7471 13.5225 11.6786 13.5558C11.492 13.6465 11.2805 13.7493 11.0629 13.7493C10.5262 13.7493 9.90436 13.0508 9.31217 11.7827C8.73098 10.5379 8.76806 9.88539 8.90147 9.55705C9.04868 9.19479 9.39101 9.03991 9.75877 8.90072C9.80992 8.88133 9.8561 8.86374 9.90102 8.84524L10.6391 8.53449C12.5619 7.73041 11.8465 4.92046 11.612 3.9992L11.4131 3.20712C11.2431 2.55431 10.7922 0.820312 9.29683 0.820312C9.02 0.820312 8.72467 0.884809 8.41933 1.01209C8.21898 1.09165 5.46198 2.21704 4.46315 4.19413C3.26939 6.54747 3.49012 9.70327 5.11857 13.5719C6.73485 17.4453 8.83075 19.8145 11.3481 20.6136C11.7799 20.7508 12.2679 20.8202 12.7987 20.8202H12.7989C14.5362 20.8202 16.251 20.0811 16.3902 20.0197C16.9892 19.766 17.3763 19.3804 17.5409 18.8735C17.8198 18.014 17.3519 17.0722 16.9149 16.3507ZM16.2537 18.4559C16.2155 18.5737 16.0825 18.6812 15.8588 18.7754C15.8551 18.777 15.8506 18.7789 15.8468 18.7806C15.8313 18.7875 14.2791 19.4673 12.7986 19.4672C12.4069 19.4672 12.0566 19.4191 11.7575 19.324C9.63672 18.6508 7.82326 16.5403 6.36637 13.0489C4.89866 9.56192 4.66412 6.78868 5.67026 4.80527C6.45152 3.25889 8.89741 2.27792 8.9214 2.26854C8.92628 2.26656 8.93106 2.26466 8.93584 2.26268C9.07511 2.20423 9.19996 2.17338 9.29683 2.17338C9.59496 2.17338 9.86629 2.63576 10.1021 3.54205L10.3001 4.33079C10.7273 6.00859 10.6623 7.05803 10.1153 7.28679L9.38082 7.59619C9.35159 7.60827 9.3174 7.62099 9.2797 7.63534C8.87396 7.78895 8.02965 8.10846 7.64781 9.04766C7.30134 9.89991 7.44476 10.9818 8.08584 12.3553C8.94928 14.2038 9.92303 15.1024 11.0628 15.1024C11.5917 15.1024 12.0163 14.8961 12.27 14.7728C12.3167 14.7501 12.3585 14.7293 12.4034 14.7107L13.1333 14.3977C13.2086 14.3663 13.281 14.351 13.3544 14.351C13.7057 14.351 14.3357 14.699 15.339 16.3528L15.7558 17.0488C16.2695 17.897 16.3101 18.2821 16.2537 18.4559Z"
+            fill="#fff" />
+    </svg> +6287877566677
+                                </a>
+                                <div class="free-label caption" style="color: white;">
+                                    KONSULTASI GRATIS
+                                </div>
+                            </li>
+                            <li class="mb-32">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
+            fill="#fff" />
+    </svg> sampahbijak@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="fw-600 mb-16" style="color: white;">Tanya Cepat Via WhatsApp</p>
+                        <form id="waForm">
+                            <input type="text" id="waMessage" class="form-input" placeholder="Ketik pertanyaan Anda di sini" style="border-color: white; color: white;">
+                            <style>
+                                #waMessage::placeholder {
+                                    color: white;
+                                    opacity: 1;
+                                }
+                            </style>
+                            <button type="submit" class="submit-arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+      <path
+        d="M19.8284 0.49196C19.6626 0.326179 19.414 0.275202 19.1965 0.362233L0.36834 7.89339C0.152911 7.97956 0.00865304 8.18472 0.00037181 8.41663C-0.00787036 8.64851 0.121504 8.86339 0.330254 8.96464L7.75477 12.5655L11.3556 19.99C11.4538 20.1925 11.6589 20.3202 11.8827 20.3202C11.8896 20.3202 11.8966 20.3201 11.9036 20.3199C12.1355 20.3116 12.3407 20.1674 12.4268 19.9519L19.9581 1.12391C20.0451 0.906256 19.9941 0.657702 19.8284 0.49196ZM2.0349 8.48894L16.9812 2.51047L8.07383 11.4178L2.0349 8.48894ZM11.8313 18.2854L8.90246 12.2464L17.8099 3.33906L11.8313 18.2854Z"
+        fill="#56bef9" />
+    </svg>
+  </button>
+                        </form>
+                        <script>
+                            document.getElementById("waForm").addEventListener("submit", function(e) {
+                                e.preventDefault();
+                                let message = document.getElementById("waMessage").value;
+                                let phone = "6287877566677";
+                                let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+                                window.open(url, "_blank");
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-line mb-24"></div>
+            <p class="bottom-bar text-center" style="color: white;">© 2025 All Rights Reserved <span class="fw-700 color-primary">Sampah Bijak.</span> Dibuat Oleh <span class="color-primary fw-700">SKINFA DEVELOPERS</span></p>
+        </div>
+    </footer>
+    <button class="scrollToTopBtn sembunyi"><i class="fa fa-arrow-up"></i></button>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/media/logo.png" alt=""></a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:syafiqbamazruk@gmail.com">syafiqbamazruk@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="https://wa.me/6287877566677?text=Halo%20saya%20mau%20tanya%20tentang..." target="_blank">
+    +6287877566677
+  </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-bottom-nav">
+        <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
+        <a href="fitur-detail-1.html" data-name="fitur">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span>Fitur</span>
+        </a>
+        <a href="#" id="dashboard-link" data-name="dashboard">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+    </div>
+
+    <audio id="bg-music" autoplay loop>
+  <source src="assets/media/audio.mp3" type="audio/mpeg">
+</audio>
+
+    <div id="music-toggle">
+        <i id="music-icon" class="bi bi-volume-up"></i>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dashboardLink = document.getElementById('dashboard-link');
+
+            dashboardLink.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+                if (loggedIn) {
+                    window.location.href = 'DASHBOARD/index.html';
+                } else {
+                    window.location.href = 'login.html';
+                }
+            });
+        });
+    </script>
+    <script>
+        function hidePDFLoading() {
+            document.getElementById('pdfLoading').style.display = 'none';
+        }
+
+        function showPDFError() {
+            document.getElementById('pdfLoading').style.display = 'none';
+            document.getElementById('pdfError').style.display = 'flex';
+        }
+
+        function refreshPDF() {
+            const iframe = document.getElementById('pdfFrame');
+            const loading = document.getElementById('pdfLoading');
+            const error = document.getElementById('pdfError');
+            loading.style.display = 'flex';
+            error.style.display = 'none';
+            iframe.src = iframe.src;
+        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+            let phoneNumber = "6281216700519";
+            let whatsappMessage =
+                "Halo, saya ingin mengajukan pertanyaan:\n\n" +
+                "*Nama:* " + name + "\n" +
+                "*Email:* " + email + "\n" +
+                "*Pesan:* " + message;
+            let encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+        });
+    </script>
+    <script>
+        const waNumber = "6287877566677";
+        let now = new Date();
+        let options = {
+            timeZone: "Asia/Jakarta",
+            hour: "numeric"
+        };
+        let hour = new Intl.DateTimeFormat("id-ID", options).format(now);
+        let greeting = "Halo";
+        if (hour >= 4 && hour < 11) {
+            greeting = "Selamat pagi";
+        } else if (hour >= 11 && hour < 15) {
+            greeting = "Selamat siang";
+        } else if (hour >= 15 && hour < 18) {
+            greeting = "Selamat sore";
+        } else {
+            greeting = "Selamat malam";
+        }
+        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        document.getElementById("waLink").addEventListener("click", function(e) {
+            e.preventDefault();
+            let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, "_blank");
+        });
+        document.getElementById("waLink").href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+    </script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/vendor/video.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/finance-widgets.js"></script>
+</body>
+
+</html>

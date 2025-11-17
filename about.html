@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sampah Bijak | Menuju Generasi Pintar Sampah Bijak</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png">
+
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/vendor/smoothScorllbar.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        .header {
+            position: fixed;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hilang {
+                display: none;
+            }
+        }
+        
+        .scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 999;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            cursor: pointer;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #6bcc0e;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #56bef9;
+        }
+    </style>
+</head>
+
+<body class="x-hidden">
+    <div id="loading-bar"></div>
+    <div id="particles-js" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;">
+    </div>
+
+
+    <div id="scroll-container">
+
+
+        <header class="header">
+            <div class="container-fluid">
+                <nav class="navigation d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="assets/media/logo.png" alt="/logo" class="header-logo">
+                    </a>
+                    <div class="menu-button-right">
+                        <div class="main-menu__nav">
+                            <ul class="main-menu__list">
+                                <li>
+                                    <a href="index.html">Beranda</a>
+                                </li>
+                                <li>
+                                    <a href="belajarsampahbijak.html">Mulai Belajar</a>
+                                </li>
+                                <li>
+                                    <a href="about.html" class="active">Tentang Kami</a>
+                                </li>
+                                <li>
+                                    <a href="belajarsampahbijak.html#fitur&ebook">Fitur & E-Book</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">Faq</a>
+                                </li>
+
+                                <li>
+                                    <a href="artikel-1.html">Artikel</a>
+                                </li>
+                                <li>
+                                    <a href="kontak.html">Kontak</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-menu__right">
+                        <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
+                            <a href="register.html" class="cus-btn">
+                                <span class="btn-text">Mulai Belajar</span>
+                                <span>Mulai Belajar</span>
+                            </a>
+                        </div>
+                        <a href="#" class="d-xl-none d-flex main-menu__toggler mobile-nav__toggler">
+                            <img src="assets/media/icons/menu-2.png" alt="">
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="title-banner" style="margin-top: 15px;">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-md-11">
+                        <div class="title-wrapper">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="title-content">
+                                        <h1 class="dark-gray fw-700">Tentang Kami</h1>
+                                    </div>
+                                    <div class="img-block">
+                                        <img src="assets/media/user/star.png" alt="star">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6 d-sm-block d-none">
+                                    <div class="title-image">
+                                        <img src="assets/media/backgrounds/title-banner.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="online py-80">
+            <div class="container-fluid">
+                <div class="row row-gap-4 justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="row">
+                            <div class="col-xl-5">
+                                <div class="row row-gap-3">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 sembunyi">
+                                        <div class="img-online">
+                                            <img src="assets/media/sampahbijaksource/sb-1.png" alt="Sampah Bijak">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <div class="img-online hilang">
+                                            <img src="assets/media/sampahbijaksource/sb-2.png" alt="Sampah Bijak">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <div class="img-online">
+                                            <img src="assets/media/sampahbijaksource/sb-3.png" alt="Sampah Bijak">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <div class="img-online">
+                                            <img src="assets/media/sampahbijaksource/sb-4.png" alt="Sampah Bijak">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-7">
+                                <div class="eyebrow-2">Tentang Kami</div>
+                                <h2 class="dark-gray fw-800 mb-16">Belajar Sampah Bijak Lebih Cerdas, <span class="color-primary">Kapanpun & Dimanapun.</span></h2>
+                                <p class="light-gray mb-32">
+                                    Kami percaya bahwa literasi Sampah Bijak adalah kunci masa depan yang lebih baik. Karena itu, kami menghadirkan berbagai fitur interaktif untuk membantu kamu mengelola keuangan dengan lebih mudah: mulai dari perencanaan anggaran bulanan, target menabung
+                                    hingga tercapai, kuis edukasi Sampah Bijak yang seru, sampai simulasi investasi yang realistis untuk melatih pengambilan keputusan.
+                                </p>
+                                <div class="d-flex gap-24 align-items-center mb-32 images-block">
+                                    <img src="assets/media/user/test-user-1.png" alt="" class="img-1">
+                                    <img src="assets/media/user/test-user-2.png" alt="" class="img-2">
+                                    <img src="assets/media/user/test-user-3.png" alt="" class="img-3">
+                                </div>
+                                <div class="mb-32">
+                                    <div class="row row-gap-3">
+                                        <div class="col-12 mb-4">
+                                            <div class="d-flex gap-8 align-items-start">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M11.9999 0C5.38321 0 0 5.38309 0 11.9999C0 18.6168 5.38321 24 11.9999 24C18.6167 24 23.9999 18.6168 23.9999 11.9999C23.9999 5.38309 18.6168 0 11.9999 0ZM18.8905 9.97305L11.3516 17.512C11.031 17.8326 10.6049 18.009 10.1516 18.009C9.69832 18.009 9.27221 17.8326 8.95165 17.512L5.10936 13.6697C4.78881 13.3492 4.61225 12.923 4.61225 12.4698C4.61225 12.0163 4.78881 11.5902 5.10936 11.2697C5.42979 10.9491 5.85591 10.7726 6.30932 10.7726C6.7626 10.7726 7.18884 10.9491 7.50927 11.2698L10.1515 13.9119L16.4904 7.57301C16.8109 7.25245 17.237 7.07602 17.6903 7.07602C18.1436 7.07602 18.5697 7.25245 18.8903 7.57301C19.5522 8.23491 19.5522 9.3114 18.8905 9.97305Z" fill="#56bef9"></path>
+                </svg>
+                                                <h5 class="color-primary fw-800">Visi</h5>
+                                            </div>
+                                            <p class="mt-2">Meningkatkan literasi Sampah Bijak masyarakat agar mampu mengatur keuangan, berinvestasi, dan mencapai kebebasan Sampah Bijak dengan bijak.</p>
+                                        </div>
+
+                                        <div class="col-12 mb-2">
+                                            <div class="d-flex gap-8 align-items-start">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M11.9999 0C5.38321 0 0 5.38309 0 11.9999C0 18.6168 5.38321 24 11.9999 24C18.6167 24 23.9999 18.6168 23.9999 11.9999C23.9999 5.38309 18.6168 0 11.9999 0ZM18.8905 9.97305L11.3516 17.512C11.031 17.8326 10.6049 18.009 10.1516 18.009C9.69832 18.009 9.27221 17.8326 8.95165 17.512L5.10936 13.6697C4.78881 13.3492 4.61225 12.923 4.61225 12.4698C4.61225 12.0163 4.78881 11.5902 5.10936 11.2697C5.42979 10.9491 5.85591 10.7726 6.30932 10.7726C6.7626 10.7726 7.18884 10.9491 7.50927 11.2698L10.1515 13.9119L16.4904 7.57301C16.8109 7.25245 17.237 7.07602 17.6903 7.07602C18.1436 7.07602 18.5697 7.25245 18.8903 7.57301C19.5522 8.23491 19.5522 9.3114 18.8905 9.97305Z" fill="#56bef9"></path>
+                </svg>
+                                                <h6 class="color-primary fw-700">Misi</h6>
+                                            </div>
+                                            <ul class="mt-2">
+                                                <li>Mengajarkan cara mengatur keuangan secara terarah.</li>
+                                                <li>Membantu mencapai tujuan tabungan lebih cepat.</li>
+                                                <li>Melatih keterampilan investasi tanpa risiko besar.</li>
+                                                <li>Menyediakan pembelajaran Sampah Bijak yang seru dan mudah dipahami.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="service py-80">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="img-service">
+                        <img src="assets/media/user/bulb.png" alt="bulb">
+                    </div>
+                    <div class="col-xl-10">
+                        <div class="row align-items-center">
+                            <div class="col-xl-5">
+                                <div class="eyebrow">Goals Belajar</div>
+                                <h2 class="dark-gray fw-800 mb-16">Goals Belajar
+                                    <span class="color-sec"> Sampah Bijak</span> di <span class="color-sec">SampahBijak</span>
+                                </h2>
+                                <p class="light-gray mb-32">
+                                    Belajar Sampah Bijak membantu kita memahami nilai uang, mengelola risiko, meningkatkan literasi keuangan, dan membangun kebiasaan Sampah Bijak sehat sejak dini.
+                                </p>
+                            </div>
+                            <div class="col-xl-7">
+                                <div class="row row-gap-3">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="service-wrapper-1">
+                                            <div class="service-card mb-24">
+                                                <i class="fas fa-lightbulb fa-3x mb-24" style="color:#FF9800;"></i>
+                                                <h5 class="dark-gray fw-800 mb-24">Goal 1: Pahami Nilai Uang</h5>
+                                                <p class="light-gray">Belajar menghargai setiap rupiah, mengenali kebutuhan vs keinginan, dan membuat keputusan belanja lebih bijak.</p>
+                                            </div>
+                                            <div class="service-card">
+                                                <i class="fas fa-shield-alt fa-3x mb-24" style="color:#3F51B5;"></i>
+                                                <h5 class="dark-gray fw-800 mb-24">Goal 2: Kelola Risiko Keuangan</h5>
+                                                <p class="light-gray">Belajar cara menghadapi risiko Sampah Bijak seperti darurat mendadak, investasi, dan perlindungan asuransi.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="service-wrapper-2">
+                                            <div class="service-card mb-24">
+                                                <i class="fas fa-book fa-3x mb-24" style="color:#4CAF50;"></i>
+                                                <h5 class="dark-gray fw-800 mb-24">Goal 3: Tingkatkan Literasi Keuangan</h5>
+                                                <p class="light-gray">Memahami istilah keuangan, cara kerja bank, kredit, dan investasi agar bisa mengambil keputusan cerdas.</p>
+                                            </div>
+                                            <div class="service-card">
+                                                <i class="fas fa-seedling fa-3x mb-24" style="color:#009688;"></i>
+                                                <h5 class="dark-gray fw-800 mb-24">Goal 4: Bangun Kebiasaan Sampah Bijak Sehat</h5>
+                                                <p class="light-gray">Membiasakan menabung rutin, mencatat pengeluaran, dan membuat perencanaan jangka panjang sejak dini.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brand-section py-80">
+            <div class="eyebrow-2 heading">Partner</div>
+            <h2 class="dark-gray fw-800 heading mb-48"> Partner Belajar&nbsp;<span class="color-primary">Kami</span></h2>
+            <div class="container-fluid">
+                <div class="row row-gap-4">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12  offset-lg-1  offset-md-1 offset-sm-1">
+                        <div class="brand-block-1">
+                            <img src="assets/media/brands/brand-1.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12 offset-lg-1 offset-md-1 offset-sm-1">
+                        <div class="brand-block-2">
+                            <img src="assets/media/brands/brand-2.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3  col-md-3 col-sm-4 col-12 offset-lg-1 offset-md-1 offset-sm-1">
+                        <div class="brand-block-3">
+                            <img src="assets/media/brands/brand-3.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-4 col-12 offset-sm-1">
+                        <div class="brand-block-4">
+                            <img src="assets/media/brands/brand-4.png" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3  col-md-3 col-sm-4 col-12 offset-lg-1 offset-md-1 offset-sm-1">
+                        <div class="brand-block-5">
+                            <img src="assets/media/brands/brand-5.jpg" alt="partner">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3  col-md-3  col-sm-4 col-12 offset-lg-1 offset-md-1 offset-sm-1">
+                        <div class="brand-block-6">
+                            <img src="assets/media/brands/brand-6.png" alt="partner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="article-section py-80">
+            <div class="eyebrow heading">Artikel</div>
+            <h2 class="dark-gray fw-800 heading mb-48">Wawasan dan &nbsp;<span class="color-sec">Artikel</span>
+            </h2>
+            <div class="container-fluid">
+                <div class="article-wrapper">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10">
+                            <div class="row row-gap-4 justify-content-center">
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <a href="https://www.Sampah Bijakku.com/investasi/investasi-aman-kenali-dulu-jenis-jenis-risiko-investasi/" class="article-block br-12">
+                                        <div class="article-image shine">
+                                            <img src="assets/media/blog/blog-4.png" alt="">
+                                        </div>
+                                        <div class="article-content">
+                                            <div class="d-flex align-items-center gap-32 mb-24">
+                                                <div class="d-flex align-items-center gap-8">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M17.0711 3.42892C15.1823 1.54019 12.6711 0.5 10 0.5C7.32895 0.5 4.81766 1.54019 2.92892 3.42892C1.04019 5.31766 0 7.82895 0 10.5C0 13.1711 1.04019 15.6823 2.92892 17.5711C4.81766 19.4598 7.32895 20.5 10 20.5C12.6711 20.5 15.1823 19.4598 17.0711 17.5711C18.9598 15.6823 20 13.1711 20 10.5C20 7.82895 18.9598 5.31766 17.0711 3.42892ZM4.34006 17.2694C4.67026 14.4282 7.11304 12.2346 10 12.2346C11.5219 12.2346 12.953 12.8276 14.0295 13.9039C14.939 14.8135 15.5125 16.0011 15.6601 17.2693C14.1266 18.5536 12.1521 19.3281 10 19.3281C7.8479 19.3281 5.87357 18.5537 4.34006 17.2694ZM10 11.0276C8.32535 11.0276 6.96274 9.66504 6.96274 7.99039C6.96274 6.31558 8.32535 4.95312 10 4.95312C11.6747 4.95312 13.0373 6.31558 13.0373 7.99039C13.0373 9.66504 11.6747 11.0276 10 11.0276ZM16.6687 16.2787C16.3701 15.0747 15.7474 13.9647 14.8581 13.0754C14.1379 12.3552 13.2858 11.8148 12.3566 11.4763C13.4737 10.7187 14.2091 9.43875 14.2091 7.99039C14.2091 5.66953 12.3209 3.78125 10 3.78125C7.67914 3.78125 5.79086 5.66953 5.79086 7.99039C5.79086 9.43951 6.52695 10.7199 7.64496 11.4773C6.79001 11.7889 5.99884 12.2706 5.31815 12.9048C4.33243 13.8228 3.64792 14.9933 3.33054 16.2777C1.98639 14.7282 1.17188 12.7075 1.17188 10.5C1.17188 5.63214 5.13214 1.67188 10 1.67188C14.8679 1.67188 18.8281 5.63214 18.8281 10.5C18.8281 12.7079 18.0133 14.7291 16.6687 16.2787Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                    <p class="light-gray fw-500">Sampah Bijakku</p>
+                                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="29" viewBox="0 0 2 29" fill="none">
+                                                    <path d="M1 0V29" stroke="#92949F" />
+                                                </svg>
+                                                <div class="d-flex align-items-center gap-8">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M5.84766 10.2266H4.59766C4.27406 10.2266 4.01172 10.4889 4.01172 10.8125C4.01172 11.1361 4.27406 11.3984 4.59766 11.3984H5.84766C6.17125 11.3984 6.43359 11.1361 6.43359 10.8125C6.43359 10.4889 6.17125 10.2266 5.84766 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 12.7266H4.59766C4.27406 12.7266 4.01172 12.9889 4.01172 13.3125C4.01172 13.6361 4.27406 13.8984 4.59766 13.8984H5.84766C6.17125 13.8984 6.43359 13.6361 6.43359 13.3125C6.43359 12.9889 6.17125 12.7266 5.84766 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 15.2266H4.59766C4.27406 15.2266 4.01172 15.4889 4.01172 15.8125C4.01172 16.1361 4.27406 16.3984 4.59766 16.3984H5.84766C6.17125 16.3984 6.43359 16.1361 6.43359 15.8125C6.43359 15.4889 6.17125 15.2266 5.84766 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 10.2266H9.59766C9.27406 10.2266 9.01172 10.4889 9.01172 10.8125C9.01172 11.1361 9.27406 11.3984 9.59766 11.3984H10.8477C11.1713 11.3984 11.4336 11.1361 11.4336 10.8125C11.4336 10.4889 11.1713 10.2266 10.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 12.7266H9.59766C9.27406 12.7266 9.01172 12.9889 9.01172 13.3125C9.01172 13.6361 9.27406 13.8984 9.59766 13.8984H10.8477C11.1713 13.8984 11.4336 13.6361 11.4336 13.3125C11.4336 12.9889 11.1713 12.7266 10.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 15.2266H9.59766C9.27406 15.2266 9.01172 15.4889 9.01172 15.8125C9.01172 16.1361 9.27406 16.3984 9.59766 16.3984H10.8477C11.1713 16.3984 11.4336 16.1361 11.4336 15.8125C11.4336 15.4889 11.1713 15.2266 10.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 10.2266H14.5977C14.2741 10.2266 14.0117 10.4889 14.0117 10.8125C14.0117 11.1361 14.2741 11.3984 14.5977 11.3984H15.8477C16.1713 11.3984 16.4336 11.1361 16.4336 10.8125C16.4336 10.4889 16.1713 10.2266 15.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 12.7266H14.5977C14.2741 12.7266 14.0117 12.9889 14.0117 13.3125C14.0117 13.6361 14.2741 13.8984 14.5977 13.8984H15.8477C16.1713 13.8984 16.4336 13.6361 16.4336 13.3125C16.4336 12.9889 16.1713 12.7266 15.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 15.2266H14.5977C14.2741 15.2266 14.0117 15.4889 14.0117 15.8125C14.0117 16.1361 14.2741 16.3984 14.5977 16.3984H15.8477C16.1713 16.3984 16.4336 16.1361 16.4336 15.8125C16.4336 15.4889 16.1713 15.2266 15.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M18.4648 3.03906H17.0586V2.0625C17.0586 1.73891 16.7962 1.47656 16.4727 1.47656C16.1491 1.47656 15.8867 1.73891 15.8867 2.0625V3.03906H10.8086V2.0625C10.8086 1.73891 10.5463 1.47656 10.2227 1.47656C9.89906 1.47656 9.63672 1.73891 9.63672 2.0625V3.03906H4.55859V2.0625C4.55859 1.73891 4.29625 1.47656 3.97266 1.47656C3.64906 1.47656 3.38672 1.73891 3.38672 2.0625V3.03906H1.98047C1.01121 3.03906 0.222656 3.82762 0.222656 4.79688V17.7656C0.222656 18.7349 1.01121 19.5234 1.98047 19.5234H18.4648C19.4341 19.5234 20.2227 18.7349 20.2227 17.7656C20.2227 17.3874 20.2227 5.12598 20.2227 4.79688C20.2227 3.82762 19.4341 3.03906 18.4648 3.03906ZM1.39453 4.79688C1.39453 4.47379 1.65738 4.21094 1.98047 4.21094H3.38672V5.1875C3.38672 5.51109 3.64906 5.77344 3.97266 5.77344C4.29625 5.77344 4.55859 5.51109 4.55859 5.1875V4.21094H9.63672V5.1875C9.63672 5.51109 9.89906 5.77344 10.2227 5.77344C10.5463 5.77344 10.8086 5.51109 10.8086 5.1875V4.21094H15.8867V5.1875C15.8867 5.51109 16.1491 5.77344 16.4727 5.77344C16.7962 5.77344 17.0586 5.51109 17.0586 5.1875V4.21094H18.4648C18.7879 4.21094 19.0508 4.47379 19.0508 4.79688V7.10156H1.39453V4.79688ZM18.4648 18.3516H1.98047C1.65738 18.3516 1.39453 18.0887 1.39453 17.7656V8.27344H19.0508V17.7656C19.0508 18.0887 18.7879 18.3516 18.4648 18.3516Z"
+                                                            fill="#56bef9" />
+
+                                                    </svg>
+                                                    <p class="light-gray fw-500">20 Agust 2025</p>
+                                                </div>
+                                            </div>
+                                            <h6 class="fw-800 mb-16">Investasi Aman? Kenali Dulu Jenis-Jenis Risiko Investasi!</h6>
+                                            <p>
+                                                Setiap investasi punya risiko, mulai dari fluktuasi harga, kesulitan mencairkan dana, hingga gagal bayar. Dengan mengenali risikonya, kita bisa memilih instrumen lebih aman, sesuai tujuan, dan meminimalisir kerugian di masa depan.
+                                            </p> <br>
+                                            <div class="cus-arrow-btn d-flex align-items-center">
+                                                <p class="fw-700 color-sec">Baca selengkapnya</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M19.6212 17.6941C18.2339 15.2911 18.6268 10.7924 21.1899 9.3126M21.1899 9.3126C19.7215 10.1604 15.9217 11.2863 13.147 6.48045M21.1899 9.3126L5.97147 18.099"
+                                                        stroke="#56bef9" stroke-width="1.84977" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <a href="https://www.Sampah Bijakku.com/perencana-keuangan/10-cara-merdeka-Sampah Bijak-di-hari-kemerdekaan-untuk-masa-depan-cerah/" class="article-block br-12">
+                                        <div class="article-image shine">
+                                            <img src="assets/media/blog/blog-5.png" alt="">
+                                        </div>
+                                        <div class="article-content">
+                                            <div class="d-flex align-items-center gap-32 mb-24">
+                                                <div class="d-flex align-items-center gap-8">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M17.0711 3.42892C15.1823 1.54019 12.6711 0.5 10 0.5C7.32895 0.5 4.81766 1.54019 2.92892 3.42892C1.04019 5.31766 0 7.82895 0 10.5C0 13.1711 1.04019 15.6823 2.92892 17.5711C4.81766 19.4598 7.32895 20.5 10 20.5C12.6711 20.5 15.1823 19.4598 17.0711 17.5711C18.9598 15.6823 20 13.1711 20 10.5C20 7.82895 18.9598 5.31766 17.0711 3.42892ZM4.34006 17.2694C4.67026 14.4282 7.11304 12.2346 10 12.2346C11.5219 12.2346 12.953 12.8276 14.0295 13.9039C14.939 14.8135 15.5125 16.0011 15.6601 17.2693C14.1266 18.5536 12.1521 19.3281 10 19.3281C7.8479 19.3281 5.87357 18.5537 4.34006 17.2694ZM10 11.0276C8.32535 11.0276 6.96274 9.66504 6.96274 7.99039C6.96274 6.31558 8.32535 4.95312 10 4.95312C11.6747 4.95312 13.0373 6.31558 13.0373 7.99039C13.0373 9.66504 11.6747 11.0276 10 11.0276ZM16.6687 16.2787C16.3701 15.0747 15.7474 13.9647 14.8581 13.0754C14.1379 12.3552 13.2858 11.8148 12.3566 11.4763C13.4737 10.7187 14.2091 9.43875 14.2091 7.99039C14.2091 5.66953 12.3209 3.78125 10 3.78125C7.67914 3.78125 5.79086 5.66953 5.79086 7.99039C5.79086 9.43951 6.52695 10.7199 7.64496 11.4773C6.79001 11.7889 5.99884 12.2706 5.31815 12.9048C4.33243 13.8228 3.64792 14.9933 3.33054 16.2777C1.98639 14.7282 1.17188 12.7075 1.17188 10.5C1.17188 5.63214 5.13214 1.67188 10 1.67188C14.8679 1.67188 18.8281 5.63214 18.8281 10.5C18.8281 12.7079 18.0133 14.7291 16.6687 16.2787Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                    <p class="light-gray fw-500">Sampah Bijakku</p>
+                                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="29" viewBox="0 0 2 29" fill="none">
+                                                    <path d="M1 0V29" stroke="#92949F" />
+                                                </svg>
+                                                <div class="d-flex align-items-center gap-8">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M5.84766 10.2266H4.59766C4.27406 10.2266 4.01172 10.4889 4.01172 10.8125C4.01172 11.1361 4.27406 11.3984 4.59766 11.3984H5.84766C6.17125 11.3984 6.43359 11.1361 6.43359 10.8125C6.43359 10.4889 6.17125 10.2266 5.84766 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 12.7266H4.59766C4.27406 12.7266 4.01172 12.9889 4.01172 13.3125C4.01172 13.6361 4.27406 13.8984 4.59766 13.8984H5.84766C6.17125 13.8984 6.43359 13.6361 6.43359 13.3125C6.43359 12.9889 6.17125 12.7266 5.84766 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 15.2266H4.59766C4.27406 15.2266 4.01172 15.4889 4.01172 15.8125C4.01172 16.1361 4.27406 16.3984 4.59766 16.3984H5.84766C6.17125 16.3984 6.43359 16.1361 6.43359 15.8125C6.43359 15.4889 6.17125 15.2266 5.84766 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 10.2266H9.59766C9.27406 10.2266 9.01172 10.4889 9.01172 10.8125C9.01172 11.1361 9.27406 11.3984 9.59766 11.3984H10.8477C11.1713 11.3984 11.4336 11.1361 11.4336 10.8125C11.4336 10.4889 11.1713 10.2266 10.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 12.7266H9.59766C9.27406 12.7266 9.01172 12.9889 9.01172 13.3125C9.01172 13.6361 9.27406 13.8984 9.59766 13.8984H10.8477C11.1713 13.8984 11.4336 13.6361 11.4336 13.3125C11.4336 12.9889 11.1713 12.7266 10.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 15.2266H9.59766C9.27406 15.2266 9.01172 15.4889 9.01172 15.8125C9.01172 16.1361 9.27406 16.3984 9.59766 16.3984H10.8477C11.1713 16.3984 11.4336 16.1361 11.4336 15.8125C11.4336 15.4889 11.1713 15.2266 10.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 10.2266H14.5977C14.2741 10.2266 14.0117 10.4889 14.0117 10.8125C14.0117 11.1361 14.2741 11.3984 14.5977 11.3984H15.8477C16.1713 11.3984 16.4336 11.1361 16.4336 10.8125C16.4336 10.4889 16.1713 10.2266 15.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 12.7266H14.5977C14.2741 12.7266 14.0117 12.9889 14.0117 13.3125C14.0117 13.6361 14.2741 13.8984 14.5977 13.8984H15.8477C16.1713 13.8984 16.4336 13.6361 16.4336 13.3125C16.4336 12.9889 16.1713 12.7266 15.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 15.2266H14.5977C14.2741 15.2266 14.0117 15.4889 14.0117 15.8125C14.0117 16.1361 14.2741 16.3984 14.5977 16.3984H15.8477C16.1713 16.3984 16.4336 16.1361 16.4336 15.8125C16.4336 15.4889 16.1713 15.2266 15.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M18.4648 3.03906H17.0586V2.0625C17.0586 1.73891 16.7962 1.47656 16.4727 1.47656C16.1491 1.47656 15.8867 1.73891 15.8867 2.0625V3.03906H10.8086V2.0625C10.8086 1.73891 10.5463 1.47656 10.2227 1.47656C9.89906 1.47656 9.63672 1.73891 9.63672 2.0625V3.03906H4.55859V2.0625C4.55859 1.73891 4.29625 1.47656 3.97266 1.47656C3.64906 1.47656 3.38672 1.73891 3.38672 2.0625V3.03906H1.98047C1.01121 3.03906 0.222656 3.82762 0.222656 4.79688V17.7656C0.222656 18.7349 1.01121 19.5234 1.98047 19.5234H18.4648C19.4341 19.5234 20.2227 18.7349 20.2227 17.7656C20.2227 17.3874 20.2227 5.12598 20.2227 4.79688C20.2227 3.82762 19.4341 3.03906 18.4648 3.03906ZM1.39453 4.79688C1.39453 4.47379 1.65738 4.21094 1.98047 4.21094H3.38672V5.1875C3.38672 5.51109 3.64906 5.77344 3.97266 5.77344C4.29625 5.77344 4.55859 5.51109 4.55859 5.1875V4.21094H9.63672V5.1875C9.63672 5.51109 9.89906 5.77344 10.2227 5.77344C10.5463 5.77344 10.8086 5.51109 10.8086 5.1875V4.21094H15.8867V5.1875C15.8867 5.51109 16.1491 5.77344 16.4727 5.77344C16.7962 5.77344 17.0586 5.51109 17.0586 5.1875V4.21094H18.4648C18.7879 4.21094 19.0508 4.47379 19.0508 4.79688V7.10156H1.39453V4.79688ZM18.4648 18.3516H1.98047C1.65738 18.3516 1.39453 18.0887 1.39453 17.7656V8.27344H19.0508V17.7656C19.0508 18.0887 18.7879 18.3516 18.4648 18.3516Z"
+                                                            fill="#56bef9" />
+
+                                                    </svg>
+                                                    <p class="light-gray fw-500">18 Agust 2025</p>
+                                                </div>
+                                            </div>
+                                            <h6 class="fw-800 mb-16">10 Cara Merdeka Sampah Bijak di Hari Kemerdekaan untuk Masa Depan Cerah</h6>
+                                            <p>
+                                                Rayakan Hari Kemerdekaan dengan langkah nyata menuju merdeka Sampah Bijak, mulai dari menabung rutin, mengatur anggaran, hingga berinvestasi demi masa depan yang lebih cerah.
+                                            </p>
+                                            <br>
+                                            <div class="cus-arrow-btn d-flex align-items-center">
+                                                <p class="fw-700 color-sec">Baca Selengkapnya</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M19.6212 17.6941C18.2339 15.2911 18.6268 10.7924 21.1899 9.3126M21.1899 9.3126C19.7215 10.1604 15.9217 11.2863 13.147 6.48045M21.1899 9.3126L5.97147 18.099"
+                                                        stroke="#56bef9" stroke-width="1.84977" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <a href="https://www.Sampah Bijakku.com/perencana-keuangan/5-tips-mengatur-keuangan-liburan-anti-boncos/" class="article-block br-12">
+                                        <div class="article-image shine">
+                                            <img src="assets/media/blog/blog-6.png" alt="">
+                                        </div>
+                                        <div class="article-content">
+                                            <div class="d-flex align-items-center gap-32 mb-24">
+                                                <div class="d-flex align-items-center gap-8">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M17.0711 3.42892C15.1823 1.54019 12.6711 0.5 10 0.5C7.32895 0.5 4.81766 1.54019 2.92892 3.42892C1.04019 5.31766 0 7.82895 0 10.5C0 13.1711 1.04019 15.6823 2.92892 17.5711C4.81766 19.4598 7.32895 20.5 10 20.5C12.6711 20.5 15.1823 19.4598 17.0711 17.5711C18.9598 15.6823 20 13.1711 20 10.5C20 7.82895 18.9598 5.31766 17.0711 3.42892ZM4.34006 17.2694C4.67026 14.4282 7.11304 12.2346 10 12.2346C11.5219 12.2346 12.953 12.8276 14.0295 13.9039C14.939 14.8135 15.5125 16.0011 15.6601 17.2693C14.1266 18.5536 12.1521 19.3281 10 19.3281C7.8479 19.3281 5.87357 18.5537 4.34006 17.2694ZM10 11.0276C8.32535 11.0276 6.96274 9.66504 6.96274 7.99039C6.96274 6.31558 8.32535 4.95312 10 4.95312C11.6747 4.95312 13.0373 6.31558 13.0373 7.99039C13.0373 9.66504 11.6747 11.0276 10 11.0276ZM16.6687 16.2787C16.3701 15.0747 15.7474 13.9647 14.8581 13.0754C14.1379 12.3552 13.2858 11.8148 12.3566 11.4763C13.4737 10.7187 14.2091 9.43875 14.2091 7.99039C14.2091 5.66953 12.3209 3.78125 10 3.78125C7.67914 3.78125 5.79086 5.66953 5.79086 7.99039C5.79086 9.43951 6.52695 10.7199 7.64496 11.4773C6.79001 11.7889 5.99884 12.2706 5.31815 12.9048C4.33243 13.8228 3.64792 14.9933 3.33054 16.2777C1.98639 14.7282 1.17188 12.7075 1.17188 10.5C1.17188 5.63214 5.13214 1.67188 10 1.67188C14.8679 1.67188 18.8281 5.63214 18.8281 10.5C18.8281 12.7079 18.0133 14.7291 16.6687 16.2787Z"
+                                                            fill="#56bef9" />
+                                                    </svg>
+                                                    <p class="light-gray fw-500">Sampah Bijakku</p>
+                                                </div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="29" viewBox="0 0 2 29" fill="none">
+                                                    <path d="M1 0V29" stroke="#92949F" />
+                                                </svg>
+                                                <div class="d-flex align-items-center gap-8">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <path
+                                                            d="M5.84766 10.2266H4.59766C4.27406 10.2266 4.01172 10.4889 4.01172 10.8125C4.01172 11.1361 4.27406 11.3984 4.59766 11.3984H5.84766C6.17125 11.3984 6.43359 11.1361 6.43359 10.8125C6.43359 10.4889 6.17125 10.2266 5.84766 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 12.7266H4.59766C4.27406 12.7266 4.01172 12.9889 4.01172 13.3125C4.01172 13.6361 4.27406 13.8984 4.59766 13.8984H5.84766C6.17125 13.8984 6.43359 13.6361 6.43359 13.3125C6.43359 12.9889 6.17125 12.7266 5.84766 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M5.84766 15.2266H4.59766C4.27406 15.2266 4.01172 15.4889 4.01172 15.8125C4.01172 16.1361 4.27406 16.3984 4.59766 16.3984H5.84766C6.17125 16.3984 6.43359 16.1361 6.43359 15.8125C6.43359 15.4889 6.17125 15.2266 5.84766 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 10.2266H9.59766C9.27406 10.2266 9.01172 10.4889 9.01172 10.8125C9.01172 11.1361 9.27406 11.3984 9.59766 11.3984H10.8477C11.1713 11.3984 11.4336 11.1361 11.4336 10.8125C11.4336 10.4889 11.1713 10.2266 10.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 12.7266H9.59766C9.27406 12.7266 9.01172 12.9889 9.01172 13.3125C9.01172 13.6361 9.27406 13.8984 9.59766 13.8984H10.8477C11.1713 13.8984 11.4336 13.6361 11.4336 13.3125C11.4336 12.9889 11.1713 12.7266 10.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M10.8477 15.2266H9.59766C9.27406 15.2266 9.01172 15.4889 9.01172 15.8125C9.01172 16.1361 9.27406 16.3984 9.59766 16.3984H10.8477C11.1713 16.3984 11.4336 16.1361 11.4336 15.8125C11.4336 15.4889 11.1713 15.2266 10.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 10.2266H14.5977C14.2741 10.2266 14.0117 10.4889 14.0117 10.8125C14.0117 11.1361 14.2741 11.3984 14.5977 11.3984H15.8477C16.1713 11.3984 16.4336 11.1361 16.4336 10.8125C16.4336 10.4889 16.1713 10.2266 15.8477 10.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 12.7266H14.5977C14.2741 12.7266 14.0117 12.9889 14.0117 13.3125C14.0117 13.6361 14.2741 13.8984 14.5977 13.8984H15.8477C16.1713 13.8984 16.4336 13.6361 16.4336 13.3125C16.4336 12.9889 16.1713 12.7266 15.8477 12.7266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M15.8477 15.2266H14.5977C14.2741 15.2266 14.0117 15.4889 14.0117 15.8125C14.0117 16.1361 14.2741 16.3984 14.5977 16.3984H15.8477C16.1713 16.3984 16.4336 16.1361 16.4336 15.8125C16.4336 15.4889 16.1713 15.2266 15.8477 15.2266Z"
+                                                            fill="#56bef9" />
+                                                        <path
+                                                            d="M18.4648 3.03906H17.0586V2.0625C17.0586 1.73891 16.7962 1.47656 16.4727 1.47656C16.1491 1.47656 15.8867 1.73891 15.8867 2.0625V3.03906H10.8086V2.0625C10.8086 1.73891 10.5463 1.47656 10.2227 1.47656C9.89906 1.47656 9.63672 1.73891 9.63672 2.0625V3.03906H4.55859V2.0625C4.55859 1.73891 4.29625 1.47656 3.97266 1.47656C3.64906 1.47656 3.38672 1.73891 3.38672 2.0625V3.03906H1.98047C1.01121 3.03906 0.222656 3.82762 0.222656 4.79688V17.7656C0.222656 18.7349 1.01121 19.5234 1.98047 19.5234H18.4648C19.4341 19.5234 20.2227 18.7349 20.2227 17.7656C20.2227 17.3874 20.2227 5.12598 20.2227 4.79688C20.2227 3.82762 19.4341 3.03906 18.4648 3.03906ZM1.39453 4.79688C1.39453 4.47379 1.65738 4.21094 1.98047 4.21094H3.38672V5.1875C3.38672 5.51109 3.64906 5.77344 3.97266 5.77344C4.29625 5.77344 4.55859 5.51109 4.55859 5.1875V4.21094H9.63672V5.1875C9.63672 5.51109 9.89906 5.77344 10.2227 5.77344C10.5463 5.77344 10.8086 5.51109 10.8086 5.1875V4.21094H15.8867V5.1875C15.8867 5.51109 16.1491 5.77344 16.4727 5.77344C16.7962 5.77344 17.0586 5.51109 17.0586 5.1875V4.21094H18.4648C18.7879 4.21094 19.0508 4.47379 19.0508 4.79688V7.10156H1.39453V4.79688ZM18.4648 18.3516H1.98047C1.65738 18.3516 1.39453 18.0887 1.39453 17.7656V8.27344H19.0508V17.7656C19.0508 18.0887 18.7879 18.3516 18.4648 18.3516Z"
+                                                            fill="#56bef9" />
+
+                                                    </svg>
+                                                    <p class="light-gray fw-500">18 Agust 2025</p>
+                                                </div>
+                                            </div>
+                                            <h6 class="fw-800 mb-16">5 Tips Mengatur Keuangan Liburan Anti Boncos</h6>
+                                            <p>
+                                                Nikmati liburan seru tanpa khawatir kantong jebol dengan tips sederhana, mulai dari membuat anggaran, memilih transportasi hemat, memanfaatkan promo menarik, belanja lebih bijak, hingga mengatur prioritas pengeluaran.
+                                            </p><br>
+
+                                            <div class="cus-arrow-btn d-flex align-items-center">
+                                                <p class="fw-700 color-sec">Baca Selengkapnya</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M19.6212 17.6941C18.2339 15.2911 18.6268 10.7924 21.1899 9.3126M21.1899 9.3126C19.7215 10.1604 15.9217 11.2863 13.147 6.48045M21.1899 9.3126L5.97147 18.099"
+                                                        stroke="#56bef9" stroke-width="1.84977" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container-fluid">
+                <div class="footer-wrapper pb-40">
+                    <div class="col-xl-4">
+                        <div class="logo-block">
+                            <img src="assets/media/logo-footer.png" alt="" class="ft-logo mb-16">
+                            <p class="mb-32" style="color: rgb(235, 235, 235)"> Sampah Bijak adalah platform edukasi <br> Sampah Bijak yang membantu Anda belajar <br> mengelola uang secara cerdas, mudah, <br> dan tanpa ngebosenin. Bersama Sampah Bijak, <br> tingkatkan literasi keuangan untuk masa depan
+                                <br> yang lebih aman dan terencana.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2">
+                        <div class="link-block popular">
+                            <h6 class="white fw-800 mb-24">Tautan Cepat</h6>
+                            <ul class="footer-list list-unstyled">
+                                <li class="mb-12 fw-400">
+                                    <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Mulai Belajar Sampah Bijak</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="index.html#chatbot" style="color: rgb(235, 235, 235)">Tanya Chatbot AI</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="fitur-detail-1.html" style="color: rgb(235, 235, 235)">Fitur 1</a>
+                                </li>
+                                <li class="mb-12  fw-400">
+                                    <a href="fitur-detail-2.html" style="color: rgb(235, 235, 235)">Fitur 2</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="fitur-detail-3.html" style="color: rgb(235, 235, 235)">Fitur 3</a>
+                                </li>
+                                <li class="mb-12  fw-400">
+                                    <a href="fitur-detail-4.html" style="color: rgb(235, 235, 235)">Fitur 4</a>
+                                </li>
+                                <li class="mb-12  fw-400">
+                                    <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book 1, 2, 3 & 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2">
+                        <div class="link-block quick-links">
+                            <h6 class="fw-800 mb-24" style="color: white;">Jelajahi</h6>
+                            <ul class="footer-list list-unstyled">
+                                <li class="mb-12 fw-400">
+                                    <a href="index.html " style="color: rgb(235, 235, 235)">Beranda</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="about.html" style="color: rgb(235, 235, 235)">Tentang Kami</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">Fitur</a>
+                                </li>
+                                <li class="mb-12  fw-400">
+                                    <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Apa itu Literasi Sampah Bijak?</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="artikel-1.html" style="color: rgb(235, 235, 235)">Artikel</a>
+                                </li>
+                                <li class="mb-12 fw-400">
+                                    <a href="kontak.html" style="color: rgb(235, 235, 235)">Kontak</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="link-block contact-block">
+                            <h6 class=" fw-800 mb-24" style="color: white;">Hubungi Kami</h6>
+                            <ul class="footer-list list-unstyled mb-32">
+                                <li class="mb-16 d-flex align-items-center gap-12">
+                                    <a id="waLink" href="#" target="_blank" class="d-flex align-items-center gap-12" style="color: rgb(235, 235, 235)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M16.9149 16.3507L16.4978 15.6542C15.7477 14.4174 14.7124 12.9979 13.3545 12.9979C13.1029 12.9979 12.8538 13.0485 12.6072 13.151L11.8783 13.4635C11.8117 13.4911 11.7471 13.5225 11.6786 13.5558C11.492 13.6465 11.2805 13.7493 11.0629 13.7493C10.5262 13.7493 9.90436 13.0508 9.31217 11.7827C8.73098 10.5379 8.76806 9.88539 8.90147 9.55705C9.04868 9.19479 9.39101 9.03991 9.75877 8.90072C9.80992 8.88133 9.8561 8.86374 9.90102 8.84524L10.6391 8.53449C12.5619 7.73041 11.8465 4.92046 11.612 3.9992L11.4131 3.20712C11.2431 2.55431 10.7922 0.820312 9.29683 0.820312C9.02 0.820312 8.72467 0.884809 8.41933 1.01209C8.21898 1.09165 5.46198 2.21704 4.46315 4.19413C3.26939 6.54747 3.49012 9.70327 5.11857 13.5719C6.73485 17.4453 8.83075 19.8145 11.3481 20.6136C11.7799 20.7508 12.2679 20.8202 12.7987 20.8202H12.7989C14.5362 20.8202 16.251 20.0811 16.3902 20.0197C16.9892 19.766 17.3763 19.3804 17.5409 18.8735C17.8198 18.014 17.3519 17.0722 16.9149 16.3507ZM16.2537 18.4559C16.2155 18.5737 16.0825 18.6812 15.8588 18.7754C15.8551 18.777 15.8506 18.7789 15.8468 18.7806C15.8313 18.7875 14.2791 19.4673 12.7986 19.4672C12.4069 19.4672 12.0566 19.4191 11.7575 19.324C9.63672 18.6508 7.82326 16.5403 6.36637 13.0489C4.89866 9.56192 4.66412 6.78868 5.67026 4.80527C6.45152 3.25889 8.89741 2.27792 8.9214 2.26854C8.92628 2.26656 8.93106 2.26466 8.93584 2.26268C9.07511 2.20423 9.19996 2.17338 9.29683 2.17338C9.59496 2.17338 9.86629 2.63576 10.1021 3.54205L10.3001 4.33079C10.7273 6.00859 10.6623 7.05803 10.1153 7.28679L9.38082 7.59619C9.35159 7.60827 9.3174 7.62099 9.2797 7.63534C8.87396 7.78895 8.02965 8.10846 7.64781 9.04766C7.30134 9.89991 7.44476 10.9818 8.08584 12.3553C8.94928 14.2038 9.92303 15.1024 11.0628 15.1024C11.5917 15.1024 12.0163 14.8961 12.27 14.7728C12.3167 14.7501 12.3585 14.7293 12.4034 14.7107L13.1333 14.3977C13.2086 14.3663 13.281 14.351 13.3544 14.351C13.7057 14.351 14.3357 14.699 15.339 16.3528L15.7558 17.0488C16.2695 17.897 16.3101 18.2821 16.2537 18.4559Z"
+            fill="#fff" />
+    </svg> +6287877566677
+                                    </a>
+                                    <div class="free-label caption" style="color: white;">
+                                        KONSULTASI GRATIS
+                                    </div>
+                                </li>
+                                <li class="mb-32">
+                                    <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
+            fill="#fff" />
+    </svg> sampahbijak@gmail.com
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="fw-600 mb-16" style="color: white;">Tanya Cepat Via WhatsApp</p>
+                            <form id="waForm">
+                                <input type="text" id="waMessage" class="form-input" placeholder="Ketik pertanyaan Anda di sini" style="border-color: white; color: white;">
+                                <style>
+                                    #waMessage::placeholder {
+                                        color: white;
+                                        opacity: 1;
+                                    }
+                                </style>
+                                <button type="submit" class="submit-arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+      <path
+        d="M19.8284 0.49196C19.6626 0.326179 19.414 0.275202 19.1965 0.362233L0.36834 7.89339C0.152911 7.97956 0.00865304 8.18472 0.00037181 8.41663C-0.00787036 8.64851 0.121504 8.86339 0.330254 8.96464L7.75477 12.5655L11.3556 19.99C11.4538 20.1925 11.6589 20.3202 11.8827 20.3202C11.8896 20.3202 11.8966 20.3201 11.9036 20.3199C12.1355 20.3116 12.3407 20.1674 12.4268 19.9519L19.9581 1.12391C20.0451 0.906256 19.9941 0.657702 19.8284 0.49196ZM2.0349 8.48894L16.9812 2.51047L8.07383 11.4178L2.0349 8.48894ZM11.8313 18.2854L8.90246 12.2464L17.8099 3.33906L11.8313 18.2854Z"
+        fill="#56bef9" />
+    </svg>
+  </button>
+                            </form>
+                            <script>
+                                document.getElementById("waForm").addEventListener("submit", function(e) {
+                                    e.preventDefault();
+                                    let message = document.getElementById("waMessage").value;
+                                    let phone = "6287877566677";
+                                    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+                                    window.open(url, "_blank");
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line mb-24"></div>
+                <p class="bottom-bar text-center" style="color: white;">© 2025 All Rights Reserved <span class="fw-700 color-primary">Sampah Bijak.</span> Dibuat Oleh <span class="color-primary fw-700">Skinfa Developers</span></p>
+            </div>
+        </footer>
+
+
+        <button class="scrollToTopBtn sembunyi"><i class="fa fa-arrow-up"></i></button>
+
+
+        <div class="mobile-nav__wrapper">
+            <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+            <div class="mobile-nav__content">
+                <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+                <div class="logo-box">
+                    <a href="index.html" aria-label="logo image"><img src="assets/media/logo.png" alt=""></a>
+                </div>
+                <div class="mobile-nav__container"></div>
+                <ul class="mobile-nav__contact list-unstyled">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:syafiqbamazruk@gmail.com">syafiqbamazruk@gmail.com</a>
+                    </li>
+
+                    <li>
+                        <i class="fa fa-phone-alt"></i>
+                        <a href="https://wa.me/6287877566677?text=Halo%20saya%20mau%20tanya%20tentang..." target="_blank">
+    +6287877566677
+  </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+
+        <div class="mobile-bottom-nav">
+            <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
+            <a href="fitur-detail-1.html" data-name="fitur">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <span>Fitur</span>
+            </a>
+            <a href="#" id="dashboard-link" data-name="dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+        </div>
+        <audio id="bg-music" autoplay loop>
+  <source src="assets/media/audio.mp3" type="audio/mpeg">
+</audio>
+
+        <div id="music-toggle">
+            <i id="music-icon" class="bi bi-volume-up"></i>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const dashboardLink = document.getElementById('dashboard-link');
+
+                dashboardLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+                    if (loggedIn) {
+                        window.location.href = 'DASHBOARD/index.html';
+                    } else {
+                        window.location.href = 'login.html';
+                    }
+                });
+            });
+        </script>
+        <script>
+            const ytModal = document.getElementById('ytModal');
+            const ytPlayer = document.getElementById('ytPlayer');
+            const videoId = 'sCUghGYNGC4';
+            ytModal.addEventListener('show.bs.modal', function() {
+                ytPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            });
+            ytModal.addEventListener('hidden.bs.modal', function() {
+                ytPlayer.src = '';
+            });
+
+            const waNumber = "6287877566677";
+
+            let now = new Date();
+            let options = {
+                timeZone: "Asia/Jakarta",
+                hour: "numeric"
+            };
+            let hour = new Intl.DateTimeFormat("id-ID", options).format(now);
+
+            let greeting = "Halo";
+            if (hour >= 4 && hour < 11) {
+                greeting = "Selamat pagi";
+            } else if (hour >= 11 && hour < 15) {
+                greeting = "Selamat siang";
+            } else if (hour >= 15 && hour < 18) {
+                greeting = "Selamat sore";
+            } else {
+                greeting = "Selamat malam";
+            }
+
+            let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+
+            document.getElementById("waLink").href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+        </script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/vendor/slick.min.js"></script>
+        <script src="assets/js/vendor/video.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

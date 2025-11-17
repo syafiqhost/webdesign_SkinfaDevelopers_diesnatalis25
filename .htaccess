@@ -1,0 +1,36 @@
+# Aktifkan rewrite engine
+RewriteEngine On
+RewriteBase /
+
+# Akses tanpa .html (misal /about → about.html)
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Default ke index.html
+DirectoryIndex index.html
+
+# Kecualikan folder assets dan DASHBOARD biar ga ke-rewrite
+RewriteCond %{REQUEST_URI} !^/assets/
+RewriteCond %{REQUEST_URI} !^/DASHBOARD/
+
+# Amankan file sensitif
+<FilesMatch "\.(htaccess|htpasswd|ini|log|conf)$">
+  Require all denied
+</FilesMatch>
+
+# Cache control
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# (Opsional) Redirect ke HTTPS
+# <IfModule mod_rewrite.c>
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+# </IfModule>

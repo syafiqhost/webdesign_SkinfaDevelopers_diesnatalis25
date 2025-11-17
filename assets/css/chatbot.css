@@ -1,0 +1,344 @@
+       emoji-picker {
+           position: absolute;
+           bottom: 50px;
+           right: 55px;
+           width: 300px;
+           height: 350px;
+           z-index: 1000;
+           display: none;
+       }
+       
+       #chat-toggle {
+           position: fixed;
+           bottom: 85px;
+           right: 20px;
+           background: #6bcc0e;
+           color: #fff;
+           width: 60px;
+           height: 60px;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 24px;
+           cursor: pointer;
+           box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+           z-index: 1000;
+           border: none;
+           transition: background-color 0.3s ease;
+       }
+       
+       #chat-toggle:hover {
+           background: #56bef9;
+       }
+       
+       #chat-toggle:active {
+           transform: translateY(1px);
+       }
+       
+       #chatbot {
+           display: none;
+           position: fixed;
+           bottom: 90px;
+           right: 85px;
+           z-index: 999;
+           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+           border-radius: 20px;
+       }
+       
+       .center {
+           position: static;
+           transform: none;
+           display: flex;
+       }
+       
+       .pic {
+           width: 4rem;
+           height: 4rem;
+           background-size: cover;
+           background-position: center;
+           border-radius: 50%;
+       }
+       
+       .contact {
+           position: relative;
+           margin-bottom: 1rem;
+           padding-left: 5rem;
+           height: 4.5rem;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+       }
+       
+       .contact .pic {
+           position: absolute;
+           left: 0;
+       }
+       
+       .contact .name {
+           font-weight: 500;
+           margin-bottom: 0.125rem;
+       }
+       
+       .contact .message,
+       .contact .seen {
+           font-size: 0.9rem;
+           color: #999;
+       }
+       
+       .contact .badge {
+           box-sizing: border-box;
+           position: absolute;
+           width: 1.5rem;
+           height: 1.5rem;
+           text-align: center;
+           font-size: 0.9rem;
+           padding-top: 0.125rem;
+           border-radius: 1rem;
+           top: 0;
+           left: 2.5rem;
+           background: #333;
+           color: #fff;
+       }
+       
+       .contacts {
+           position: absolute;
+           top: 50%;
+           left: 0;
+           transform: translate(-6rem, -50%);
+           width: 24rem;
+           height: 32rem;
+           padding: 1rem 2rem 1rem 1rem;
+           box-sizing: border-box;
+           border-radius: 1rem 0 0 1rem;
+           cursor: pointer;
+           background: #fff;
+           transition: transform 500ms;
+       }
+       
+       .contacts:hover {
+           transform: translate(-23rem, -50%);
+       }
+       
+       .contacts h2 {
+           margin: 0.5rem 0 1.5rem 5rem;
+       }
+       
+       .contacts .fa-bars {
+           position: absolute;
+           left: 2.25rem;
+           color: #999;
+           transition: color 200ms;
+       }
+       
+       .contacts .fa-bars:hover {
+           color: #666;
+       }
+       
+       .chat {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           width: 28rem;
+           height: 38rem;
+           z-index: 2;
+           box-sizing: border-box;
+           border-radius: 1rem;
+           background: #fff;
+           overflow: hidden;
+       }
+       
+       .chat .contact.bar {
+           flex-basis: 3.5rem;
+           flex-shrink: 0;
+           margin: 1rem;
+           box-sizing: border-box;
+           display: flex;
+           align-items: center;
+       }
+       
+       .messages {
+           padding: 1rem;
+           background: #fcfcfc;
+           flex: 1 1 auto;
+           overflow-y: auto;
+       }
+       
+       .messages .time {
+           font-size: 0.8rem;
+           background: #EEE;
+           padding: 0.25rem 1rem;
+           border-radius: 2rem;
+           color: #999;
+           width: fit-content;
+           margin: 0 auto;
+       }
+       
+       .messages .message {
+           box-sizing: border-box;
+           padding: 0.5rem 1rem;
+           margin: 1rem;
+           background: #FFF;
+           border-radius: 1.125rem 1.125rem 1.125rem 0;
+           min-height: 2.25rem;
+           width: fit-content;
+           max-width: 66%;
+           word-wrap: break-word;
+           white-space: pre-wrap;
+       }
+       
+       .messages .message.parker {
+           margin: 1rem 1rem 1rem auto;
+           border-radius: 1.125rem 1.125rem 0 1.125rem;
+           background: #333;
+           color: #fff;
+       }
+       
+       .input {
+           box-sizing: border-box;
+           position: relative;
+           flex-basis: 4rem;
+           flex-shrink: 0;
+           display: flex;
+           align-items: center;
+           padding: 0 0.5rem 0 1.5rem;
+           background: #fff;
+           gap: .5rem;
+       }
+       
+       .input i {
+           font-size: 1.5rem;
+           margin-right: .25rem;
+           color: #666;
+           cursor: pointer;
+           transition: color 200ms;
+       }
+       
+       .input i:hover {
+           color: #333;
+       }
+       
+       .input input {
+           border: none;
+           background-color: white;
+           padding: 0.5rem 1rem;
+           margin-right: .25rem;
+           border-radius: 1.125rem;
+           flex-grow: 2;
+           font-family: 'Red Hat Display', sans-serif;
+           font-weight: 400;
+           letter-spacing: 0.025em;
+       }
+       
+       #send-btn {
+           border: none;
+           background: transparent;
+           cursor: pointer;
+           font-size: 1.25rem;
+           color: #333;
+       }
+       
+       .chat .contact.bar .name {
+           margin-right: 240px;
+           white-space: nowrap;
+       }
+       
+       .chat .contact.bar .seen {
+           margin-right: 320px;
+           color: #25D366;
+       }
+       
+       .pic {
+           width: 50px;
+           height: 50px;
+           background-color: #6bcc0e;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           overflow: hidden;
+           padding: 5px;
+       }
+       
+       .pic img {
+           padding-top: 5px;
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+       }
+       
+       #chat-toggle {
+           box-shadow: none;
+       }
+       
+       .suggested-chips-wrapper {
+           width: 100%;
+           padding: 6px;
+           box-sizing: border-box;
+           background: #fefefe;
+           border-top: 1px solid #ddd;
+           position: sticky;
+           bottom: 0;
+           z-index: 5;
+       }
+       
+       .suggested-chips {
+           display: flex;
+           gap: 8px;
+           user-select: none;
+           overflow: hidden;
+           cursor: grab;
+       }
+       
+       .suggested-chips .chip {
+           padding: 6px 12px;
+           background: white;
+           border-radius: 20px;
+           border: 1px solid #ccc;
+           white-space: nowrap;
+           font-size: 14px;
+           flex-shrink: 0;
+       }
+       
+       .wa-chip i.fab.fa-whatsapp {
+           color: #25D366;
+           margin-right: 6px;
+       }
+       
+       .wa-chip a {
+           color: #007bff;
+           text-decoration: none;
+       }
+       
+       .wa-chip a:hover {
+           text-decoration: underline;
+       }
+       
+       @media (max-width: 768px) {
+           .chat .contact.bar .name {
+               margin-right: 175px;
+               white-space: nowrap;
+           }
+           .chat .contact.bar .seen {
+               margin-right: 240px;
+               color: #25D366;
+           }
+           #chatbot {
+               bottom: 160px;
+               right: 19px;
+           }
+           .chat {
+               width: 22rem;
+               height: 36rem;
+           }
+           /* emoji-picker {
+                bottom: -400px !important;
+            } */
+       }
+       
+       @media screen and (min-width: 768px) and (max-width: 850px) {
+           #chatbot {
+               right: 10px;
+               bottom: 170px;
+           }
+       }

@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fitur 2 | Sampah Bijak</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png">
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/smoothScorllbar.css">
+    <link rel="stylesheet" href="assets/css/vendor/classic.css">
+    <link rel="stylesheet" href="assets/css/vendor/classic.date.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/finance-widgets.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .input-group-text {
+            padding: 0.375rem 0.5rem;
+        }
+        
+        .input-group .form-control {
+            padding-left: 0.5rem;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #000000;
+        }
+        
+        .input-group-text {
+            background: #6bcc0e;
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px 0 0 12px;
+        }
+        
+        .input-group .form-control {
+            border-radius: 0 12px 12px 0;
+            border: 1px solid #dcdfe6;
+            transition: all 0.25s ease;
+        }
+        
+        .input-group .form-control:focus {
+            border-color: #56bef9;
+            box-shadow: 0 0 8px #ea972b8b;
+        }
+        
+        .btn {
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+            min-width: 140px;
+            max-width: 200px;
+        }
+        
+        .btn-primary {
+            background: #56bef9;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #0d927e;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-secondary {
+            border: 2px solid #ced6e0;
+        }
+        
+        .btn-outline-secondary:hover {
+            background: #f1f2f6;
+            color: black;
+        }
+        
+        .card {
+            border-radius: 20px;
+            overflow: hidden;
+            border: none;
+        }
+        
+        h2 {
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .goal-option img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s, border 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .goal-option input[type="radio"] {
+            display: none;
+        }
+        
+        .goal-option input[type="radio"]:checked+img {
+            border: 3px solid #198754;
+            transform: scale(1.08);
+            box-shadow: 0 4px 10px #19875463;
+        }
+        
+        .preview-img {
+            max-width: 200px;
+            margin-top: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            display: block;
+        }
+        
+        .btn-primary {
+            border: none;
+            font-weight: 600;
+            border-radius: 12px;
+            padding: 12px;
+            transition: 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result-box h5 {
+            font-weight: 700;
+            color: #198754;
+            margin-bottom: 20px;
+        }
+        
+        .progress {
+            height: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            font-weight: 600;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        #updateBox {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        #updateBox.d-none {
+            display: none !important;
+        }
+        
+        label[for="fotoProduk"] {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
+        
+        label[for="fotoProduk"]:hover {
+            background-color: #ffeeba;
+        }
+        
+        .d-none {
+            display: none;
+        }
+        
+        #hasil {
+            border: 2px dashed #56bef9;
+            min-height: 200px;
+        }
+        
+        #hasil {
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #fdfbfb, #ebedee);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-3px);
+        }
+        
+        .stat-box strong {
+            font-size: 0.9rem;
+            color: #666;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .stat-box .fs-5 {
+            font-weight: 600;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #6bcc0e;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #56bef9;
+        }
+        
+        .header {
+            position: fixed;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="tt-smooth-scroll">
+    <div id="loading-bar"></div>
+    <div id="particles-js" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;">
+    </div>
+    <header class="header">
+        <div class="container-fluid">
+            <nav class="navigation d-flex align-items-center justify-content-between">
+                <a href="index.html" class="d-flex align-items-center">
+                    <img src="assets/media/logo.png" alt="/logo" class="header-logo">
+                </a>
+                <div class="menu-button-right">
+                    <div class="main-menu__nav">
+                        <ul class="main-menu__list">
+                            <li>
+                                <a href="index.html">Beranda</a>
+                            </li>
+                            <li>
+                                <a href="belajarsampahbijak.html">Mulai Belajar</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Tentang Kami</a>
+                            </li>
+                            <li>
+                                <a href="belajarsampahbijak.html#fitur&ebook">Fitur & E-Book</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">Faq</a>
+                            </li>
+                            <li>
+                                <a href="artikel-1.html">Artikel</a>
+                            </li>
+                            <li>
+                                <a href="kontak.html">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-menu__right">
+                    <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
+                        <a href="register.html" class="cus-btn">
+                            <span class="btn-text">Mulai Belajar</span>
+                            <span>Mulai Belajar</span>
+                        </a>
+                    </div>
+                    <a href="#" class="d-xl-none d-flex main-menu__toggler mobile-nav__toggler">
+                        <img src="assets/media/icons/menu-2.png" alt="">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="title-banner">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-11">
+                    <div class="title-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="title-content">
+                                    <h1 class="dark-gray fw-700">Fitur 2</h1>
+                                </div>
+                                <div class="img-block">
+                                    <img src="assets/media/user/star.png" alt="star">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 d-sm-block d-none">
+                                <div class="title-image">
+                                    <img src="assets/media/backgrounds/title-banner.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-page py-5">
+        <div class="container-fluid">
+            <div class="eyebrow heading">Fitur</div>
+            <h2 class="dark-gray text-center mb-16 fw-800 heading-anggaran">
+                <span>Fitur Sampah Bijak Interaktif <span class=" color-sec fw-700">Super Cerdas</span> Solusi pintar untuk <span class=" color-sec fw-700">Tabungan tujuan.</span></span>
+            </h2>
+            <p class="text-center light-gray mb-32">
+                Bingung mulai nabung dari mana? Yuk coba simulasi menabung cerdas ini! Kamu bisa lihat gimana uangmu berkembang dan atur strategi Sampah Bijak dengan cara yang gampang banget. </p>
+            <div class="budget-app mx-auto p-4 rounded shadow-lg">
+                <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;"><span>2. Simulasi Tabungan Tujuan</span></h2>
+                <div class="card p-2 w-100" style="max-width: 1500px;">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Pilih Kategori Tujuan:</label>
+                        <div class="d-flex flex-wrap gap-3 justify-content-start">
+                            <label class="goal-option"><input type="radio" name="goal" value="Rumah"><img src="assets/media/icons/house.png" alt="Rumah"></label>
+                            <label class="goal-option"><input type="radio" name="goal" value="Liburan"><img src="assets/media/icons/holiday.png" alt="Liburan"></label>
+                            <label class="goal-option"><input type="radio" name="goal" value="Kendaraan"><img src="assets/media/icons/bike.png" alt="Kendaraan"></label>
+                            <label class="goal-option"><input type="radio" name="goal" value="Gadget"><img src="assets/media/icons/gadget.png" alt="Gadget"></label>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Upload Foto Produk Spesifik:</label>
+                        <label for="fotoProduk" class="d-flex align-items-center p-2 border rounded bg-light" style="cursor: pointer; width: fit-content;">
+                <i class="fas fa-upload me-2 text-warning"></i><span class="text-dark">Pilih Foto</span>
+              </label>
+                        <input type="file" id="fotoProduk" class="d-none" accept="image/*">
+                        <div class="mt-3"><img id="previewFoto" class="preview-img d-none" alt="Preview Produk"></div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Detail Produk:</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-box"></i></span>
+                                <input type="text" id="goalDetail" class="form-control" placeholder="IPhone 13 Pro">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Harga Total (Rp):</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-cash-stack"></i></span>
+                                <input type="text" id="hargaTotal" class="form-control" placeholder="15.000.000">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Nabung per Minggu (Rp):</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-wallet2"></i></span>
+                                <input type="text" id="perMinggu" class="form-control" placeholder="700.000">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Lama Menabung (bulan):</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+                                <input type="number" id="lamaBulan" class="form-control" placeholder="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 mt-4">
+                        <button id="simpanRencana" class="btn btn-primary flex-fill">Simpan</button>
+                        <button id="resetRencana" class="btn btn-outline-secondary flex-fill fw-bold">Reset</button>
+                    </div>
+                    <div id="hasil" class="result-box d-none"></div>
+                    <div id="updateBox" class="d-none">
+                        <label class="form-label fw-bold">Update Tabungan Minggu Ini:</label>
+                        <div class="input-group">
+                            <input type="text" id="updateNominal" class="form-control" placeholder="Rp 200.000">
+                            <button id="tambahTabungan" class="btn btn-success">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination mt-48">
+            <ul id="border-pagination" style="margin-top: 30px;">
+                <li>
+                    <a href="fitur-detail-1.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                                                    <path d="M14.2246 26.8364C14.2246 23.4614 11.0746 18.9614 7.47461 18.9614M7.47461 18.9614C9.53711 18.9614 14.2246 17.8364 14.2246 11.0864M7.47461 18.9614H28.8496" stroke="white" stroke-width="2.25"/>
+                                                  </svg>
+                    </a>
+                </li>
+                <li><a href="fitur-detail-1.html">1</a></li>
+                <li><a href="fitur-detail-2.html" style="background-color: #56bef9;">2</a></li>
+                <li><a href="fitur-detail-3.html">3</a></li>
+                <li><a href="fitur-detail-4.html">4</a></li>
+                <li>
+                    <a href="fitur-detail-3.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                                                    <path d="M21.7754 26.8364C21.7754 23.4614 24.9254 18.9614 28.5254 18.9614M28.5254 18.9614C26.4629 18.9614 21.7754 17.8364 21.7754 11.0864M28.5254 18.9614H7.15039" stroke="white" stroke-width="2.25"/>
+                                                  </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="container-fluid">
+            <div class="footer-wrapper pb-40">
+                <div class="col-xl-4">
+                    <div class="logo-block">
+                        <img src="assets/media/logo-footer.png" alt="" class="ft-logo mb-16">
+                        <p class="mb-32" style="color: rgb(235, 235, 235)">
+                            Sampah Bijak adalah platform edukasi <br> yang membantu Anda belajar mengelola sampah <br> secara cerdas, mudah, dan menyenangkan. <br> Bersama Sampah Bijak, wujudkan lingkungan <br> yang lebih bersih, hijau, dan berkelanjutan.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="link-block popular">
+                        <h6 class="white fw-800 mb-24">Tautan Cepat</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Mulai Belajar Sampah Bijak</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="index.html#chatbot" style="color: rgb(235, 235, 235)">Tanya Chatbot AI</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="fitur-detail-1.html" style="color: rgb(235, 235, 235)">Fitur 1</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="fitur-detail-2.html" style="color: rgb(235, 235, 235)">Fitur 2</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="fitur-detail-3.html" style="color: rgb(235, 235, 235)">Fitur 3</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="fitur-detail-4.html" style="color: rgb(235, 235, 235)">Fitur 4</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book 1, 2, 3 & 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="link-block quick-links">
+                        <h6 class="fw-800 mb-24" style="color: white;">Jelajahi</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="mb-12 fw-400">
+                                <a href="index.html " style="color: rgb(235, 235, 235)">Beranda</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="about.html" style="color: rgb(235, 235, 235)">Tentang Kami</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">Fitur</a>
+                            </li>
+                            <li class="mb-12  fw-400">
+                                <a href="belajarsampahbijak.html#fitur&ebook" style="color: rgb(235, 235, 235)">E-Book</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="belajarsampahbijak.html" style="color: rgb(235, 235, 235)">Apa itu Literasi Sampah Bijak?</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="artikel-1.html" style="color: rgb(235, 235, 235)">Artikel</a>
+                            </li>
+                            <li class="mb-12 fw-400">
+                                <a href="kontak.html" style="color: rgb(235, 235, 235)">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="link-block contact-block">
+                        <h6 class=" fw-800 mb-24" style="color: white;">Hubungi Kami</h6>
+                        <ul class="footer-list list-unstyled mb-32">
+                            <li class="mb-16 d-flex align-items-center gap-12">
+                                <a id="waLink" href="#" target="_blank" class="d-flex align-items-center gap-12" style="color: rgb(235, 235, 235)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M16.9149 16.3507L16.4978 15.6542C15.7477 14.4174 14.7124 12.9979 13.3545 12.9979C13.1029 12.9979 12.8538 13.0485 12.6072 13.151L11.8783 13.4635C11.8117 13.4911 11.7471 13.5225 11.6786 13.5558C11.492 13.6465 11.2805 13.7493 11.0629 13.7493C10.5262 13.7493 9.90436 13.0508 9.31217 11.7827C8.73098 10.5379 8.76806 9.88539 8.90147 9.55705C9.04868 9.19479 9.39101 9.03991 9.75877 8.90072C9.80992 8.88133 9.8561 8.86374 9.90102 8.84524L10.6391 8.53449C12.5619 7.73041 11.8465 4.92046 11.612 3.9992L11.4131 3.20712C11.2431 2.55431 10.7922 0.820312 9.29683 0.820312C9.02 0.820312 8.72467 0.884809 8.41933 1.01209C8.21898 1.09165 5.46198 2.21704 4.46315 4.19413C3.26939 6.54747 3.49012 9.70327 5.11857 13.5719C6.73485 17.4453 8.83075 19.8145 11.3481 20.6136C11.7799 20.7508 12.2679 20.8202 12.7987 20.8202H12.7989C14.5362 20.8202 16.251 20.0811 16.3902 20.0197C16.9892 19.766 17.3763 19.3804 17.5409 18.8735C17.8198 18.014 17.3519 17.0722 16.9149 16.3507ZM16.2537 18.4559C16.2155 18.5737 16.0825 18.6812 15.8588 18.7754C15.8551 18.777 15.8506 18.7789 15.8468 18.7806C15.8313 18.7875 14.2791 19.4673 12.7986 19.4672C12.4069 19.4672 12.0566 19.4191 11.7575 19.324C9.63672 18.6508 7.82326 16.5403 6.36637 13.0489C4.89866 9.56192 4.66412 6.78868 5.67026 4.80527C6.45152 3.25889 8.89741 2.27792 8.9214 2.26854C8.92628 2.26656 8.93106 2.26466 8.93584 2.26268C9.07511 2.20423 9.19996 2.17338 9.29683 2.17338C9.59496 2.17338 9.86629 2.63576 10.1021 3.54205L10.3001 4.33079C10.7273 6.00859 10.6623 7.05803 10.1153 7.28679L9.38082 7.59619C9.35159 7.60827 9.3174 7.62099 9.2797 7.63534C8.87396 7.78895 8.02965 8.10846 7.64781 9.04766C7.30134 9.89991 7.44476 10.9818 8.08584 12.3553C8.94928 14.2038 9.92303 15.1024 11.0628 15.1024C11.5917 15.1024 12.0163 14.8961 12.27 14.7728C12.3167 14.7501 12.3585 14.7293 12.4034 14.7107L13.1333 14.3977C13.2086 14.3663 13.281 14.351 13.3544 14.351C13.7057 14.351 14.3357 14.699 15.339 16.3528L15.7558 17.0488C16.2695 17.897 16.3101 18.2821 16.2537 18.4559Z"
+            fill="#fff" />
+    </svg> +6287877566677
+                                </a>
+                                <div class="free-label caption" style="color: white;">
+                                    KONSULTASI GRATIS
+                                </div>
+                            </li>
+                            <li class="mb-32">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+        <path
+            d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
+            fill="#fff" />
+    </svg> sampahbijak@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="fw-600 mb-16" style="color: white;">Tanya Cepat Via WhatsApp</p>
+                        <form id="waForm">
+                            <input type="text" id="waMessage" class="form-input" placeholder="Ketik pertanyaan Anda di sini" style="border-color: white; color: white;">
+                            <style>
+                                #waMessage::placeholder {
+                                    color: white;
+                                    opacity: 1;
+                                }
+                            </style>
+                            <button type="submit" class="submit-arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+      <path
+        d="M19.8284 0.49196C19.6626 0.326179 19.414 0.275202 19.1965 0.362233L0.36834 7.89339C0.152911 7.97956 0.00865304 8.18472 0.00037181 8.41663C-0.00787036 8.64851 0.121504 8.86339 0.330254 8.96464L7.75477 12.5655L11.3556 19.99C11.4538 20.1925 11.6589 20.3202 11.8827 20.3202C11.8896 20.3202 11.8966 20.3201 11.9036 20.3199C12.1355 20.3116 12.3407 20.1674 12.4268 19.9519L19.9581 1.12391C20.0451 0.906256 19.9941 0.657702 19.8284 0.49196ZM2.0349 8.48894L16.9812 2.51047L8.07383 11.4178L2.0349 8.48894ZM11.8313 18.2854L8.90246 12.2464L17.8099 3.33906L11.8313 18.2854Z"
+        fill="#56bef9" />
+    </svg>
+  </button>
+                        </form>
+                        <script>
+                            document.getElementById("waForm").addEventListener("submit", function(e) {
+                                e.preventDefault();
+                                let message = document.getElementById("waMessage").value;
+                                let phone = "6287877566677";
+                                let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+                                window.open(url, "_blank");
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-line mb-24"></div>
+            <p class="bottom-bar text-center" style="color: white;">© 2025 All Rights Reserved <span class="fw-700 color-primary">Sampah Bijak.</span> Dibuat Oleh <span class="color-primary fw-700">SKINFA DEVELOPERS</span></p>
+        </div>
+    </footer>
+    <button class="scrollToTopBtn sembunyi"><i class="fa fa-arrow-up"></i></button>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/media/logo.png" alt=""></a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:syafiqbamazruk@gmail.com">syafiqbamazruk@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="https://wa.me/6287877566677?text=Halo%20saya%20mau%20tanya%20tentang..." target="_blank">
+    +6287877566677
+  </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <audio id="bg-music" autoplay loop>
+  <source src="assets/media/audio.mp3" type="audio/mpeg">
+</audio>
+
+    <div id="music-toggle">
+        <i id="music-icon" class="bi bi-volume-up"></i>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+                    const fotoProduk = document.getElementById("fotoProduk");
+                    const previewFoto = document.getElementById("previewFoto");
+                    const goalDetail = document.getElementById("goalDetail");
+                    const hargaTotal = document.getElementById("hargaTotal");
+                    const perMinggu = document.getElementById("perMinggu");
+                    const lamaBulan = document.getElementById("lamaBulan");
+                    const simpanBtn = document.getElementById("simpanRencana");
+                    const resetBtn = document.getElementById("resetRencana");
+                    const hasilBox = document.getElementById("hasil");
+                    const updateBox = document.getElementById("updateBox");
+                    const updateNominal = document.getElementById("updateNominal");
+                    const tambahBtn = document.getElementById("tambahTabungan");
+
+                    function formatRupiah(angka) {
+                        if (!angka) return "";
+                        return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                    }
+
+                    function parseRupiah(rp) {
+                        if (!rp) return 0;
+                        return parseInt(rp.replace(/[^0-9]/g, "")) || 0;
+                    }
+                    [hargaTotal, perMinggu, updateNominal].forEach(input => {
+                        input.addEventListener("input", () => {
+                            let val = parseRupiah(input.value);
+                            input.value = formatRupiah(val);
+                        });
+                    });
+                    fotoProduk.addEventListener("change", e => {
+                        const file = e.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = () => {
+                                previewFoto.src = reader.result;
+                                previewFoto.classList.remove("d-none");
+                                localStorage.setItem("fotoProduk", reader.result);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                    simpanBtn.addEventListener("click", () => {
+                        const selectedGoal = document.querySelector("input[name='goal']:checked");
+                        const total = parseRupiah(hargaTotal.value);
+                        const perWeek = parseRupiah(perMinggu.value);
+                        const bulan = parseInt(lamaBulan.value) || 0;
+                        if (!selectedGoal) {
+                            alert("⚠️ Pilih kategori tujuan dulu!");
+                            return;
+                        }
+                        if (!goalDetail.value || !total || !perWeek || !bulan) {
+                            alert("⚠️ Lengkapi semua data (detail, harga, tabungan per minggu, lama bulan)!");
+                            return;
+                        }
+                        const data = {
+                            goal: selectedGoal.value,
+                            detail: goalDetail.value,
+                            hargaTotal: total,
+                            perMinggu: perWeek,
+                            lamaBulan: bulan,
+                            foto: localStorage.getItem("fotoProduk") || "",
+                            terkumpul: 0
+                        };
+                        localStorage.setItem("tabunganRencana", JSON.stringify(data));
+                        renderHasil(data);
+                    });
+
+                    function renderHasil(data) {
+                        const totalMinggu = data.lamaBulan * 4;
+                        const kekurangan = data.hargaTotal - data.terkumpul;
+                        const persen = Math.min((data.terkumpul / data.hargaTotal) * 100, 100).toFixed(1);
+                        const saran = kekurangan > 0 ? Math.ceil(kekurangan / (totalMinggu || 1)) : 0;
+                        hasilBox.classList.remove("d-none");
+                        hasilBox.innerHTML = `
+          <div class="text-center mb-4">
+            <h5 class="fw-bold text-success">📊 Ringkasan Simulasi Tabungan</h5>
+            <p class="text-muted">Rencana tabunganmu sudah tersimpan, berikut progresnya:</p>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Kategori</strong><div class="fs-5">${data.goal}</div></div></div>
+            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Detail</strong><div class="fs-5">${data.detail}</div></div></div>
+            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Target Harga</strong><div class="fs-5 text-primary">${formatRupiah(data.hargaTotal)}</div></div></div>
+            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Nabung / Minggu</strong><div class="fs-5 text-success">${formatRupiah(data.perMinggu)}</div></div></div>
+            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Lama Rencana</strong><div class="fs-5">${data.lamaBulan} bln (${totalMinggu} minggu)</div></div></div>
+            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Terkumpul</strong><div class="fs-5 text-success">${formatRupiah(data.terkumpul)}</div></div></div>
+            <div class="col-md-6"><div class="stat-box text-center"><strong class="text-dark">Kekurangan</strong><div class="fs-5 text-danger">${formatRupiah(Math.max(kekurangan,0))}</div></div></div>
+            <div class="col-md-6"><div class="stat-box text-center"><strong class="text-dark">Saran Menabung</strong><div class="fs-5 text-warning">${formatRupiah(saran)} / minggu</div></div></div>
+            <div class="col-md-12 text-center">
+              ${data.foto ? `<img src="${data.foto}" alt="Foto Produk" class="preview-img shadow">` : ""}
+            </div>
+            <div class="col-md-12">
+              <label class="fw-bold">Progress Menabung:</label>
+              <div class="progress mt-2" style="height: 30px; border-radius: 15px;">
+                <div class="progress-bar bg-success fs-6 fw-bold" role="progressbar" style="width:${persen}%; transition: width .6s;">${persen}%</div>
+              </div>
+            </div>
+          </div>
+        `;
+        updateBox.classList.remove("d-none");
+      }
+      tambahBtn.addEventListener("click", () => {
+        const nominal = parseRupiah(updateNominal.value);
+        if (!nominal || nominal <= 0) { alert("⚠️ Masukkan nominal yang valid!"); return; }
+        let data = JSON.parse(localStorage.getItem("tabunganRencana"));
+        if (!data) { alert("❌ Tidak ada data rencana tersimpan."); return; }
+        data.terkumpul += nominal;
+        if (data.terkumpul > data.hargaTotal) data.terkumpul = data.hargaTotal;
+        localStorage.setItem("tabunganRencana", JSON.stringify(data));
+        updateNominal.value = "";
+        renderHasil(data);
+      });
+      resetBtn.addEventListener("click", () => {
+        if (!confirm("⚠️ Yakin mau reset semua data tabungan?")) return;
+        localStorage.removeItem("tabunganRencana");
+        localStorage.removeItem("fotoProduk");
+        [goalDetail, hargaTotal, perMinggu, lamaBulan, updateNominal].forEach(i => i.value = "");
+        document.querySelectorAll("input[name='goal']").forEach(r => r.checked = false);
+        fotoProduk.value = "";
+        previewFoto.src = "";
+        previewFoto.classList.add("d-none");
+        hasilBox.innerHTML = "";
+        hasilBox.classList.add("d-none");
+        updateBox.classList.add("d-none");
+      });
+      const saved = JSON.parse(localStorage.getItem("tabunganRencana"));
+      if (saved) {
+        renderHasil(saved);
+        if (saved.foto) {
+          previewFoto.src = saved.foto;
+          previewFoto.classList.remove("d-none");
+        }
+      }
+    });
+    </script>
+    <div class="mobile-bottom-nav">
+        <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
+        <a href="fitur-detail-1.html" class="active" data-name="fitur">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span>Fitur</span>
+        </a>
+        <a href="#" id="dashboard-link" data-name="dashboard">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dashboardLink = document.getElementById('dashboard-link');
+
+            dashboardLink.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+                if (loggedIn) {
+                    window.location.href = 'DASHBOARD/index.html';
+                } else {
+                    window.location.href = 'login.html';
+                }
+            });
+        });
+    </script>
+    <script>
+        const waNumber = "6287877566677";
+        let now = new Date();
+        let options = {
+            timeZone: "Asia/Jakarta",
+            hour: "numeric"
+        };
+        let hour = new Intl.DateTimeFormat("id-ID", options).format(now);
+        let greeting = "Halo";
+        if (hour >= 4 && hour < 11) {
+            greeting = "Selamat pagi";
+        } else if (hour >= 11 && hour < 15) {
+            greeting = "Selamat siang";
+        } else if (hour >= 15 && hour < 18) {
+            greeting = "Selamat sore";
+        } else {
+            greeting = "Selamat malam";
+        }
+        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        document.getElementById("waLink").addEventListener("click", function(e) {
+            e.preventDefault();
+            let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, "_blank");
+        });
+        document.getElementById("waLink").href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+    </script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/vendor/video.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/finance-widgets.js"></script>
+</body>
+
+</html>
