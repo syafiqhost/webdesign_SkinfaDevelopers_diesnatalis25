@@ -1,4 +1,4 @@
-# Nama Pencipta: Syafiq Bamazruk
+# Nama Pencipta: blm di atur
 ##  Nama Tim : Skinfa Developers
  Judul Project: Website Edukasi Sampah Bijak “Sampah Bijak”
  Tema: Edukasi Sampah Bijak untuk Remaja dan Dewasa | “Innovation Beyond Limits: Empowering the Future with IT”
