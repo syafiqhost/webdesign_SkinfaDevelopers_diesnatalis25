@@ -1,42 +1,59 @@
-# Nama Pencipta: blm di atur
-##  Nama Tim : Skinfa Developers
+#  Nama Tim : Skinfa Developers
+## Nama Anggota : 1. Syafiq Bamazruk 2. Sayidina Aqilah Barani Yusup
+
  Judul Project: Website Edukasi Sampah Bijak “Sampah Bijak”
- Tema: Edukasi Sampah Bijak untuk Remaja dan Dewasa | “Innovation Beyond Limits: Empowering the Future with IT”
+ Tema: Edukasi Sampah Bijak untuk Semua Kalangan | ““Eco Digital For Environment: Web Design Competition”
 
 ## 💡 Latar Belakang
 
-Di era modern saat ini, masih banyak remaja dan dewasa muda yang belum memahami cara mengelola keuangan dengan baik. Banyak dari mereka belum mengenal konsep dasar seperti perencanaan anggaran, menabung, investasi, maupun manajemen pengeluaran. Akibatnya, muncul berbagai masalah Sampah Bijak di usia muda seperti boros, terlilit hutang, atau tidak punya tabungan jangka panjang.
+Di era modern saat ini, masalah sampah menjadi salah satu tantangan terbesar bagi lingkungan. Banyak remaja dan masyarakat umum yang masih belum paham cara memilah sampah, jenis sampah yang benar, dampak sampah terhadap bumi, serta bagaimana menerapkan prinsip 3R (Reduce, Reuse, Recycle) dalam kehidupan sehari-hari.
 
-Melihat hal tersebut, saya terinspirasi untuk membuat website edukasi Sampah Bijak yang menarik, interaktif, dan mudah dipahami, agar generasi muda bisa belajar mengatur keuangan secara cerdas sejak dini.
+Melihat kondisi tersebut, saya terinspirasi untuk membuat website edukasi Sampah Bijak yang menarik, interaktif, dan mudah dipahami. Website ini dirancang agar generasi muda dan masyarakat umum bisa belajar mengelola sampah dengan cara yang benar, praktis, dan menyenangkan agar mereka lebih peduli dan bertanggung jawab terhadap lingkungan.
 
 ## ⚠️ Permasalahan
 
-- Kurangnya pengetahuan remaja tentang manajemen keuangan pribadi.
-- Minimnya platform edukasi Sampah Bijak yang dikemas secara menarik dan interaktif.
-- Sulitnya menemukan alat bantu praktis untuk menghitung anggaran, investasi, dan tabungan.
+- Kurangnya pemahaman masyarakat mengenai cara memilah sampah organik dan anorganik.
+
+- Minimnya platform edukasi lingkungan yang dikemas secara interaktif dan mudah dipahami.
+
+- Kurangnya kesadaran untuk menerapkan prinsip 3R dalam aktivitas sehari-hari.
+
+- Masih banyak yang bingung menentukan jenis sampah, dampaknya, dan cara pengolahan yang benar.
 
 ## 🚀 Solusi
 
-Website Sampah Bijak hadir sebagai solusi digital edukatif yang membantu pengguna memahami konsep Sampah Bijak secara menyenangkan.
-Dengan desain yang sangat menarik, responsif, dan berfokus pada kesempurnaan UI/UX, website ini mempunyai tampilan yang mudah dipahami, profesional, dan nyaman digunakan di semua perangkat.
-Setiap elemen dirancang dengan interaksi yang halus, layout modern, serta performa yang ringan, sehingga pengguna dapat belajar, menghitung, dan merencanakan keuangan mereka secara mandiri dengan pengalaman terbaik.
+Website Sampah Bijak hadir sebagai platform edukasi digital mengenai pengelolaan sampah yang ramah lingkungan.
+Dengan tampilan yang modern, responsif, dan fokus pada kenyamanan pengguna, website ini memberikan pengalaman belajar yang menyenangkan—baik untuk pelajar, mahasiswa, maupun masyarakat umum.
+
+Setiap fitur dibuat agar edukasi lingkungan terasa ringan, mudah dipahami, dan bisa langsung dipraktikkan dalam kehidupan harian.
 
 ## 🎯 Tujuan
 
-- Meningkatkan literasi Sampah Bijak di kalangan remaja dan dewasa.
-- Menyediakan platform belajar keuangan digital yang seru dan mudah dipahami.
-- Membantu pengguna dalam mengelola uang, menabung, dan berinvestasi dengan bijak.
-- Mendorong generasi muda agar lebih siap menghadapi tantangan Sampah Bijak masa depan.
+- Meningkatkan literasi pengelolaan sampah pada masyarakat, terutama generasi muda.
+
+- Menyediakan media belajar tentang jenis sampah, 3R, dan dampak lingkungan secara interaktif.
+
+- Membantu pengguna memahami cara memilah sampah dengan benar.
+
+- Menumbuhkan kesadaran tentang pentingnya menjaga lingkungan dan mengurangi sampah.
+
+- Mendukung gerakan eco-friendly menuju lingkungan yang bersih dan berkelanjutan.
 
 ## 🧠 Fitur Unggulan
 
-- 💰 Kalkulator Perencanaan Anggaran Pintar – membantu pengguna menghitung rencana keuangan bulanan.
-- 🎯 Tabungan Tujuan – fitur menabung berdasarkan target yang ingin dicapai.
-- 🧩 Quiz Edukasi Sampah Bijak – belajar sambil bermain agar tidak membosankan.
-- 📈 Kalkulator Investasi – simulasi hasil investasi untuk berbagai jangka waktu.
-- 🤖 Chatbot Tanya Sampah Bijak – asisten virtual yang menjawab pertanyaan seputar keuangan dan memberi tips bermanfaat.
-- 📊 Dashboard – menampilkan hasil, progress, dan laporan keuangan pengguna dengan desain modern.
-- 📚 Ebook Gratis – sumber belajar tambahan untuk mendukung peningkatan literasi Sampah Bijak.
+- ♻️ Game Pilah Sampah Interaktif – pengguna menggeser sampah ke tong yang benar sambil belajar jenis sampah.
+
+- 🗑️ Kalkulator Jejak Karbon – fitur interaktif untuk menghitung perkiraan emisi karbon (CO2).
+
+- 📘 Quiz Edukasi Sampah Bijak – belajar sambil bermain agar edukasi makin seru.
+
+- 🤖  Eco AI Sorter - Analisis jenis samoah dengan AI Cerdas
+
+- 🤖 Chatbot Eco Assistant – menjawab pertanyaan seputar sampah dan memberikan tips ramah lingkungan.
+
+- 📊 Dashboard Edukasi – menampilkan progress belajar dan skor quiz pengguna.
+
+- 📚 E-Book & Materi Edukasi – materi tambahan tentang cara mengelola sampah dengan benar dan prinsip 3R.
 
 ## 💻 Teknologi yang Digunakan
 
@@ -48,47 +65,7 @@ Setiap elemen dirancang dengan interaksi yang halus, layout modern, serta perfor
 
 - Bootstrap – untuk desain responsif dan komponen modern
 
-## 📂 Struktur Project
-```
-SYAFIQBAMAZRUK_ITFEST.UHO_WEBDESIGN/
-│
-├── assets/
-│   ├── css/              # Berisi file stylesheet (tampilan dan desain)
-│   ├── js/               # Berisi file JavaScript (logika dan interaktivitas)
-│   └── media/            # Berisi gambar, ikon, dan aset multimedia lainnya
-│
-├── DASHBOARD/
-│   └── index.html        # Halaman dashboard interaktif pengguna
-│
-├── _DOKUMENTASI.png      # Gambar dokumentasi proyek
-├── .htaccess             # Pengaturan URL rewrite agar link lebih rapi
-│
-├── about.html            # Halaman tentang website
-├── artikel-1.html        # Artikel 1
-├── artikel-2.html        # Artikel 2
-├── artikel-3.html        # Artikel 3
-│
-├── belajarsampahbijak.html # Halaman pembelajaran Sampah Bijak
-│
-├── ebook-1.html          # Ebook literasi Sampah Bijak 1
-├── ebook-2.html          # Ebook literasi Sampah Bijak 2
-├── ebook-3.html          # Ebook literasi Sampah Bijak 3
-├── ebook-4.html          # Ebook literasi Sampah Bijak 4
-│
-├── faq.html              # Halaman Pertanyaan Populer
-│
-├── fitur-detail-1.html   # Detail fitur: Kalkulator Anggaran
-├── fitur-detail-2.html   # Detail fitur: Tabungan Tujuan
-├── fitur-detail-3.html   # Detail fitur: Quiz Edukasi
-├── fitur-detail-4.html   # Detail fitur: kalkulator Investasi
-│
-├── index.html            # Halaman utama website Include Chatbot
-├── kontak.html           # Halaman kontak 
-├── login.html            # Halaman login pengguna
-├── register.html         # Halaman pendaftaran pengguna
-│
-└── README.md             # Dokumentasi proyek
-```
+
 ## Website tersedia (Aktif) :
 https://SampahBijak.netlify.app
 

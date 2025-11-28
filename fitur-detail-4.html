@@ -157,7 +157,7 @@
         }
         
         .icon-bg {
-            background-color: #f7941d;
+            background-color: #42A5F5;
             color: white;
             font-weight: bold;
         }
@@ -240,7 +240,7 @@
                 </div>
                 <div class="main-menu__right">
                     <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
-                        <a href="register.html" class="cus-btn">
+                        <a href="belajarsampahbijak.html" class="cus-btn">
                             <span class="btn-text">Mulai Belajar</span>
                             <span>Mulai Belajar</span>
                         </a>
@@ -284,225 +284,132 @@
                 <span>Fitur Sampah Bijak Interaktif <span class=" color-sec fw-700">Super Cerdas</span> Solusi pintar untuk <span class=" color-sec fw-700">Kalkulator investasi cerdas.</span></span>
             </h2>
             <p class="text-center light-gray mb-32">
-                Hitung potensi investasi kamu dengan mudah dan cerdas. Dengan simulasi ini, kamu bisa melihat bagaimana uangmu berkembang dan merencanakan masa depan yang lebih terjamin. </p>
-            <div class="budget-app mx-auto p-4 rounded shadow-lg">
-                <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;">
-                    <span>4. Kalkulator Investasi
+                Coba fitur analisis sampah dengan Ai cerdas yang bisa memilah sampah sesuai jenissampah dari gambar yang kamu kirim!.
+                <div class="budget-app mx-auto p-4 rounded shadow-lg">
+                    <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;">
+                        <span>4. Eco AI Sorter 🌱
 </span>
-                </h2>
-                <form id="investmentForm">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <label class="form-label">
-        <img src="assets/media/icons/modalawal.png" alt="Initial Capital Icon" style="height:20px;">
-        Modal Awal :
-      </label>
-                            <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="initial" placeholder="Contoh: 10.000.000" required>
+                    </h2>
+
+
+                    <div id="eco-ai-sorter-section" class="mb-4">
+                        <p style="font-size:1.05em">
+                            Upload foto sampahmu! Sistem akan menebak jenisnya (Organik, Anorganik, Daur Ulang, B3) <b>+ tips pembuangan tepat!</b>
+                        </p>
+                        <form id="ai-sorter-form" class="mb-3 text-center" enctype="multipart/form-data">
+                            <label for="inputImage" class="form-label d-block mb-2">Upload Foto Sampah</label>
+                            <div class="input-group justify-content-center" style="max-width: 400px;margin:auto;">
+                                <label for="inputImage" class="input-group-text icon-bg" style="cursor:pointer;">
+            <i class="bi bi-upload"></i>
+          </label>
+                                <input type="file" class="form-control" id="inputImage" accept="image/*" style="display:none;" required>
+                                <input type="text" class="form-control" id="fileName" placeholder="Belum memilih file..." disabled style="background:#f8f9fa;color:#808080;">
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-        <img src="assets/media/icons/bungathn.png" alt="Interest Icon" style="height:20px;">
-        Bunga Tahunan (%) :
-      </label>
-                            <div class="input-group">
-                                <span class="input-group-text">%</span>
-                                <input type="number" class="form-control" id="interest" placeholder="Contoh: 6" step="0.01" required>
+                            <div class="mt-3 text-center">
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-stars"></i> Mulai Deteksi Sampah</button>
                             </div>
+                        </form>
+                        <div id="detection-loading" style="display:none;text-align:center;">
+                            <div class="spinner-border text-success mb-2"></div>
+                            <div style="color:#6bcc0e;font-weight:bold">Mendeteksi...</div>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-        <img src="assets/media/icons/jangkawaktu.png" alt="Time Icon" style="height:20px;">
-        Jangka Waktu (Tahun) :
-      </label>
-                            <div class="input-group">
-                                <span class="input-group-text">🗓</span>
-                                <input type="number" class="form-control" id="years" placeholder="Contoh: 5" required>
-                            </div>
+                        <div id="eco-ai-result" style="display:none;" class="mt-4 result-box p-3 mx-auto">
+                            <h4 class="mb-2"><i class="bi bi-shield-check"></i> Hasil Deteksi Sampah</h4>
+                            <div id="result-preview" class="mb-2"></div>
+                            <div class="mb-2"><span class="fw-600">Jenis Sampah:</span> <span id="aiTrashType" style="font-weight:700;"></span></div>
+                            <div id="recommendation" class="p-3" style="background:#ebfbea;margin:auto;font-size:1em;"></div>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-        <img src="assets/media/icons/penambahanmodal.png" alt="Monthly Add Icon" style="height:20px;">
-        Penambahan Modal Bulanan :
-      </label>
-                            <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="monthlyAdd" placeholder="Contoh: 500.000">
-                            </div>
-                        </div>
+                        <div id="eco-ai-error" class="alert alert-danger text-center mt-2" style="display:none;"></div>
                     </div>
-                    <div class="mt-5 d-flex gap-2">
-                        <button type="submit" class="btn btn-primary flex-fill fw-bold">Hitung Investasi</button>
-                        <button type="reset" class="btn btn-outline-secondary flex-fill fw-bold" id="resetBtn">Reset</button>
-                    </div>
-                </form>
-                <div id="investmentOutput" class="mt-4">
-                    <em>Masukkan data untuk melihat hasil...</em>
-                </div>
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        const form = document.getElementById("investmentForm");
-                        const output = document.getElementById("investmentOutput");
-                        const resetBtn = document.getElementById("resetBtn");
-                        let chartInstance = null;
+                    <!-- Penutup fitur -->
 
-                        function formatRupiah(angka) {
-                            if (isNaN(angka)) return "Rp 0";
-                            return "Rp " + angka.toLocaleString("id-ID");
+                    <script>
+                        // Mapping tips pembuangan
+                        const jenisToTips = {
+                            "Organik": `- Buang ke tong <b>organik (hijau)</b>.<br>- Dapat dijadikan kompos.<br>- Contoh: sisa makanan, daun kering.`,
+                            "Anorganik": `- Buang ke tong <b>anorganik (kuning/biru)</b>.<br>- Bersihkan sebelum dibuang.<br>- Contoh: plastik, kaca, styrofoam.`,
+                            "Daur Ulang": `- Pisahkan dan letakkan di tempat <b>daur ulang</b>.<br>- Contoh: botol plastik, kardus, kaleng.<br>- Bersihkan sebelum setor ke bank sampah.`,
+                            "B3": `- Jangan dicampur sampah lain.<br>- Bungkus rapat, letakkan di wadah <b>B3 (merah)</b>.<br>- Contoh: baterai, obat kedaluwarsa, elektronik rusak.<br>- Hubungi petugas/drop off B3 khusus.`
+                        };
+                        // Berdasar nama file sistem tebak jenis sampah
+                        function detectSampah(filename) {
+                            filename = filename.toLowerCase();
+                            if (filename.match(/kulit|daun|makanan|sisa|nasi|buah|sayur|tulang|organik/)) return "Organik";
+                            if (filename.match(/plastik|botol|styrofoam|gelas|kresek|anorganik|kaca/)) return "Anorganik";
+                            if (filename.match(/kaleng|cardboard|kardus|paper|kertas|daur|ulang|can|metal|besi/)) return "Daur Ulang";
+                            if (filename.match(/baterai|oli|cat|obat|bb|b3|elektronik|lampu|accu|beracun|bahaya|ampas|pestisida/)) return "B3";
+                            // default case
+                            return "Anorganik";
                         }
 
-                        function formatInputRupiah(input) {
-                            input.addEventListener("input", (e) => {
-                                let value = e.target.value.replace(/\D/g, "");
-                                if (value === "") value = 0;
-                                e.target.value = parseInt(value).toLocaleString("id-ID");
-                            });
-                        }
-                        document.querySelectorAll(".rupiah-input").forEach(input => {
-                            formatInputRupiah(input);
-                        });
-
-                        function saranInvestasi(total, keuntungan, years) {
-                            let tips = [];
-                            if (years < 3) tips.push("Pertimbangkan deposito untuk keamanan modal jangka pendek.");
-                            if (keuntungan / total > 0.2) tips.push("Investasi di reksa dana saham bisa lebih menguntungkan.");
-                            if (keuntungan / total < 0.1) tips.push("Pertimbangkan menambah modal bulanan agar hasil lebih optimal.");
-                            if (total > 100000000) tips.push("Diversifikasi portofolio untuk mengurangi risiko.");
-                            if (tips.length === 0) tips.push("Investasi Anda terlihat stabil. Lanjutkan rutin menabung.");
-                            return tips;
-                        }
-                        form.addEventListener("submit", (e) => {
-                            e.preventDefault();
-                            let initial = parseFloat(document.getElementById("initial").value.replace(/\D/g, "")) || 0;
-                            let interest = parseFloat(document.getElementById("interest").value) / 100 || 0;
-                            let years = parseInt(document.getElementById("years").value) || 0;
-                            let monthlyAdd = parseFloat(document.getElementById("monthlyAdd").value.replace(/\D/g, "")) || 0;
-                            let total = initial;
-                            let months = years * 12;
-                            let monthlyRate = interest / 12;
-                            let labels = [];
-                            let dataGrowth = [];
-                            for (let i = 1; i <= months; i++) {
-                                total = total * (1 + monthlyRate) + monthlyAdd;
-                                if (i % 12 === 0) {
-                                    labels.push("Tahun " + (i / 12));
-                                    dataGrowth.push(Math.round(total));
-                                }
+                        document.getElementById("inputImage").addEventListener("change", function(evt) {
+                            if (this.files && this.files[0]) {
+                                document.getElementById("fileName").value = this.files[0].name;
                             }
-                            let totalInvestasi = initial + (monthlyAdd * months);
-                            let keuntungan = total - totalInvestasi;
-                            let tips = saranInvestasi(total, keuntungan, years);
-                            let tipsHtml = "<ul>";
-                            tips.forEach(t => {
-                                tipsHtml += `<li>${t}</li>`;
-                            });
-                            tipsHtml += "</ul>";
-                            output.innerHTML = `
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h4 class="card-title mb-3 text-center">📊 Hasil Simulasi Investasi</h4>
-                <div class="row text-center">
-                    <div class="col-md-6 col-lg-3 mb-3">
-                        <div class="p-3 bg-light rounded shadow-sm">
-                            <h6>Modal Awal</h6>
-                            <p class="fw-bold text-primary">${formatRupiah(initial)}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-3">
-                        <div class="p-3 bg-light rounded shadow-sm">
-                            <h6>Total Setoran</h6>
-                            <p class="fw-bold text-success">${formatRupiah(monthlyAdd * months)}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-3">
-                        <div class="p-3 bg-light rounded shadow-sm">
-                            <h6>Keuntungan</h6>
-                            <p class="fw-bold text-warning">${formatRupiah(Math.round(keuntungan))}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-3">
-                        <div class="p-3 bg-light rounded shadow-sm">
-                            <h6>Total Akhir</h6>
-                            <p class="fw-bold text-danger">${formatRupiah(Math.round(total))}</p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <canvas id="investmentChart" height="100"></canvas>
-                <hr>
-                <h5  class="mt-4">Saran Investasi</h5>
-                ${tipsHtml}
-              </div>
-            </div>
-        `;
-                            const ctx = document.getElementById("investmentChart").getContext("2d");
-                            if (chartInstance) chartInstance.destroy();
-                            chartInstance = new Chart(ctx, {
-                                type: "line",
-                                data: {
-                                    labels: labels,
-                                    datasets: [{
-                                        label: "Total Nilai Investasi",
-                                        data: dataGrowth,
-                                        borderColor: "#0d6efd",
-                                        backgroundColor: "rgba(13, 110, 253, 0.2)",
-                                        fill: true,
-                                        tension: 0.3
-                                    }]
-                                },
-                                options: {
-                                    responsive: true,
-                                    plugins: {
-                                        legend: {
-                                            display: true
-                                        },
-                                        tooltip: {
-                                            callbacks: {
-                                                label: function(context) {
-                                                    return formatRupiah(context.raw);
-                                                }
-                                            }
-                                        }
-                                    },
-                                    scales: {
-                                        y: {
-                                            ticks: {
-                                                callback: function(value) {
-                                                    return "Rp " + value.toLocaleString("id-ID");
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            });
                         });
-                        resetBtn.addEventListener("click", () => {
-                            output.innerHTML = "<em>Masukkan data untuk melihat hasil...</em>";
-                            if (chartInstance) chartInstance.destroy();
-                        });
-                    });
-                </script>
-            </div>
-            <div class="pagination mt-48">
-                <ul id="border-pagination" id="border-pagination" style="margin-top: 30px;">
 
-                    <li>
-                        <a href="fitur-detail-3.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                        document.getElementById("ai-sorter-form").addEventListener("submit", async function(e) {
+                            e.preventDefault();
+                            document.getElementById("eco-ai-error").style.display = "none";
+                            const imgInput = document.getElementById("inputImage");
+                            if (!imgInput.files || !imgInput.files[0]) {
+                                document.getElementById("eco-ai-error").style.display = "block";
+                                document.getElementById("eco-ai-error").innerText = "Silakan pilih gambar terlebih dahulu.";
+                                return;
+                            }
+                            document.getElementById("eco-ai-result").style.display = "none";
+                            document.getElementById("detection-loading").style.display = "block";
+
+                            // UX fake delay deteksi
+                            setTimeout(() => {
+                                try {
+                                    const file = imgInput.files[0];
+                                    const jenis = detectSampah(file.name);
+                                    // Preview Gambar
+                                    const img = new Image();
+                                    img.src = URL.createObjectURL(file);
+                                    img.onload = function() {
+                                        document.getElementById("result-preview").innerHTML = `<img src="${img.src}" style="max-height:120px;max-width:140px;border-radius:8px;border:2px solid #6bcc0e;background:#eafee0;" alt="Preview">`;
+                                    };
+                                    document.getElementById("aiTrashType").innerHTML = jenis;
+                                    document.getElementById("recommendation").innerHTML = `<b>Cara Pembuangan Tepat:</b><br>${jenisToTips[jenis] || "-"}`;
+                                    document.getElementById("detection-loading").style.display = "none";
+                                    document.getElementById("eco-ai-result").style.display = "block";
+                                } catch (err) {
+                                    document.getElementById("detection-loading").style.display = "none";
+                                    document.getElementById("eco-ai-error").style.display = "block";
+                                    document.getElementById("eco-ai-error").innerText = "Gagal mendeteksi: " + err;
+                                }
+                            }, 800); // Agar UX mirip loading prediksi
+                        });
+
+                        // Klik icon = trigger input file
+                        document.querySelector(".input-group-text.icon-bg").addEventListener("click", function() {
+                            document.getElementById("inputImage").click();
+                        });
+                    </script>
+
+
+
+
+                </div>
+                <div class="pagination mt-48">
+                    <ul id="border-pagination" id="border-pagination" style="margin-top: 30px;">
+
+                        <li>
+                            <a href="fitur-detail-3.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
                                                     <path d="M14.2246 26.8364C14.2246 23.4614 11.0746 18.9614 7.47461 18.9614M7.47461 18.9614C9.53711 18.9614 14.2246 17.8364 14.2246 11.0864M7.47461 18.9614H28.8496" stroke="white" stroke-width="2.25"/>
                                                   </svg>
-                        </a>
-                    </li>
-                    <li><a href="fitur-detail-1.html">1</a></li>
-                    <li><a href="fitur-detail-2.html">2</a></li>
-                    <li><a href="fitur-detail-3.html">3</a></li>
-                    <li><a href="fitur-detail-4.html" style="background-color: #56bef9;">4</a></li>
+                            </a>
+                        </li>
+                        <li><a href="fitur-detail-1.html">1</a></li>
+                        <li><a href="fitur-detail-2.html">2</a></li>
+                        <li><a href="fitur-detail-3.html">3</a></li>
+                        <li><a href="fitur-detail-4.html" style="background-color: #56bef9;">4</a></li>
 
-                </ul>
-            </div>
+                    </ul>
+                </div>
     </section>
     <footer>
         <div class="container-fluid">
@@ -588,7 +495,8 @@
                                 </div>
                             </li>
                             <li class="mb-32">
-                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Sampah%20Bijak&body=Hai%20Sampah%20Bijak%2C%20saya%20mau%20bertanya%20tentang...
+" class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
         <path
             d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
@@ -655,15 +563,18 @@
     </div>
     <div class="mobile-bottom-nav">
         <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
-        <a href="fitur-detail-1.html" class="active" data-name="fitur">
+        <a href="fitur-detail-1.html" data-name="fitur" style="color: #42A5F5;">
             <i class="fa-solid fa-puzzle-piece"></i>
             <span>Fitur</span>
         </a>
-        <a href="#" id="dashboard-link" data-name="dashboard">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Dashboard</span>
+        <a href="belajarsampahbijak.html">
+            <i class="fa-solid fa-play"></i>
+            <span>Mulai Belajar</span>
         </a>
-        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+        <a href="faq.html" data-name="faq">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>FAQ</span>
+        </a>
     </div>
 
 
@@ -678,23 +589,7 @@
         <i id="music-icon" class="bi bi-volume-up"></i>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dashboardLink = document.getElementById('dashboard-link');
 
-            dashboardLink.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-                if (loggedIn) {
-                    window.location.href = 'DASHBOARD/index.html';
-                } else {
-                    window.location.href = 'login.html';
-                }
-            });
-        });
-    </script>
     <script>
         const waNumber = "6287877566677";
         let now = new Date();
@@ -713,7 +608,7 @@
         } else {
             greeting = "Selamat malam";
         }
-        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        let message = `${greeting}, Sampah Bijak by Skinfa Developers. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
         document.getElementById("waLink").addEventListener("click", function(e) {
             e.preventDefault();
             let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;

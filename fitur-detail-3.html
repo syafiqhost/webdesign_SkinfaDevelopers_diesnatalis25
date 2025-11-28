@@ -47,7 +47,7 @@
         }
         
         .question-box {
-            background: #f7941d;
+            background: #42A5F5;
             border: 2px solid #dee2e6;
             border-radius: 15px;
             padding: 20px;
@@ -185,7 +185,7 @@
                 </div>
                 <div class="main-menu__right">
                     <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
-                        <a href="register.html" class="cus-btn">
+                        <a href="belajarsampahbijak.html" class="cus-btn">
                             <span class="btn-text">Mulai Belajar</span>
                             <span>Mulai Belajar</span>
                         </a>
@@ -226,16 +226,18 @@
         <div class="container-fluid">
             <div class="eyebrow heading">Fitur</div>
             <h2 class="dark-gray text-center mb-16 fw-800 heading-anggaran">
-                <span>Fitur Sampah Bijak Interaktif <span class=" color-sec fw-700">Super Cerdas</span> Solusi pintar untuk <span class=" color-sec fw-700">Quiz edukasi Sampah Bijak.</span></span>
+                <span>Fitur Edukasi <span class="color-sec fw-700">Sampah Bijak</span> Interaktif – solusi pintar untuk <span class="color-sec fw-700">belajar pilah sampah dengan cara menyenangkan.</span></span>
             </h2>
             <p class="text-center light-gray mb-32">
-                Yuk uji pengetahuanmu soal keuangan pribadi lewat quiz seru ini! Sambil jawab pertanyaan, kamu juga belajar cara mengelola uang dengan lebih cerdas dan bijak setiap harinya. Ayo coba sekarang dan buktikan seberapa pintar kamu dalam mengatur keuangan!
+                Uji pengetahuanmu tentang sampah organik, anorganik, daur ulang, hingga residu lewat kuis interaktif ini! Sambil menjawab pertanyaan, kamu akan belajar cara memilah sampah dengan benar agar lingkungan tetap bersih dan sehat. Ayo coba sekarang dan lihat
+                seberapa bijak kamu dalam mengelola sampah!
             </p>
+
             <div class="budget-app mx-auto p-4 rounded shadow-lg" style="background-color: white;">
                 <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;">
-                    <span>3. Quiz Edukasi Sampah Bijak
-</span>
+                    <span>3. Quiz Edukasi Sampah Bijak</span>
                 </h2>
+
                 <div class="quiz-container">
                     <div class="quiz-header" id="quiz-header">
                         <span>Skor: <span id="score">0</span> / <span id="total-questions"></span></span>
@@ -244,7 +246,9 @@
                     <div class="question-box" id="display-question">Loading...</div>
                     <div class="options" id="options-container"></div>
                     <div class="explanation" id="explanation" style="display:none;"></div>
-                    <button class="btn btn-primary w-100 mt-2" style="background-color: #f7941d;" id="next-btn" onclick="nextQuestion()">Pertanyaan Selanjutnya</button>
+
+                    <button class="btn btn-primary w-100 mt-2" style="background-color: #42A5F5;" id="next-btn" onclick="nextQuestion()">Pertanyaan Selanjutnya</button>
+
                     <div class="result-box" id="result-box">
                         <h2 class="mb-3">🎉 Kuis Selesai!</h2>
                         <div id="answers-summary"></div>
@@ -253,6 +257,7 @@
                 </div>
             </div>
         </div>
+
         <div class="pagination mt-48">
             <ul id="border-pagination" style="margin-top: 30px;">
                 <li>
@@ -360,7 +365,8 @@
                                 </div>
                             </li>
                             <li class="mb-32">
-                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Sampah%20Bijak&body=Hai%20Sampah%20Bijak%2C%20saya%20mau%20bertanya%20tentang...
+" class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
         <path
             d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
@@ -437,105 +443,108 @@
     </div>
     <script>
         const questions = [{
-            question: "Apa langkah pertama yang penting dalam mengelola keuangan pribadi?",
+            question: "Sampah organik termasuk jenis sampah seperti apa?",
             options: [{
-                text: "Membuat anggaran bulanan",
-                explanation: "Dengan anggaran, kamu tahu persis pengeluaran dan pemasukan agar lebih terkontrol.",
-                category: "disiplin"
+                text: "Sampah yang mudah terurai secara alami",
+                explanation: "Betul! Sampah organik berasal dari makhluk hidup dan bisa terurai, contohnya sisa makanan atau daun.",
+                category: "bijak"
             }, {
-                text: "Mulai investasi besar",
-                explanation: "Investasi penting, tapi harus diawali dengan pengelolaan dasar yang baik dulu.",
-                category: "aman"
+                text: "Sampah yang tidak dapat didaur ulang sama sekali",
+                explanation: "Salah, sampah yang sulit didaur ulang termasuk residu.",
+                category: "kurang"
             }, {
-                text: "Membeli barang mewah untuk motivasi",
-                explanation: "Membeli barang mewah tanpa perencanaan bisa berisiko keuangan.",
-                category: "boros"
+                text: "Sampah dari bahan plastik",
+                explanation: "Plastik termasuk anorganik, bukan organik.",
+                category: "kurang"
             }, {
-                text: "Meminjam uang agar punya modal cepat",
-                explanation: "Pinjaman harus dipertimbangkan matang agar tidak menambah beban hutang.",
-                category: "boros"
+                text: "Sampah berbahaya seperti baterai",
+                explanation: "Itu termasuk B3, bukan organik.",
+                category: "kurang"
             }]
         }, {
-            question: "Apa manfaat memiliki dana darurat?",
+            question: "Mana contoh sampah anorganik yang bisa didaur ulang?",
             options: [{
-                text: "Menghadapi kebutuhan tak terduga tanpa stres",
-                explanation: "Dana darurat menjaga kestabilan keuangan saat keadaan darurat.",
-                category: "aman"
+                text: "Botol plastik bekas minuman",
+                explanation: "Benar! Botol plastik PET bisa didaur ulang menjadi produk baru.",
+                category: "bijak"
             }, {
-                text: "Untuk membeli barang mahal kapan saja",
-                explanation: "Dana darurat sebaiknya tidak dipakai untuk pembelian konsumtif.",
-                category: "boros"
+                text: "Sisa makanan basi",
+                explanation: "Itu organik, bukan anorganik.",
+                category: "kurang"
             }, {
-                text: "Meminjam ke teman jadi tidak perlu dana darurat",
-                explanation: "Dana darurat lebih baik daripada harus meminjam dengan risiko konflik.",
-                category: "disiplin"
+                text: "Daun kering dan rumput",
+                explanation: "Itu organik.",
+                category: "kurang"
             }, {
-                text: "Investasi dalam aset berisiko tinggi",
-                explanation: "Dana darurat harus aman dan mudah dicairkan, bukan berisiko tinggi.",
-                category: "aman"
+                text: "Kain lap kotor yang rusak",
+                explanation: "Kain rusak lebih tepat masuk residu.",
+                category: "kurang"
             }]
         }, {
-            question: "Mengapa menabung secara rutin itu penting?",
+            question: "Mengapa penting memilah sampah sebelum dibuang?",
             options: [{
-                text: "Untuk mewujudkan tujuan Sampah Bijak jangka panjang",
-                explanation: "Menabung rutin membangun kebiasaan dan dana untuk masa depan.",
-                category: "disiplin"
+                text: "Agar sampah bisa diolah dengan benar dan mengurangi pencemaran",
+                explanation: "Betul! Pemilahan sampah membantu daur ulang dan menjaga lingkungan.",
+                category: "bijak"
             }, {
-                text: "Agar bisa membeli gadget terbaru setiap bulan",
-                explanation: "Kebiasaan boros menghambat pencapaian tujuan keuangan.",
-                category: "boros"
+                text: "Supaya tempat sampah terlihat penuh",
+                explanation: "Tidak relevan dan tidak ada manfaatnya.",
+                category: "kurang"
             }, {
-                text: "Supaya terlihat kaya di mata teman",
-                explanation: "Fokus pada tujuan keuangan lebih penting daripada penampilan.",
-                category: "boros"
+                text: "Agar petugas kebersihan tidak bekerja",
+                explanation: "Justru pemilahan memudahkan mereka, bukan sebaliknya.",
+                category: "kurang"
             }, {
-                text: "Agar tidak perlu kerja lagi",
-                explanation: "Menabung adalah langkah awal, tapi perencanaan keuangan menyeluruh diperlukan.",
-                category: "aman"
+                text: "Karena semua sampah harus dicampur",
+                explanation: "Justru pemilahan memisahkan sampah agar tidak tercampur.",
+                category: "kurang"
             }]
         }, {
-            question: "Apa risiko jika mengandalkan kartu kredit tanpa pengelolaan yang baik?",
+            question: "Contoh sampah residu yaitu…",
             options: [{
-                text: "Bisa menumpuk hutang dan bunga tinggi",
-                explanation: "Penggunaan kartu kredit tanpa kendali dapat membebani keuangan.",
-                category: "boros"
+                text: "Popok sekali pakai",
+                explanation: "Benar! Popok adalah residu karena sulit diolah dan tidak bisa didaur ulang.",
+                category: "bijak"
             }, {
-                text: "Meningkatkan skor kredit jika bayar tepat waktu",
-                explanation: "Pemakaian bijak kartu kredit bisa memperbaiki kredit kamu.",
-                category: "disiplin"
+                text: "Botol kaca utuh",
+                explanation: "Botol kaca bisa didaur ulang.",
+                category: "kurang"
             }, {
-                text: "Dapat diskon dan promo menarik",
-                explanation: "Promo menarik tapi harus tetap dalam batas kemampuan bayar.",
-                category: "aman"
+                text: "Sayur busuk",
+                explanation: "Itu organik, bukan residu.",
+                category: "kurang"
             }, {
-                text: "Membuat gaya hidup lebih santai",
-                explanation: "Santai boleh, tapi pengelolaan kartu kredit harus tetap disiplin.",
-                category: "boros"
+                text: "Plastik bening PET",
+                explanation: "PET termasuk anorganik yang dapat didaur ulang.",
+                category: "kurang"
             }]
         }, {
-            question: "Investasi apa yang cocok untuk pemula dengan modal kecil?",
+            question: "Apa dampak positif daur ulang?",
             options: [{
-                text: "Reksa dana karena mudah dan terdiversifikasi",
-                explanation: "Reksa dana cocok untuk pemula dengan risiko terkelola.",
-                category: "aman"
+                text: "Mengurangi jumlah sampah di TPA",
+                explanation: "Betul! Daur ulang mengurangi volume sampah yang menumpuk di TPA.",
+                category: "bijak"
             }, {
-                text: "Trading saham setiap hari agar cepat untung",
-                explanation: "Trading harian berisiko tinggi untuk pemula.",
-                category: "boros"
+                text: "Membuat sampah jadi lebih bau",
+                explanation: "Tidak benar, pemilahan justru mengurangi bau.",
+                category: "kurang"
             }, {
-                text: "Membeli emas batangan sebagai investasi jangka panjang",
-                explanation: "Emas adalah aset aman dan nilai tahan inflasi.",
-                category: "aman"
+                text: "Membuat orang jadi membuang sampah sembarangan",
+                explanation: "Tidak ada hubungannya.",
+                category: "kurang"
             }, {
-                text: "Meminjam uang untuk investasi besar",
-                explanation: "Pinjaman untuk investasi berisiko dan harus hati-hati.",
-                category: "boros"
+                text: "Menambah polusi udara",
+                explanation: "Daur ulang membantu mengurangi polusi, bukan menambah.",
+                category: "kurang"
             }]
         }];
+
         let currentQuestion = 0;
         let answersChosen = [];
         let score = 0;
+
         document.getElementById("total-questions").textContent = questions.length;
+
         loadQuestion();
 
         function loadQuestion() {
@@ -543,6 +552,7 @@
             document.getElementById("display-question").textContent = q.question;
             document.getElementById("question-number").textContent = currentQuestion + 1;
             document.getElementById("options-container").innerHTML = "";
+
             q.options.forEach(opt => {
                 const btn = document.createElement("div");
                 btn.classList.add("option-btn");
@@ -550,6 +560,7 @@
                 btn.onclick = () => selectOption(btn, opt);
                 document.getElementById("options-container").appendChild(btn);
             });
+
             document.getElementById("explanation").style.display = "none";
             document.getElementById("next-btn").style.display = "none";
         }
@@ -557,24 +568,30 @@
         function selectOption(element, opt) {
             const options = document.querySelectorAll(".option-btn");
             options.forEach(o => o.classList.remove("correct"));
+
             element.classList.add("correct");
+
             document.getElementById("explanation").textContent = opt.explanation;
             document.getElementById("explanation").style.display = "block";
             document.getElementById("next-btn").style.display = "block";
+
             if (!answersChosen[currentQuestion]) {
                 score++;
             }
+
             answersChosen[currentQuestion] = {
                 question: questions[currentQuestion].question,
                 answer: opt.text,
                 explanation: opt.explanation,
                 category: opt.category
             };
+
             document.getElementById("score").textContent = score;
         }
 
         function nextQuestion() {
             currentQuestion++;
+
             if (currentQuestion < questions.length) {
                 loadQuestion();
             } else {
@@ -588,49 +605,51 @@
             document.getElementById("options-container").style.display = "none";
             document.getElementById("explanation").style.display = "none";
             document.getElementById("next-btn").style.display = "none";
+
             const resultBox = document.getElementById("result-box");
             resultBox.style.display = "block";
+
             const summary = document.getElementById("answers-summary");
             summary.innerHTML = "";
+
             answersChosen.forEach((ans, i) => {
                 const div = document.createElement("div");
                 div.classList.add("answer-review");
                 div.innerHTML = `
-                <h5>${i + 1}. ${ans.question}</h5>
-                <p><b>Jawabanmu:</b> ${ans.answer}</p>
-                <p><b>Penjelasan:</b> ${ans.explanation}</p>
-            `;
+            <h5>${i + 1}. ${ans.question}</h5>
+            <p><b>Jawabanmu:</b> ${ans.answer}</p>
+            <p><b>Penjelasan:</b> ${ans.explanation}</p>
+        `;
                 summary.appendChild(div);
             });
+
             const categoryCount = {};
             answersChosen.forEach(ans => {
                 categoryCount[ans.category] = (categoryCount[ans.category] || 0) + 1;
             });
+
             let maxCategory = null;
             let maxCount = 0;
+
             for (const cat in categoryCount) {
                 if (categoryCount[cat] > maxCount) {
                     maxCount = categoryCount[cat];
                     maxCategory = cat;
                 }
             }
+
             let personalityMsg = "";
             switch (maxCategory) {
-                case "hemat":
-                    personalityMsg = "Kamu adalah orang yang sangat hemat dan bijak dalam mengelola keuangan. Terus pertahankan kebiasaan baik ini untuk masa depan yang lebih cerah!";
+                case "bijak":
+                    personalityMsg = "Kamu sudah sangat bijak dalam memilah sampah! Teruskan kebiasaan baik ini untuk lingkungan yang lebih bersih.";
                     break;
-                case "disiplin":
-                    personalityMsg = "Kamu punya disiplin tinggi dalam mengatur keuangan. Ini adalah kunci kesuksesan Sampah Bijak jangka panjang!";
-                    break;
-                case "aman":
-                    personalityMsg = "Kamu cenderung memilih keamanan Sampah Bijak dan siap menghadapi risiko tak terduga dengan baik.";
-                    break;
-                case "boros":
-                    personalityMsg = "Perlu lebih bijak dalam mengelola pengeluaran agar keuanganmu lebih stabil dan terencana.";
+                case "kurang":
+                    personalityMsg = "Masih ada yang perlu ditingkatkan. Yuk belajar lagi supaya makin jago memilah sampah!";
                     break;
                 default:
-                    personalityMsg = "Terima kasih sudah mengikuti kuis ini! Terus belajar dan perbaiki pengelolaan keuanganmu.";
+                    personalityMsg = "Terima kasih sudah mengikuti kuis Sampah Bijak!";
             }
+
             const personalityDiv = document.createElement("div");
             personalityDiv.style.marginTop = "20px";
             personalityDiv.style.padding = "15px";
@@ -639,6 +658,7 @@
             personalityDiv.style.color = "#0c5460";
             personalityDiv.style.fontWeight = "600";
             personalityDiv.textContent = personalityMsg;
+
             summary.appendChild(personalityDiv);
         }
 
@@ -646,46 +666,35 @@
             currentQuestion = 0;
             answersChosen = [];
             score = 0;
+
             document.getElementById("score").textContent = score;
             document.getElementById("quiz-header").style.display = "flex";
             document.querySelector(".question-box").style.display = "block";
             document.getElementById("options-container").style.display = "grid";
             document.getElementById("result-box").style.display = "none";
             document.getElementById("explanation").style.display = "none";
+
             loadQuestion();
         }
     </script>
+
     <div class="mobile-bottom-nav">
         <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
-        <a href="fitur-detail-1.html" class="active" data-name="fitur">
+        <a href="fitur-detail-1.html" data-name="fitur" style="color: #42A5F5;">
             <i class="fa-solid fa-puzzle-piece"></i>
             <span>Fitur</span>
         </a>
-        <a href="#" id="dashboard-link" data-name="dashboard">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Dashboard</span>
+        <a href="belajarsampahbijak.html">
+            <i class="fa-solid fa-play"></i>
+            <span>Mulai Belajar</span>
         </a>
-        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+        <a href="faq.html" data-name="faq">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>FAQ</span>
+        </a>
     </div>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dashboardLink = document.getElementById('dashboard-link');
-
-            dashboardLink.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-                if (loggedIn) {
-                    window.location.href = 'DASHBOARD/index.html';
-                } else {
-                    window.location.href = 'login.html';
-                }
-            });
-        });
-    </script>
     <script>
         const waNumber = "6287877566677";
         let now = new Date();
@@ -704,7 +713,7 @@
         } else {
             greeting = "Selamat malam";
         }
-        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        let message = `${greeting}, Sampah Bijak by Skinfa Developers. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
         document.getElementById("waLink").addEventListener("click", function(e) {
             e.preventDefault();
             let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;

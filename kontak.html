@@ -88,7 +88,7 @@
                 </div>
                 <div class="main-menu__right">
                     <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
-                        <a href="register.html" class="cus-btn">
+                        <a href="belajarsampahbijak.html" class="cus-btn">
                             <span class="btn-text">Mulai Belajar</span>
                             <span>Mulai Belajar</span>
                         </a>
@@ -381,7 +381,8 @@
                                 </div>
                             </li>
                             <li class="mb-32">
-                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Sampah%20Bijak&body=Hai%20Sampah%20Bijak%2C%20saya%20mau%20bertanya%20tentang...
+" class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
         <path
             d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
@@ -452,31 +453,17 @@
             <i class="fa-solid fa-puzzle-piece"></i>
             <span>Fitur</span>
         </a>
-        <a href="#" id="dashboard-link" data-name="dashboard">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Dashboard</span>
+        <a href="belajarsampahbijak.html">
+            <i class="fa-solid fa-play"></i>
+            <span>Mulai Belajar</span>
         </a>
-        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+        <a href="faq.html" data-name="faq">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>FAQ</span>
+        </a>
     </div>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dashboardLink = document.getElementById('dashboard-link');
-
-            dashboardLink.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-                if (loggedIn) {
-                    window.location.href = 'DASHBOARD/index.html';
-                } else {
-                    window.location.href = 'login.html';
-                }
-            });
-        });
-    </script>
     <script>
         const waNumber = "6287877566677";
         let now = new Date();
@@ -495,7 +482,7 @@
         } else {
             greeting = "Selamat malam";
         }
-        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        let message = `${greeting}, Sampah Bijak by Skinfa Developers. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
         document.getElementById("waLink").addEventListener("click", function(e) {
             e.preventDefault();
             let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;

@@ -157,7 +157,7 @@
         }
         
         .icon-bg {
-            background-color: #f7941d;
+            background-color: #42A5F5;
             color: white;
             font-weight: bold;
         }
@@ -240,7 +240,7 @@
                 </div>
                 <div class="main-menu__right">
                     <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
-                        <a href="register.html" class="cus-btn">
+                        <a href="belajarsampahbijak.html" class="cus-btn">
                             <span class="btn-text">Mulai Belajar</span>
                             <span>Mulai Belajar</span>
                         </a>
@@ -280,113 +280,110 @@
     <section class="sec-page py-5">
         <div class="container-fluid">
             <div class="eyebrow heading">Fitur</div>
+
             <h2 class="dark-gray text-center mb-16 fw-800 heading-anggaran">
-                <span>Fitur Sampah Bijak Interaktif <span class=" color-sec fw-700">Super Cerdas</span> Solusi pintar untuk <span class=" color-sec fw-700">Perencanaan anggaran.</span>
+                <span>Fitur <span class="color-sec fw-700">Kalkulator Jejak Karbon</span> Interaktif</span><br> Solusi pintar untuk <span class="color-sec fw-700">mengetahui emisi harianmu.</span>
             </h2>
+
             <p class="text-center light-gray mb-32">
-                Susah ngatur uang bulanan? Tenang, di sini kamu bisa belajar bikin perencanaan anggaran dengan cara simpel. Yuk coba fitur perencanaan anggaran cerdas, biar setiap pemasukan dan pengeluaranmu lebih terarah tanpa ribet! </p>
+                Yuk hitung jejak karbon aktivitas harianmu! Dengan kalkulator ini, kamu bisa tahu seberapa besar emisi CO₂ dari transportasi, listrik, sampah, dan penggunaan air. Langsung dapat hasil + rekomendasi cara menguranginya.
+            </p>
+
             <div class="budget-app mx-auto p-4 rounded shadow-lg">
                 <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;">
-                    <span>1. Perencana Anggaran Bulanan Pintar</span>
+                    <span>1. Kalkulator Jejak Karbon</span>
                 </h2>
-                <form id="budgetForm">
+
+                <form id="carbonForm">
+
                     <div class="row g-4">
+
                         <div class="col-md-6">
                             <label class="form-label">
-                            <img src="assets/media/icons/pendapatan.png" alt="Income Icon" style="height:20px;">
-                            Pendapatan Bulanan :
-                            </label>
+                            Transportasi (km per hari)
+                        </label>
                             <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="income" placeholder="Contoh: 7.500.000" required>
+                                <span class="input-group-text">Km</span>
+                                <input type="number" class="form-control" id="transport_km" placeholder="Contoh: 10" required>
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <label class="form-label">
-              <img src="assets/media/icons/kebutuhanpokok.png" alt="Needs Icon" style="height:20px;">
-              Kebutuhan Pokok :
-            </label>
+                            Konsumsi Listrik (kWh per bulan)
+                        </label>
                             <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="needs" placeholder="Contoh: 3.000.000" required>
+                                <span class="input-group-text">kWh</span>
+                                <input type="number" class="form-control" id="listrik" placeholder="Contoh: 450" required>
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <label class="form-label">
-              <img src="assets/media/icons/transport.png" alt="Transport Icon" style="height:20px;">
-              Transportasi :
-            </label>
+                            Sampah Harian (kg per hari)
+                        </label>
                             <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="transport" placeholder="Contoh: 500.000" required>
+                                <span class="input-group-text">Kg</span>
+                                <input type="number" class="form-control" id="sampah" placeholder="Contoh: 1" required>
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <label class="form-label">
-              <img src="assets/media/icons/hiburan.png" alt="Entertainment Icon" style="height:20px;">
-              Hiburan :
-            </label>
+                            Penggunaan Air (liter per hari)
+                        </label>
                             <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="entertainment" placeholder="Contoh: 700.000" required>
+                                <span class="input-group-text">L</span>
+                                <input type="number" class="form-control" id="air" placeholder="Contoh: 120" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-              <img src="assets/media/icons/tabungan.png" alt="Savings Icon" style="height:20px;">
-              Tabungan :
-            </label>
-                            <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="savings" placeholder="Contoh: 1.500.000" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-              <img src="assets/media/icons/kesehatan.png" alt="Health Icon" style="height:20px;">
-              Kesehatan :
-            </label>
-                            <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control rupiah-input" id="health" placeholder="Contoh: 300.000">
-                            </div>
-                        </div>
+
                     </div>
+
                     <div class="mt-5 d-flex gap-2">
-                        <button type="submit" class="btn btn-primary flex-fill fw-bold">Hitung Anggaran</button>
+                        <button type="submit" class="btn btn-primary flex-fill fw-bold">Hitung Jejak Karbon</button>
                         <button type="reset" class="btn btn-outline-secondary flex-fill fw-bold" id="resetBtn">Reset</button>
                     </div>
+
                 </form>
+
                 <div id="result" class="mt-5 p-4 rounded shadow-sm bg-light d-none result-box">
                     <h4 class="fw-bold mb-3">
-                        <img src="assets/media/icons/penambahanmodal.png" alt="Result Icon" style="height:24px; margin-right:8px;"> Hasil Perhitungan
+                        Hasil Jejak Karbon Bulanan
                     </h4>
-                    <ul class="list-unstyled">
-                        <li><strong>Total Pengeluaran:</strong> <span id="totalExpense" class="text-danger"></span></li>
-                        <li><strong>Sisa Saldo:</strong> <span id="remaining" class="text-success"></span></li>
-                        <li><strong>Persentase Penggunaan Anggaran:</strong> <span id="percentUsed" class="badge bg-info"></span></li>
-                    </ul>
-                    <div id="recommendation" class="mt-4 alert alert-warning fw-semibold"></div>
-                </div>
-            </div>
-        </div>
-        <div class="pagination mt-48">
-            <ul id="border-pagination" style="margin-top: 30px;">
 
-                <li><a href="fitur-detail-1.html" style="background-color: #56bef9;">1</a></li>
-                <li><a href="fitur-detail-2.html">2</a></li>
-                <li><a href="fitur-detail-3.html">3</a></li>
-                <li><a href="fitur-detail-4.html">4</a></li>
-                <li>
-                    <a href="fitur-detail-2.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                    <ul class="list-unstyled">
+                        <li><strong>Total Emisi:</strong> <span id="totalCarbon" class="text-danger"></span></li>
+                        <li><strong>Transportasi:</strong> <span id="carbonTransport"></span></li>
+                        <li><strong>Listrik:</strong> <span id="carbonListrik"></span></li>
+                        <li><strong>Sampah:</strong> <span id="carbonSampah"></span></li>
+                        <li><strong>Air:</strong> <span id="carbonAir"></span></li>
+                    </ul>
+
+                    <div id="recommendation" class="mt-4 alert alert-success fw-semibold"></div>
+                </div>
+
+            </div>
+
+            <div class="pagination mt-48">
+                <ul id="border-pagination">
+                    <li><a href="fitur-detail-1.html" style="background-color:#56bef9;">1</a></li>
+                    <li><a href="fitur-detail-2.html">2</a></li>
+                    <li><a href="fitur-detail-3.html">3</a></li>
+                    <li><a href="fitur-detail-4.html">4</a></li>
+                    <li>
+                        <a href="fitur-detail-2.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
                                                     <path d="M21.7754 26.8364C21.7754 23.4614 24.9254 18.9614 28.5254 18.9614M28.5254 18.9614C26.4629 18.9614 21.7754 17.8364 21.7754 11.0864M28.5254 18.9614H7.15039" stroke="white" stroke-width="2.25"/>
                                                   </svg>
-                    </a>
-                </li>
-            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </section>
+
     <footer>
         <div class="container-fluid">
             <div class="footer-wrapper pb-40">
@@ -471,7 +468,8 @@
                                 </div>
                             </li>
                             <li class="mb-32">
-                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Sampah%20Bijak&body=Hai%20Sampah%20Bijak%2C%20saya%20mau%20bertanya%20tentang...
+" class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
         <path
             d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
@@ -547,181 +545,135 @@
         <i id="music-icon" class="bi bi-volume-up"></i>
     </div>
     <script>
-        (function() {
-            const fmtRupiah = num => {
-                if (isNaN(num)) return "0";
-                return Number(num).toLocaleString('id-ID');
-            };
-            const onlyDigits = str => (str || '').replace(/\D/g, '');
-            document.querySelectorAll(".rupiah-input").forEach(input => {
-                input.addEventListener("input", function() {
-                    const raw = onlyDigits(this.value);
-                    this.value = raw ? raw.replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "";
-                });
-            });
+        const EF_TRANSPORT = 0.21;
+        const EF_LISTRIK = 0.85;
+        const EF_SAMPAH = 45;
+        const EF_AIR = 0.0003;
 
-            function removeBreakdown() {
-                const old = document.getElementById('breakdown-detail');
-                if (old) old.remove();
+        document.getElementById("carbonForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const km = parseFloat(document.getElementById("transport_km").value) || 0;
+            const listrik = parseFloat(document.getElementById("listrik").value) || 0;
+            const sampah = parseFloat(document.getElementById("sampah").value) || 0;
+            const air = parseFloat(document.getElementById("air").value) || 0;
+
+            const carbonTransport = km * EF_TRANSPORT * 30;
+            const carbonListrik = listrik * EF_LISTRIK;
+            const carbonSampah = sampah * EF_SAMPAH * 30;
+            const carbonAir = air * EF_AIR * 30;
+
+            const total = carbonTransport + carbonListrik + carbonSampah + carbonAir;
+
+            document.getElementById("carbonTransport").textContent = `${carbonTransport.toFixed(2)} kg CO₂`;
+            document.getElementById("carbonListrik").textContent = `${carbonListrik.toFixed(2)} kg CO₂`;
+            document.getElementById("carbonSampah").textContent = `${carbonSampah.toFixed(2)} kg CO₂`;
+            document.getElementById("carbonAir").textContent = `${carbonAir.toFixed(2)} kg CO₂`;
+            document.getElementById("totalCarbon").textContent = `${total.toFixed(2)} kg CO₂`;
+
+            const kategori = [{
+                nama: "Transportasi",
+                nilai: carbonTransport
+            }, {
+                nama: "Listrik",
+                nilai: carbonListrik
+            }, {
+                nama: "Sampah",
+                nilai: carbonSampah
+            }, {
+                nama: "Air",
+                nilai: carbonAir
+            }];
+
+            kategori.sort((a, b) => b.nilai - a.nilai);
+            const palingTinggi = kategori[0].nama;
+
+            let tips = "";
+
+            if (palingTinggi === "Transportasi") {
+                tips = `
+        <strong>🔵 Fokus Utama: Transportasi Tinggi</strong><br>
+        1️⃣ Gunakan transportasi umum atau carpool.<br>
+        2️⃣ Atur jadwal perjalanan agar lebih efisien.<br>
+        3️⃣ Coba jalan kaki/sepeda untuk jarak dekat 🚶‍♂️🚲<br>
+        `;
+            } else if (palingTinggi === "Listrik") {
+                tips = `
+        <strong>🟡 Fokus Utama: Listrik Tinggi</strong><br>
+        1️⃣ Ganti lampu ke LED hemat energi.<br>
+        2️⃣ Cabut charger & perangkat standby.<br>
+        3️⃣ Atur penggunaan AC (27°C) atau pakai kipas 🌬️<br>
+        `;
+            } else if (palingTinggi === "Sampah") {
+                tips = `
+        <strong>🟢 Fokus Utama: Sampah Tinggi</strong><br>
+        1️⃣ Pisahkan organik & anorganik.<br>
+        2️⃣ Mulai kompos untuk sampah organik.<br>
+        3️⃣ Kurangi belanja barang sekali pakai ♻️<br>
+        `;
+            } else if (palingTinggi === "Air") {
+                tips = `
+        <strong>🔵 Fokus Utama: Air Tinggi</strong><br>
+        1️⃣ Kurangi durasi mandi.<br>
+        2️⃣ Matikan keran saat tidak digunakan.<br>
+        3️⃣ Gunakan shower hemat air 🚿<br>
+        `;
             }
 
-            function renderBreakdown(values, income, total, percUsed) {
-                removeBreakdown();
-                const colors = {
-                    needs: '#2563eb', // biru
-                    transport: '#f59e0b', // kuning/orange
-                    entertainment: '#ef4444', // merah
-                    savings: '#10b981', // hijau
-                    health: '#7c3aed' // ungu
-                };
-                const container = document.createElement('div');
-                container.id = 'breakdown-detail';
-                container.style.marginTop = '16px';
-                let inner = `<div class="card" style="border:0; background:transparent;">
-      <div style="padding:12px 16px; border-radius:8px; background:#fff; box-shadow: 0 6px 18px rgba(12,18,40,0.06);">
-        <div style="font-weight:700; margin-bottom:8px;">Rincian Kategori</div>`;
-                const cats = ['needs', 'transport', 'entertainment', 'savings', 'health'];
-                cats.forEach(cat => {
-                    const val = values[cat] || 0;
-                    const pct = income > 0 ? ((val / income) * 100) : 0;
-                    const pctLabel = pct.toFixed(1) + '%';
-                    const barWidth = Math.min(100, Math.abs(pct));
-                    const color = colors[cat] || '#94a3b8';
-                    inner += `
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
-          <div style="flex:1; min-width:160px;">
-            <div style="font-size:0.9rem; color:#374151; font-weight:600; text-transform:capitalize;">
-              ${cat === 'needs' ? 'Kebutuhan Pokok' : cat === 'transport' ? 'Transportasi' : cat === 'entertainment' ? 'Hiburan' : cat === 'savings' ? 'Tabungan' : 'Kesehatan'}
-            </div>
-            <div style="font-size:0.9rem; color:#6b7280;">Rp ${fmtRupiah(val)}</div>
-          </div>
-          <div style="flex-basis:40%; max-width:46%;">
-            <div style="height:8px; border-radius:999px; background:#eef2ff; overflow:hidden;">
-              <div style="width:${barWidth}%; height:8px; background:${color}; border-radius:999px;"></div>
-            </div>
-            <div style="font-size:0.82rem; color:#374151; margin-top:6px; text-align:right;">${pctLabel}</div>
-          </div>
-        </div>`;
-                });
-                inner += `</div></div>`;
-                container.innerHTML = inner;
-                const resultBox = document.getElementById('result');
-                const ul = resultBox.querySelector('ul.list-unstyled');
-                if (ul) ul.insertAdjacentElement('afterend', container);
+            let ucapan = "";
+            if (total < 200) {
+                ucapan = "🌱 Jejak karbonmu rendah! Pertahankan gaya hidup ramah lingkungan!";
+            } else if (total < 400) {
+                ucapan = "👍 Cukup bagus! Masih ada ruang untuk mengurangi emisi.";
+            } else {
+                ucapan = "⚠️ Jejak karbonmu cukup tinggi, yuk mulai turunin pelan-pelan!";
             }
-            // main submit handler
-            document.getElementById("budgetForm").addEventListener("submit", function(e) {
-                e.preventDefault();
-                const fields = ["income", "needs", "transport", "entertainment", "savings", "health"];
-                const values = {};
-                fields.forEach(id => {
-                    values[id] = parseInt((document.getElementById(id).value || "0").replace(/\./g, "")) || 0;
-                });
-                const income = values.income;
-                const total = values.needs + values.transport + values.entertainment + values.savings + values.health;
-                const remaining = income - total;
-                const percentUsedNum = income > 0 ? (total / income) * 100 : 0;
-                const percentUsedText = income > 0 ? percentUsedNum.toFixed(2) + '%' : '0%';
-                document.getElementById("totalExpense").textContent = "Rp " + fmtRupiah(total);
-                document.getElementById("remaining").textContent = "Rp " + fmtRupiah(remaining);
-                document.getElementById("percentUsed").textContent = percentUsedText;
-                let recList = [];
-                if (values.savings < values.income * 0.2) {
-                    recList.push("💡 Sisihkan minimal 20% dari pendapatan untuk tabungan.");
-                    recList.push("📦 Gunakan rekening terpisah untuk menyimpan tabungan agar tidak terpakai.");
-                    recList.push("🎯 Tetapkan target menabung per bulan dan konsisten.");
-                } else if (values.savings >= values.income * 0.3) {
-                    recList.push("👏 Tabungan kamu luar biasa! Teruskan kebiasaan menabung ini.");
-                    recList.push("💹 Pertimbangkan untuk mengalokasikan sebagian ke investasi.");
-                    recList.push("🛡️ Diversifikasi simpanan untuk keamanan Sampah Bijak.");
-                }
-                if (values.entertainment > values.income * 0.15) {
-                    recList.push("🎯 Pengeluaran hiburan melebihi batas wajar (15%). Pertimbangkan untuk menguranginya.");
-                    recList.push("🍿 Pilih hiburan gratis atau berbiaya rendah, seperti olahraga atau piknik.");
-                    recList.push("📅 Batasi frekuensi hiburan berbayar per bulan.");
-                }
-                if (values.needs > values.income * 0.5) {
-                    recList.push("📊 Kebutuhan pokok menghabiskan lebih dari 50% pendapatan. Coba cari cara untuk menghemat.");
-                    recList.push("🛒 Bandingkan harga sebelum membeli dan cari diskon.");
-                    recList.push("🥘 Masak di rumah lebih sering daripada makan di luar.");
-                }
-                if (values.transport > values.income * 0.1) {
-                    recList.push("🚗 Biaya transportasi cukup tinggi (>10%). Pertimbangkan alternatif yang lebih hemat.");
-                    recList.push("🚲 Gunakan transportasi umum atau sepeda untuk perjalanan dekat.");
-                    recList.push("🤝 Carpool dengan rekan kerja atau teman untuk berbagi biaya.");
-                }
-                if (values.health < values.income * 0.05) {
-                    recList.push("🩺 Alokasi kesehatan kurang dari 5% dari pendapatan. Pastikan dana kesehatan cukup.");
-                    recList.push("💊 Siapkan dana cadangan untuk kebutuhan medis mendesak.");
-                    recList.push("🥗 Pertimbangkan asuransi kesehatan atau check-up rutin untuk pencegahan.");
-                }
-                if (remaining < 0) {
-                    recList.push("⚠️ Pengeluaran lebih besar dari pendapatan! Segera evaluasi anggaran.");
-                    recList.push("📉 Prioritaskan pengeluaran wajib dan tunda yang tidak mendesak.");
-                    recList.push("📝 Buat daftar pengeluaran bulanan untuk memantau arus kas.");
-                }
-                if (percentUsed > 90) {
-                    recList.push("⏳ Hampir semua pendapatan terpakai. Sisakan ruang untuk dana darurat.");
-                    recList.push("💰 Alokasikan minimal 10% untuk dana darurat.");
-                    recList.push("🛑 Hentikan sementara pengeluaran tidak penting.");
-                }
-                if (recList.length === 0) {
-                    recList.push("✅ Keuangan kamu sudah sehat dan seimbang. Pertahankan!");
-                    recList.push("💪 Terus evaluasi anggaran secara berkala.");
-                    recList.push("📈 Pertimbangkan investasi untuk pertumbuhan kekayaan.");
-                }
-                const important = recList.slice(0, 4);
-                document.getElementById("recommendation").innerHTML = important.map(r => `<div style="margin-bottom:6px;">${r}</div>`).join('');
-                renderBreakdown(values, income, total, percentUsedNum);
-                document.getElementById("result").classList.remove("d-none");
-                document.getElementById("result").scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-            document.getElementById("resetBtn").addEventListener("click", function() {
-                // clear output
-                document.getElementById("result").classList.add("d-none");
-                document.getElementById("totalExpense").textContent = "";
-                document.getElementById("remaining").textContent = "";
-                document.getElementById("percentUsed").textContent = "";
-                document.getElementById("recommendation").textContent = "";
-                document.querySelectorAll(".rupiah-input").forEach(input => input.value = "");
-                removeBreakdown();
-            });
-        })();
+
+            const box = `
+        <div style="
+            background:#e7f9ef;
+            border-left:6px solid #2ecc71;
+            padding:15px 20px;
+            border-radius:10px;
+        ">
+            ${tips}
+            <div style="margin-top:8px; font-weight:600;">${ucapan}</div>
+        </div>
+    `;
+
+            document.getElementById("recommendation").innerHTML = box;
+
+            document.getElementById("result").classList.remove("d-none");
+        });
+
+        document.getElementById("resetBtn").addEventListener("click", function() {
+            document.getElementById("result").classList.add("d-none");
+        });
     </script>
+
+
+
+
+
+
     <div class="mobile-bottom-nav">
         <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
-        <a href="fitur-detail-1.html" class="active" data-name="fitur">
+        <a href="fitur-detail-1.html" data-name="fitur" style="color: #42A5F5;">
             <i class="fa-solid fa-puzzle-piece"></i>
             <span>Fitur</span>
         </a>
-        <a href="#" id="dashboard-link" data-name="dashboard">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Dashboard</span>
+        <a href="belajarsampahbijak.html">
+            <i class="fa-solid fa-play"></i>
+            <span>Mulai Belajar</span>
         </a>
-        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+        <a href="faq.html" data-name="faq">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>FAQ</span>
+        </a>
     </div>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dashboardLink = document.getElementById('dashboard-link');
 
-            dashboardLink.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-                if (loggedIn) {
-                    window.location.href = 'DASHBOARD/index.html';
-                } else {
-                    window.location.href = 'login.html';
-                }
-            });
-        });
-    </script>
     <script>
         const waNumber = "6287877566677";
         let now = new Date();
@@ -740,7 +692,7 @@
         } else {
             greeting = "Selamat malam";
         }
-        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        let message = `${greeting}, Sampah Bijak by Skinfa Developers. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
         document.getElementById("waLink").addEventListener("click", function(e) {
             e.preventDefault();
             let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
@@ -756,5 +708,7 @@
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/finance-widgets.js"></script>
 </body>
+
+</html>
 
 </html>

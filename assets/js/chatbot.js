@@ -6,34 +6,52 @@
         const faqData = [
             // 🔹 Edukasi Sampah Bijak
             {
-                keywords: ["edukasi Sampah Bijak", "Sampah Bijak", "belajar Sampah Bijak", "keuangan pribadi", "literasi Sampah Bijak"],
-                response: "Edukasi Sampah Bijak adalah proses belajar mengelola uang, memahami cara menabung, berinvestasi, dan menggunakan uang dengan bijak agar masa depan lebih terjamin."
-            }, {
-                keywords: ["investasi", "apa itu investasi", "cara investasi", "investasi pemula", "mulai investasi", "investasi"],
-                response: "Investasi adalah cara mengembangkan uang dengan menaruh dana di instrumen seperti emas, saham, reksa dana, atau deposito. Untuk pemula, bisa mulai dengan reksa dana atau emas."
-            }, {
-                keywords: ["kenapa harus nabung", "pentingnya menabung", "alasan menabung", "nabung", "tabung"],
-                response: "Menabung penting agar punya dana darurat, bisa capai tujuan Sampah Bijak, dan menghindari utang yang tidak perlu. Tips menabung: tetapkan tujuan, sisihkan minimal 10% dari pendapatan, gunakan rekening khusus tabungan, dan hindari pengeluaran yang tidak perlu"
-            }, {
-                keywords: ["utang", "pinjaman", "cara mengelola utang", "utang baik", "utang buruk", "hutang"],
-                response: "Utang ada dua jenis: utang baik (misalnya untuk pendidikan atau usaha produktif) dan utang buruk (seperti pinjaman konsumtif). Pastikan cicilan utang tidak melebihi 30% dari penghasilan."
-            }, {
-                keywords: ["asuransi", "apa itu asuransi", "fungsi asuransi", "perlu asuransi"],
-                response: "Asuransi adalah perlindungan keuangan dari risiko yang tidak terduga, seperti sakit atau kecelakaan. Dengan asuransi, beban biaya bisa lebih ringan."
-            }, {
-                keywords: ["darurat", "dana darurat", "apa itu dana darurat", "uang darurat", "tabungan darurat"],
-                response: "Dana darurat adalah tabungan khusus untuk kebutuhan mendesak, seperti sakit atau kehilangan pekerjaan. Idealnya sebesar 3–6 kali pengeluaran bulanan."
-            }, {
-                keywords: ["budgeting", "anggaran", "cara buat anggaran", "mengatur keuangan", "atur uang bulanan"],
-                response: "Buat budgeting dengan metode 50/30/20: 50% untuk kebutuhan pokok, 30% untuk keinginan, dan 20% untuk tabungan atau investasi."
-            }, {
-                keywords: ["pensiun", "persiapan pensiun", "tabungan pensiun", "cara menyiapkan pensiun"],
-                response: "Persiapan pensiun sebaiknya dimulai sejak dini. Sisihkan dana setiap bulan ke tabungan pensiun atau investasi jangka panjang agar hari tua lebih tenang."
+                keywords: ["apa itu sampah bijak", "sampah bijak", "program sampah bijak"],
+                response: "Sampah Bijak adalah gerakan edukasi untuk membantu masyarakat memilah, mengolah, dan membuang sampah dengan benar agar lingkungan menjadi lebih bersih dan berkelanjutan."
             },
-            // 🔹 Info perusahaan
+            {
+                keywords: ["cara memilah sampah", "pilah sampah", "jenis sampah"],
+                response: "Sampah dibagi menjadi 3 kategori utama: Organik (sisa makanan/daun), Anorganik (plastik, botol, kertas), dan B3 (baterai, lampu, kaleng cat). Pisahkan sejak dari rumah ya! 😉"
+            },
+            {
+                keywords: ["apa itu 3r", "reduce reuse recycle", "3r"],
+                response: "3R adalah konsep Reduce (mengurangi), Reuse (menggunakan kembali), dan Recycle (mendaur ulang). Konsep ini membantu mengurangi jumlah sampah yang berakhir di TPA."
+            },
+            {
+                keywords: ["apa itu bank sampah", "bank sampah", "jual sampah"],
+                response: "Bank sampah adalah tempat dimana sampah anorganik seperti botol plastik, kardus, atau logam bisa ditabung dan ditukar menjadi uang atau poin."
+            },
+            {
+                keywords: ["boleh bakar sampah", "bakar sampah", "bahaya bakar sampah"],
+                response: "Membakar sampah sangat tidak disarankan karena menghasilkan zat beracun seperti dioksin yang berbahaya bagi paru-paru dan lingkungan."
+            },
+            {
+                keywords: ["dampak sampah", "sampah ke laut", "bahaya sampah"],
+                response: "Sampah yang tidak dikelola bisa mencemari tanah, air, udara, dan membahayakan hewan. Contohnya, plastik di laut bisa membunuh ikan, penyu, dan burung laut."
+            },
+            {
+                keywords: ["kompos", "cara kompos", "organik"],
+                response: "Kompos adalah proses mengubah sampah organik seperti sisa makanan, sayur, atau daun menjadi pupuk alami yang bermanfaat untuk tanaman."
+            },
+            {
+                keywords: ["plastik", "bahaya plastik", "plastik daur ulang"],
+                response: "Plastik membutuhkan ratusan tahun untuk terurai. Sebaiknya kurangi penggunaan plastik sekali pakai dan pilih alternatif ramah lingkungan."
+            },
+            {
+                keywords: ["halo", "hai", "hello", "permisi", "hi"],
+                response: "Halo 👋 Ada yang bisa aku bantu tentang cara mengelola sampah dengan bijak?"
+            },
+            {
+                keywords: ["terima kasih", "makasih"],
+                response: "Sama-sama! Semoga informasi ini bermanfaat 🌿"
+            },
+            {
+                keywords: ["siapa kamu", "kamu siapa"],
+                response: "Saya adalah Chatbot SampahBijak 🤖 yang dibuat oleh Skinfa Developers untuk membantu edukasi lingkungan!"
+            },
             {
                 keywords: ["nama perusahaan", "bisnis", "apa nama perusahaan", "apa nama bisnis", "nama"],
-                response: "Nama perusahaan kami adalah SampahBijak dibuat oleh Syafiq Bamazruk dalam Partisipasi Lomba Web Design Intechfest."
+                response: "Nama perusahaan kami adalah SampahBijak dibuat oleh Skinfa Developers dalam Partisipasi Lomba Web Design Intechfest."
             }, {
                 keywords: ["layanan", "apa layanan", "produk", "jenis produk"],
                 response: "Kami menyediakan layanan edukasi Sampah Bijak, perencanaan keuangan, serta tips menabung dan investasi."
@@ -63,13 +81,6 @@
             }, {
                 keywords: ["terima kasih", "thanks", "makasih", "terimakasih"],
                 response: "Sama-sama! Senang bisa membantu Anda. 🙏"
-            }, {
-                keywords: ["fitur apa saja", "ada fitur apa", "fitur"],
-                response: `Berikut fitur-fitur SampahBijak: 
-1. Kalkulator Perencanaan Anggaran Pintar
-2. Tabungan Tujuan Impian
-3. Quiz Edukasi Sampah Bijak
-4. Kalkulator Investasi Cerdas`
             }, {
                 keywords: ["siapa kamu", "kamu siapa", "bot apa ini", "siapa"],
                 response: "Saya adalah chatbot SampahBijak 🤖 yang diciptakan oleh Syafiq Bamazruk, siap membantu Anda dalam hal edukasi Sampah Bijak."

@@ -18,226 +18,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        .input-group-text {
-            padding: 0.375rem 0.5rem;
-        }
-        
-        .input-group .form-control {
-            padding-left: 0.5rem;
-        }
-        
-        .form-label {
-            font-weight: 600;
-            color: #000000;
-        }
-        
-        .input-group-text {
-            background: #6bcc0e;
-            color: white;
-            font-weight: 600;
-            border: none;
-            border-radius: 12px 0 0 12px;
-        }
-        
-        .input-group .form-control {
-            border-radius: 0 12px 12px 0;
-            border: 1px solid #dcdfe6;
-            transition: all 0.25s ease;
-        }
-        
-        .input-group .form-control:focus {
-            border-color: #56bef9;
-            box-shadow: 0 0 8px #ea972b8b;
-        }
-        
-        .btn {
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.25s ease;
-            min-width: 140px;
-            max-width: 200px;
-        }
-        
-        .btn-primary {
-            background: #56bef9;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background: #0d927e;
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline-secondary {
-            border: 2px solid #ced6e0;
-        }
-        
-        .btn-outline-secondary:hover {
-            background: #f1f2f6;
-            color: black;
-        }
-        
-        .card {
-            border-radius: 20px;
-            overflow: hidden;
-            border: none;
-        }
-        
-        h2 {
-            font-weight: 700;
-            color: #333;
-        }
-        
-        .goal-option img {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: transform 0.3s, border 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .goal-option input[type="radio"] {
-            display: none;
-        }
-        
-        .goal-option input[type="radio"]:checked+img {
-            border: 3px solid #198754;
-            transform: scale(1.08);
-            box-shadow: 0 4px 10px #19875463;
-        }
-        
-        .preview-img {
-            max-width: 200px;
-            margin-top: 10px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            display: block;
-        }
-        
-        .btn-primary {
-            border: none;
-            font-weight: 600;
-            border-radius: 12px;
-            padding: 12px;
-            transition: 0.3s;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        .result-box {
-            margin-top: 30px;
-            padding: 20px;
-            border-radius: 16px;
-            background: #ffffff;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .result-box h5 {
-            font-weight: 700;
-            color: #198754;
-            margin-bottom: 20px;
-        }
-        
-        .progress {
-            height: 25px;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .progress-bar {
-            font-weight: 600;
-        }
-        
-        .stat-box {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .stat-box strong {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        
-        #updateBox {
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        #updateBox.d-none {
-            display: none !important;
-        }
-        
-        label[for="fotoProduk"] {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 8px 15px;
-            transition: 0.3s;
-        }
-        
-        label[for="fotoProduk"]:hover {
-            background-color: #ffeeba;
-        }
-        
-        .d-none {
-            display: none;
-        }
-        
-        #hasil {
-            border: 2px dashed #56bef9;
-            min-height: 200px;
-        }
-        
-        #hasil {
-            animation: fadeInUp 0.6s ease;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .stat-box {
-            background: linear-gradient(135deg, #fdfbfb, #ebedee);
-            border-radius: 14px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s;
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-3px);
-        }
-        
-        .stat-box strong {
-            font-size: 0.9rem;
-            color: #666;
-            display: block;
-            margin-bottom: 6px;
-        }
-        
-        .stat-box .fs-5 {
-            font-weight: 600;
-        }
-        
          ::-webkit-scrollbar {
             width: 10px;
         }
@@ -306,7 +86,7 @@
                 </div>
                 <div class="main-menu__right">
                     <div class="search-heart-icon d-sm-flex d-none align-items-center gap-24">
-                        <a href="register.html" class="cus-btn">
+                        <a href="belajarsampahbijak.html" class="cus-btn">
                             <span class="btn-text">Mulai Belajar</span>
                             <span>Mulai Belajar</span>
                         </a>
@@ -346,97 +126,552 @@
     <section class="sec-page py-5">
         <div class="container-fluid">
             <div class="eyebrow heading">Fitur</div>
+
             <h2 class="dark-gray text-center mb-16 fw-800 heading-anggaran">
-                <span>Fitur Sampah Bijak Interaktif <span class=" color-sec fw-700">Super Cerdas</span> Solusi pintar untuk <span class=" color-sec fw-700">Tabungan tujuan.</span></span>
+                <span>Fitur <span class="color-sec fw-700">Kalkulator Jejak Karbon</span> Interaktif</span><br> Solusi pintar untuk <span class="color-sec fw-700">mengetahui emisi harianmu.</span>
             </h2>
+
             <p class="text-center light-gray mb-32">
-                Bingung mulai nabung dari mana? Yuk coba simulasi menabung cerdas ini! Kamu bisa lihat gimana uangmu berkembang dan atur strategi Sampah Bijak dengan cara yang gampang banget. </p>
+                Yukcoba game pilah sampah uji kemampuan mu di game pilah sampah by sampah bijak.
+            </p>
+
             <div class="budget-app mx-auto p-4 rounded shadow-lg">
-                <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;"><span>2. Simulasi Tabungan Tujuan</span></h2>
-                <div class="card p-2 w-100" style="max-width: 1500px;">
-                    <div class="mb-4">
-                        <label class="form-label fw-bold">Pilih Kategori Tujuan:</label>
-                        <div class="d-flex flex-wrap gap-3 justify-content-start">
-                            <label class="goal-option"><input type="radio" name="goal" value="Rumah"><img src="assets/media/icons/house.png" alt="Rumah"></label>
-                            <label class="goal-option"><input type="radio" name="goal" value="Liburan"><img src="assets/media/icons/holiday.png" alt="Liburan"></label>
-                            <label class="goal-option"><input type="radio" name="goal" value="Kendaraan"><img src="assets/media/icons/bike.png" alt="Kendaraan"></label>
-                            <label class="goal-option"><input type="radio" name="goal" value="Gadget"><img src="assets/media/icons/gadget.png" alt="Gadget"></label>
+                <h2 class="dark-gray mb-16 fw-800 heading-anggaran" style="text-align: left;">
+                    <span>2. Game Pilah Sampah</span>
+                </h2>
+
+                <div id="waste-sorter-game" class="mx-auto eco-bg rounded-4 shadow" style="max-width:480px;min-width:225px;width:95%;margin:auto;">
+                    <div class="text-center py-3 px-2 px-md-3">
+                        <h3 class="fw-bold eco-green m-0 mb-1" style="font-size:1.5rem;">Game Pilah Sampah</h3>
+                        <div class="small text-dark mb-2" style="line-height:1.3; position: relative; z-index: 9999 !important;">
+                            Geser/drag sampah ke tong benar.<br>
+                            <span class="fw-bold" style="color:#56bef9;">Edukasi & skor instan!</span>
                         </div>
+
                     </div>
-                    <div class="mb-4">
-                        <label class="form-label fw-bold">Upload Foto Produk Spesifik:</label>
-                        <label for="fotoProduk" class="d-flex align-items-center p-2 border rounded bg-light" style="cursor: pointer; width: fit-content;">
-                <i class="fas fa-upload me-2 text-warning"></i><span class="text-dark">Pilih Foto</span>
-              </label>
-                        <input type="file" id="fotoProduk" class="d-none" accept="image/*">
-                        <div class="mt-3"><img id="previewFoto" class="preview-img d-none" alt="Preview Produk"></div>
-                    </div>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label fw-bold">Detail Produk:</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-box"></i></span>
-                                <input type="text" id="goalDetail" class="form-control" placeholder="IPhone 13 Pro">
+                    <div id="game-area" class="mx-auto w-100 rounded-4 bg-white position-relative d-flex flex-column align-items-center justify-content-between" style="background:linear-gradient(180deg,#f8fff4 70%,#d2f5cb 100%);height:clamp(310px,38vw,355px);overflow:hidden;box-shadow:0 4px 22px #baf6ca33;max-width:99vw;">
+                        <!-- Skor & timer -->
+                        <div class="w-100 d-flex justify-content-between align-items-start px-2 pt-2" style="z-index:3;">
+                            <div id="timer-box" class="rounded-circle bg-white eco-green d-inline-flex align-items-center justify-content-center shadow" style="width:34px;height:34px;font-size:17px;font-weight:bold;box-shadow:0 2px 7px #b3d6b33a;">
+                                <span id="timer-count">30</span>
+                            </div>
+                            <div id="scoreboard" class="badge fw-bold eco-green bg-white px-2 shadow-sm" style="font-size:1.11em;">
+                                <i class="bi bi-star-fill"></i> <span id="game-score">0</span>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label fw-bold">Harga Total (Rp):</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-cash-stack"></i></span>
-                                <input type="text" id="hargaTotal" class="form-control" placeholder="15.000.000">
+                        <!-- Area jatuh & bins -->
+                        <div style="position:relative;flex:1;width:100%;min-height:150px;max-height:62%;">
+                            <div id="falling-trash" style="position:absolute;left:0;top:0;width:100%;height:195px;z-index:2;">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label fw-bold">Nabung per Minggu (Rp):</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-wallet2"></i></span>
-                                <input type="text" id="perMinggu" class="form-control" placeholder="700.000">
-                            </div>
+                        <div id="bins" class="d-flex justify-content-between align-items-end px-2 pb-2" style="width:100%;max-width:100vw;height:85px;position:relative;z-index:1;gap:clamp(4px,2vw,18px);">
+                            <!-- bins generated -->
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label fw-bold">Lama Menabung (bulan):</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
-                                <input type="number" id="lamaBulan" class="form-control" placeholder="6">
-                            </div>
+                        <!-- Feedback edukasi -->
+                        <div id="feedback-popup" class="position-absolute start-50 translate-middle-x p-3 rounded-3 shadow-sm text-center" style="top:45%;background:#f6fff3;display:none;min-width:160px;max-width:96vw;z-index:12;">
                         </div>
                     </div>
-                    <div class="d-flex gap-2 mt-4">
-                        <button id="simpanRencana" class="btn btn-primary flex-fill">Simpan</button>
-                        <button id="resetRencana" class="btn btn-outline-secondary flex-fill fw-bold">Reset</button>
-                    </div>
-                    <div id="hasil" class="result-box d-none"></div>
-                    <div id="updateBox" class="d-none">
-                        <label class="form-label fw-bold">Update Tabungan Minggu Ini:</label>
-                        <div class="input-group">
-                            <input type="text" id="updateNominal" class="form-control" placeholder="Rp 200.000">
-                            <button id="tambahTabungan" class="btn btn-success">+ Tambah</button>
-                        </div>
+                    <div class="text-center py-3">
+                        <button id="start-game-btn" class="btn btn-success px-4 py-2 rounded-pill fw-bold" style="background:linear-gradient(90deg,#8fdd16,#5dd92b);border:none;font-size:17px;box-shadow:0 2px 8px #bae9ac23;">
+      <i class="bi bi-play-fill"></i> MAIN SEKARANG!
+    </button>
                     </div>
                 </div>
+
+                <style>
+                    .eco-bg {
+                        background: linear-gradient(133deg, #f0fbe5 65%, #d4fad6 99%);
+                    }
+                    
+                    .eco-green {
+                        color: #59b813 !important;
+                    }
+                    /* ==================== TRASH JATUH ==================== */
+                    
+                    #falling-trash .trash-item {
+                        width: clamp(40px, 10vw, 60px);
+                        height: clamp(40px, 10vw, 60px);
+                        position: absolute;
+                        user-select: none;
+                        touch-action: none;
+                        background: #fff;
+                        border-radius: 50%;
+                        border: 2px solid #cdf6ae;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: 0 2px 10px #b0f28838;
+                        font-size: clamp(19px, 3vw, 27px);
+                        transition: box-shadow .14s, transform .13s;
+                        cursor: grab;
+                        z-index: 22;
+                    }
+                    
+                    #falling-trash .trash-item.dragging {
+                        opacity: .82;
+                        transform: scale(1.09) rotate(-7deg);
+                        box-shadow: 0 8px 19px #d4efb066;
+                        cursor: grabbing;
+                        z-index: 99;
+                    }
+                    
+                    #bins {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 14px;
+                        width: 100%;
+                        margin-top: 15px;
+                    }
+                    
+                    .bin-box {
+                        width: clamp(60px, 12vw, 90px);
+                        min-height: 60px;
+                        max-width: none;
+                        background: #fff;
+                        border: 2px solid #c1ecc2;
+                        border-radius: 16px;
+                        box-shadow: 0 2px 9px #b0f28823;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: flex-end;
+                        font-size: 16px;
+                        transition: .13s;
+                        cursor: pointer;
+                        position: relative;
+                        overflow: visible;
+                        margin-top: -17px;
+                        /* ⬅️ NAIKIN TONG BIAR GAK TENGGELEM */
+                    }
+                    
+                    #game-area {
+                        padding-bottom: 20px;
+                        min-height: 450px;
+                        height: auto;
+                        margin-top: -50px;
+                    }
+                    
+                    .bin-box.highlight {
+                        border: 2.4px solid #66e647;
+                        background: #eaffed
+                    }
+                    
+                    .bin-label {
+                        font-size: 12px;
+                        font-weight: 600;
+                        margin-top: 1px;
+                        color: #fff;
+                        padding: 1px 8px 2px;
+                        border-radius: 80px;
+                        letter-spacing: .2px;
+                        text-shadow: 1px 1px 2px #337e1c0d;
+                        width: fit-content;
+                        max-width: 95%;
+                    }
+                    
+                    .bin-organik {
+                        background: #91cd57;
+                    }
+                    
+                    .bin-plastik {
+                        background: #56bef9;
+                    }
+                    
+                    .bin-kaca {
+                        background: #9bdffc;
+                    }
+                    
+                    .bin-anorganik {
+                        background: #f9d456;
+                    }
+                    
+                    .bin-kertas {
+                        background: #ff8e6c;
+                    }
+                    
+                    .bin-residu {
+                        background: #939393;
+                    }
+                    
+                    .bin-icon {
+                        font-size: 22px;
+                        margin-bottom: -3px;
+                    }
+                    /* ==================== TABLET ==================== */
+                    
+                    @media (max-width: 748px) {
+                        #game-area {
+                            min-height: 420px;
+                        }
+                        .bin-box {
+                            width: clamp(55px, 18vw, 80px);
+                            min-height: 70px;
+                        }
+                    }
+                    /* ==================== HP KECIL ==================== */
+                    
+                    @media (max-width: 420px) {
+                        #game-area {
+                            min-height: 460px;
+                            /* HP kecil harus lebih tinggi */
+                        }
+                        .bin-box {
+                            width: clamp(55px, 22vw, 75px);
+                            min-height: 65px;
+                        }
+                        .bin-label {
+                            font-size: 10px;
+                            padding: 1.5px 6px;
+                        }
+                    }
+                </style>
+
+
+                <script>
+                    // ==== DATA ====
+                    const TRASHES = [{
+                        name: 'Kulit Pisang',
+                        type: 'Organik',
+                        img: '🍌',
+                        edukasi: "Kulit pisang mudah terurai, buang di tong Organik."
+                    }, {
+                        name: 'Plastik Botol',
+                        type: 'Plastik',
+                        img: '🧴',
+                        edukasi: "Botol plastik masuk ke tong Plastik untuk daur ulang."
+                    }, {
+                        name: 'Koran Bekas',
+                        type: 'Kertas',
+                        img: '📰',
+                        edukasi: "Kertas/koran didaur ulang, buang ke tong Kertas!"
+                    }, {
+                        name: 'Pecahan Kaca',
+                        type: 'Kaca',
+                        img: '🧩',
+                        edukasi: "Kaca berbahaya, harus ke tong Kaca agar aman."
+                    }, {
+                        name: 'Bungkus Snack',
+                        type: 'Anorganik',
+                        img: '🍬',
+                        edukasi: "Bungkus snack sulit diurai, buang ke tong Anorganik."
+                    }, {
+                        name: 'Daun',
+                        type: 'Organik',
+                        img: '🍂',
+                        edukasi: "Daun kering bagus untuk kompos, kategori Organik."
+                    }, {
+                        name: 'Botol Kaca',
+                        type: 'Kaca',
+                        img: '🍾',
+                        edukasi: "Botol kaca sebaiknya ke tong Kaca."
+                    }, {
+                        name: 'Tisu Basah',
+                        type: 'Residu',
+                        img: '🧻',
+                        edukasi: "Tisu basah masuk Residu, susah didaur ulang!"
+                    }, {
+                        name: 'Kaleng',
+                        type: 'Anorganik',
+                        img: '🥫',
+                        edukasi: "Kaleng masuk Anorganik, bisa didaur ulang khusus."
+                    }, {
+                        name: 'Kantong Plastik',
+                        type: 'Plastik',
+                        img: '🛍️',
+                        edukasi: "Kantong plastik = tong Plastik, jangan dicampur!"
+                    }, {
+                        name: 'Sisa Makanan',
+                        type: 'Organik',
+                        img: '🍚',
+                        edukasi: "Sisa makanan bagus untuk kompos di tong Organik!"
+                    }];
+                    const BINS = [{
+                        key: 'Organik',
+                        label: 'Organik',
+                        emoji: '🍃',
+                        class: 'bin-organik'
+                    }, {
+                        key: 'Plastik',
+                        label: 'Plastik',
+                        emoji: '🧴',
+                        class: 'bin-plastik'
+                    }, {
+                        key: 'Kaca',
+                        label: 'Kaca',
+                        emoji: '🪟',
+                        class: 'bin-kaca'
+                    }, {
+                        key: 'Kertas',
+                        label: 'Kertas',
+                        emoji: '📄',
+                        class: 'bin-kertas'
+                    }, {
+                        key: 'Anorganik',
+                        label: 'Anorganik',
+                        emoji: '⚙️',
+                        class: 'bin-anorganik'
+                    }, {
+                        key: 'Residu',
+                        label: 'Residu',
+                        emoji: '♻️',
+                        class: 'bin-residu'
+                    }];
+                    const correctSfxUrl = "https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa4fd6.mp3";
+                    const wrongSfxUrl = "https://cdn.pixabay.com/audio/2022/07/26/audio_124b9613cc.mp3";
+                    let score = 0,
+                        timerInt = null,
+                        timeLeft = 30,
+                        running = false,
+                        curTrash = null,
+                        curTrashDiv = null;
+
+                    // ==== RENDER ====
+                    function renderBins() {
+                        document.getElementById('bins').innerHTML = BINS.map(b => `
+    <div class="bin-box ${b.class}" data-bin="${b.key}" tabindex="0">
+      <div class="bin-icon">${b.emoji}</div>
+      <span class="bin-label ${b.class}">${b.label}</span>
+    </div>
+  `).join('');
+                    }
+                    renderBins();
+
+                    // ==== GAME ====
+                    function resetGame() {
+                        score = 0;
+                        timeLeft = 30;
+                        document.getElementById('game-score').textContent = '0';
+                        document.getElementById('timer-count').textContent = "30";
+                        document.getElementById('falling-trash').innerHTML = "";
+                        document.getElementById('feedback-popup').style.display = "none";
+                    }
+
+                    function startGame() {
+                        if (running) return;
+                        running = true;
+                        resetGame();
+                        document.getElementById('start-game-btn').disabled = true;
+                        nextTrash();
+                        timerInt = setInterval(() => {
+                            timeLeft--;
+                            document.getElementById('timer-count').textContent = timeLeft;
+                            if (timeLeft <= 0) {
+                                endGame();
+                            }
+                        }, 1000);
+                    }
+
+                    function endGame() {
+                        running = false;
+                        clearInterval(timerInt);
+                        document.getElementById('start-game-btn').disabled = false;
+                        setTimeout(() => showFeedback(true, `Permainan selesai! <br>Skor: <b>${score}</b>`), 320);
+                        if (curTrashDiv) {
+                            curTrashDiv.remove();
+                        }
+                    }
+
+                    function nextTrash() {
+                        if (!running) return;
+                        curTrash = TRASHES[Math.floor(Math.random() * TRASHES.length)];
+                        const leftPerc = 12 + Math.random() * 72;
+                        const trashDiv = document.createElement('div');
+                        trashDiv.className = "trash-item";
+                        trashDiv.style.left = leftPerc + "%";
+                        trashDiv.style.top = "-42px";
+                        trashDiv.setAttribute("draggable", "true");
+                        trashDiv.setAttribute("data-type", curTrash.type);
+                        trashDiv.innerHTML = `<span>${curTrash.img}</span>`;
+                        document.getElementById('falling-trash').innerHTML = "";
+                        document.getElementById('falling-trash').appendChild(trashDiv);
+                        curTrashDiv = trashDiv;
+                        animateTrashFall(trashDiv);
+                        enableDrag(trashDiv);
+                        enableTouch(trashDiv);
+                    }
+
+                    function animateTrashFall(el) {
+                        let y = 0,
+                            maxY = 128,
+                            fallV = 1.35;
+                        el.fallInterval = setInterval(() => {
+                            if (!el.isDragging) {
+                                y += fallV;
+                                el.style.top = y + 'px';
+                                if (y >= maxY) {
+                                    clearInterval(el.fallInterval);
+                                    if (document.body.contains(el)) {
+                                        playSfx(wrongSfxUrl);
+                                        score = Math.max(0, score - 2);
+                                        document.getElementById('game-score').textContent = score;
+                                        showFeedback(false, "Sampah tidak dipilah!");
+                                        el.remove();
+                                        if (running) setTimeout(nextTrash, 900);
+                                    }
+                                }
+                            }
+                        }, 16);
+                    }
+
+                    function showFeedback(benar, msg) {
+                        let box = document.getElementById('feedback-popup');
+                        box.innerHTML = `<b class="${benar?'eco-green':'text-danger'}">${benar?"Benar!":"Salah!"}</b><br>
+    <div style="font-size:0.96em;">${msg||""}</div>`;
+                        box.style.display = "block";
+                        setTimeout(() => {
+                            box.style.display = "none"
+                        }, benar ? 1200 : 1500);
+                    }
+
+                    function playSfx(src) {
+                        let a = new Audio(src);
+                        a.volume = 0.37;
+                        a.play();
+                    }
+
+                    function enableDrag(trashDiv) {
+                        trashDiv.addEventListener("dragstart", function(e) {
+                            trashDiv.classList.add('dragging');
+                            trashDiv.isDragging = true;
+                            e.dataTransfer.setData('text', curTrash.type);
+                            setTimeout(() => {
+                                trashDiv.style.opacity = '.77';
+                            }, 0);
+                        });
+                        trashDiv.addEventListener("dragend", function(e) {
+                            trashDiv.classList.remove('dragging');
+                            trashDiv.isDragging = false;
+                            trashDiv.style.opacity = '1';
+                            if (running) tryDrop(trashDiv, null, true);
+                        });
+                        trashDiv.addEventListener("mousedown", e => e.stopPropagation());
+                        trashDiv.addEventListener("selectstart", e => e.preventDefault());
+                    }
+
+                    function enableTouch(trashDiv) {
+                        let offset = {
+                            x: 0,
+                            y: 0
+                        };
+                        trashDiv.addEventListener('touchstart', function(e) {
+                            const touch = e.touches[0];
+                            const rect = trashDiv.getBoundingClientRect(),
+                                parent = document.getElementById('game-area').getBoundingClientRect();
+                            offset.x = touch.clientX - rect.left;
+                            offset.y = touch.clientY - rect.top;
+                            trashDiv.isDragging = true;
+                            trashDiv.classList.add('dragging');
+                            if (trashDiv.fallInterval) clearInterval(trashDiv.fallInterval);
+                        }, {
+                            passive: false
+                        });
+                        trashDiv.addEventListener('touchmove', function(e) {
+                            if (!trashDiv.isDragging) return;
+                            const parent = document.getElementById('game-area').getBoundingClientRect();
+                            const touch = e.touches[0];
+                            let x = touch.clientX - parent.left - offset.x,
+                                y = touch.clientY - parent.top - offset.y;
+                            x = Math.max(0, Math.min(x, document.getElementById('game-area').offsetWidth - trashDiv.offsetWidth));
+                            y = Math.max(0, Math.min(y, 128));
+                            trashDiv.style.left = x + "px";
+                            trashDiv.style.top = y + "px";
+                            e.preventDefault();
+                        }, {
+                            passive: false
+                        });
+                        trashDiv.addEventListener('touchend', function(e) {
+                            trashDiv.classList.remove('dragging');
+                            trashDiv.isDragging = false;
+                            if (running) tryDrop(trashDiv, null, false);
+                        });
+                    }
+
+                    // -- DROP LOGIC --
+                    function tryDrop(trashDiv, binDiv, isMouse) {
+                        let type = trashDiv.getAttribute('data-type');
+                        let found = binDiv || null;
+                        let bins = Array.from(document.querySelectorAll('.bin-box'));
+                        if (!binDiv) {
+                            const t = trashDiv.getBoundingClientRect();
+                            bins.forEach(b => {
+                                const r = b.getBoundingClientRect();
+                                const vert = t.bottom > r.top + 7 && t.top < r.bottom - 7;
+                                const hori = t.left < r.right - 6 && t.right > r.left + 6;
+                                if (vert && hori) {
+                                    found = b;
+                                }
+                            });
+                        }
+                        if (found) {
+                            let bName = found.getAttribute('data-bin');
+                            const correct = type === bName;
+                            showFeedback(correct, curTrash.edukasi);
+                            playSfx(correct ? correctSfxUrl : wrongSfxUrl);
+                            score = Math.max(0, correct ? score + 10 : score - 5);
+                            document.getElementById('game-score').textContent = score;
+                            trashDiv.remove();
+                            if (running) setTimeout(nextTrash, 850);
+                        }
+                    }
+                    // Desktop drag-and-drop
+                    document.addEventListener('dragover', function(e) {
+                        e.preventDefault();
+                    });
+                    document.addEventListener('drop', function(e) {
+                        document.querySelectorAll('.bin-box').forEach(b => b.classList.remove('highlight'));
+                    });
+                    document.getElementById('bins').addEventListener('click', function(e) {
+                        if (!curTrashDiv) return;
+                        let bin = e.target.closest('.bin-box');
+                        if (!bin) return;
+                        tryDrop(curTrashDiv, bin, false);
+                    });
+                    document.getElementById('bins').addEventListener('dragover', function(e) {
+                        e.preventDefault();
+                        let bin = e.target.closest('.bin-box');
+                        if (bin) bin.classList.add('highlight');
+                    });
+                    document.getElementById('bins').addEventListener('dragleave', function(e) {
+                        let bin = e.target.closest('.bin-box');
+                        if (bin) bin.classList.remove('highlight');
+                    });
+                    document.getElementById('bins').addEventListener('drop', function(e) {
+                        let bin = e.target.closest('.bin-box');
+                        if (bin && curTrashDiv) {
+                            bin.classList.remove('highlight');
+                            tryDrop(curTrashDiv, bin, true);
+                        }
+                    });
+                    document.getElementById('start-game-btn').addEventListener('click', startGame);
+                </script>
+
+
             </div>
-        </div>
-        <div class="pagination mt-48">
-            <ul id="border-pagination" style="margin-top: 30px;">
-                <li>
-                    <a href="fitur-detail-1.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+
+            <div class="pagination mt-48">
+                <ul id="border-pagination">
+                    <li>
+                        <a href="fitur-detail-1.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
                                                     <path d="M14.2246 26.8364C14.2246 23.4614 11.0746 18.9614 7.47461 18.9614M7.47461 18.9614C9.53711 18.9614 14.2246 17.8364 14.2246 11.0864M7.47461 18.9614H28.8496" stroke="white" stroke-width="2.25"/>
                                                   </svg>
-                    </a>
-                </li>
-                <li><a href="fitur-detail-1.html">1</a></li>
-                <li><a href="fitur-detail-2.html" style="background-color: #56bef9;">2</a></li>
-                <li><a href="fitur-detail-3.html">3</a></li>
-                <li><a href="fitur-detail-4.html">4</a></li>
-                <li>
-                    <a href="fitur-detail-3.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                        </a>
+                    </li>
+                    <li><a href="fitur-detail-1.html">1</a></li>
+                    <li><a href="fitur-detail-2.html" style="background-color:#56bef9;">2</a></li>
+                    <li><a href="fitur-detail-3.html">3</a></li>
+                    <li><a href="fitur-detail-4.html">4</a></li>
+                    <li>
+                        <a href="fitur-detail-3.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
                                                     <path d="M21.7754 26.8364C21.7754 23.4614 24.9254 18.9614 28.5254 18.9614M28.5254 18.9614C26.4629 18.9614 21.7754 17.8364 21.7754 11.0864M28.5254 18.9614H7.15039" stroke="white" stroke-width="2.25"/>
                                                   </svg>
-                    </a>
-                </li>
-            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </section>
     <footer>
@@ -523,7 +758,8 @@
                                 </div>
                             </li>
                             <li class="mb-32">
-                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Uang%20Pintar&body=Hai%20Cerdas%20Sampah Bijak%2C%20saya%20mau%20bernanya%20tentang..." class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
+                                <a href="mailto:sampahbijak@gmail.com?subject=Halo%20Sampah%20Bijak&body=Hai%20Sampah%20Bijak%2C%20saya%20mau%20bertanya%20tentang...
+" class="d-flex align-items-center gap-12 subtitle" style="color: rgb(235, 235, 235)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
         <path
             d="M18.9082 3.78906H2.42383C1.45262 3.78906 0.666016 4.58055 0.666016 5.54688V16.0938C0.666016 17.0658 1.4584 17.8516 2.42383 17.8516H18.9082C19.8713 17.8516 20.666 17.0691 20.666 16.0938V5.54688C20.666 4.58227 19.8825 3.78906 18.9082 3.78906ZM18.662 4.96094C18.3029 5.31816 12.1224 11.4661 11.909 11.6784C11.577 12.0104 11.1355 12.1932 10.666 12.1932C10.1965 12.1932 9.75508 12.0104 9.42195 11.6773C9.27844 11.5345 3.16613 5.45445 2.67 4.96094H18.662ZM1.83789 15.8552V5.78613L6.90188 10.8234L1.83789 15.8552ZM2.67074 16.6797L7.73273 11.6499L8.59441 12.507C9.14777 13.0604 9.88348 13.3651 10.666 13.3651C11.4486 13.3651 12.1843 13.0604 12.7365 12.5081L13.5993 11.6499L18.6613 16.6797H2.67074ZM19.4941 15.8552L14.4302 10.8234L19.4941 5.78613V15.8552Z"
@@ -598,172 +834,24 @@
     <div id="music-toggle">
         <i id="music-icon" class="bi bi-volume-up"></i>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-                    const fotoProduk = document.getElementById("fotoProduk");
-                    const previewFoto = document.getElementById("previewFoto");
-                    const goalDetail = document.getElementById("goalDetail");
-                    const hargaTotal = document.getElementById("hargaTotal");
-                    const perMinggu = document.getElementById("perMinggu");
-                    const lamaBulan = document.getElementById("lamaBulan");
-                    const simpanBtn = document.getElementById("simpanRencana");
-                    const resetBtn = document.getElementById("resetRencana");
-                    const hasilBox = document.getElementById("hasil");
-                    const updateBox = document.getElementById("updateBox");
-                    const updateNominal = document.getElementById("updateNominal");
-                    const tambahBtn = document.getElementById("tambahTabungan");
 
-                    function formatRupiah(angka) {
-                        if (!angka) return "";
-                        return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                    }
-
-                    function parseRupiah(rp) {
-                        if (!rp) return 0;
-                        return parseInt(rp.replace(/[^0-9]/g, "")) || 0;
-                    }
-                    [hargaTotal, perMinggu, updateNominal].forEach(input => {
-                        input.addEventListener("input", () => {
-                            let val = parseRupiah(input.value);
-                            input.value = formatRupiah(val);
-                        });
-                    });
-                    fotoProduk.addEventListener("change", e => {
-                        const file = e.target.files[0];
-                        if (file) {
-                            const reader = new FileReader();
-                            reader.onload = () => {
-                                previewFoto.src = reader.result;
-                                previewFoto.classList.remove("d-none");
-                                localStorage.setItem("fotoProduk", reader.result);
-                            };
-                            reader.readAsDataURL(file);
-                        }
-                    });
-                    simpanBtn.addEventListener("click", () => {
-                        const selectedGoal = document.querySelector("input[name='goal']:checked");
-                        const total = parseRupiah(hargaTotal.value);
-                        const perWeek = parseRupiah(perMinggu.value);
-                        const bulan = parseInt(lamaBulan.value) || 0;
-                        if (!selectedGoal) {
-                            alert("⚠️ Pilih kategori tujuan dulu!");
-                            return;
-                        }
-                        if (!goalDetail.value || !total || !perWeek || !bulan) {
-                            alert("⚠️ Lengkapi semua data (detail, harga, tabungan per minggu, lama bulan)!");
-                            return;
-                        }
-                        const data = {
-                            goal: selectedGoal.value,
-                            detail: goalDetail.value,
-                            hargaTotal: total,
-                            perMinggu: perWeek,
-                            lamaBulan: bulan,
-                            foto: localStorage.getItem("fotoProduk") || "",
-                            terkumpul: 0
-                        };
-                        localStorage.setItem("tabunganRencana", JSON.stringify(data));
-                        renderHasil(data);
-                    });
-
-                    function renderHasil(data) {
-                        const totalMinggu = data.lamaBulan * 4;
-                        const kekurangan = data.hargaTotal - data.terkumpul;
-                        const persen = Math.min((data.terkumpul / data.hargaTotal) * 100, 100).toFixed(1);
-                        const saran = kekurangan > 0 ? Math.ceil(kekurangan / (totalMinggu || 1)) : 0;
-                        hasilBox.classList.remove("d-none");
-                        hasilBox.innerHTML = `
-          <div class="text-center mb-4">
-            <h5 class="fw-bold text-success">📊 Ringkasan Simulasi Tabungan</h5>
-            <p class="text-muted">Rencana tabunganmu sudah tersimpan, berikut progresnya:</p>
-          </div>
-          <div class="row g-3">
-            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Kategori</strong><div class="fs-5">${data.goal}</div></div></div>
-            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Detail</strong><div class="fs-5">${data.detail}</div></div></div>
-            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Target Harga</strong><div class="fs-5 text-primary">${formatRupiah(data.hargaTotal)}</div></div></div>
-            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Nabung / Minggu</strong><div class="fs-5 text-success">${formatRupiah(data.perMinggu)}</div></div></div>
-            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Lama Rencana</strong><div class="fs-5">${data.lamaBulan} bln (${totalMinggu} minggu)</div></div></div>
-            <div class="col-md-4"><div class="stat-box text-center"><strong class="text-dark">Terkumpul</strong><div class="fs-5 text-success">${formatRupiah(data.terkumpul)}</div></div></div>
-            <div class="col-md-6"><div class="stat-box text-center"><strong class="text-dark">Kekurangan</strong><div class="fs-5 text-danger">${formatRupiah(Math.max(kekurangan,0))}</div></div></div>
-            <div class="col-md-6"><div class="stat-box text-center"><strong class="text-dark">Saran Menabung</strong><div class="fs-5 text-warning">${formatRupiah(saran)} / minggu</div></div></div>
-            <div class="col-md-12 text-center">
-              ${data.foto ? `<img src="${data.foto}" alt="Foto Produk" class="preview-img shadow">` : ""}
-            </div>
-            <div class="col-md-12">
-              <label class="fw-bold">Progress Menabung:</label>
-              <div class="progress mt-2" style="height: 30px; border-radius: 15px;">
-                <div class="progress-bar bg-success fs-6 fw-bold" role="progressbar" style="width:${persen}%; transition: width .6s;">${persen}%</div>
-              </div>
-            </div>
-          </div>
-        `;
-        updateBox.classList.remove("d-none");
-      }
-      tambahBtn.addEventListener("click", () => {
-        const nominal = parseRupiah(updateNominal.value);
-        if (!nominal || nominal <= 0) { alert("⚠️ Masukkan nominal yang valid!"); return; }
-        let data = JSON.parse(localStorage.getItem("tabunganRencana"));
-        if (!data) { alert("❌ Tidak ada data rencana tersimpan."); return; }
-        data.terkumpul += nominal;
-        if (data.terkumpul > data.hargaTotal) data.terkumpul = data.hargaTotal;
-        localStorage.setItem("tabunganRencana", JSON.stringify(data));
-        updateNominal.value = "";
-        renderHasil(data);
-      });
-      resetBtn.addEventListener("click", () => {
-        if (!confirm("⚠️ Yakin mau reset semua data tabungan?")) return;
-        localStorage.removeItem("tabunganRencana");
-        localStorage.removeItem("fotoProduk");
-        [goalDetail, hargaTotal, perMinggu, lamaBulan, updateNominal].forEach(i => i.value = "");
-        document.querySelectorAll("input[name='goal']").forEach(r => r.checked = false);
-        fotoProduk.value = "";
-        previewFoto.src = "";
-        previewFoto.classList.add("d-none");
-        hasilBox.innerHTML = "";
-        hasilBox.classList.add("d-none");
-        updateBox.classList.add("d-none");
-      });
-      const saved = JSON.parse(localStorage.getItem("tabunganRencana"));
-      if (saved) {
-        renderHasil(saved);
-        if (saved.foto) {
-          previewFoto.src = saved.foto;
-          previewFoto.classList.remove("d-none");
-        }
-      }
-    });
-    </script>
     <div class="mobile-bottom-nav">
         <a href="index.html" data-name="home"> <i class="fa-solid fa-house"></i> <span>Home</span> </a>
-        <a href="fitur-detail-1.html" class="active" data-name="fitur">
+        <a href="fitur-detail-1.html" data-name="fitur" style="color: #42A5F5;">
             <i class="fa-solid fa-puzzle-piece"></i>
             <span>Fitur</span>
         </a>
-        <a href="#" id="dashboard-link" data-name="dashboard">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Dashboard</span>
+        <a href="belajarsampahbijak.html">
+            <i class="fa-solid fa-play"></i>
+            <span>Mulai Belajar</span>
         </a>
-        <a href="login.html" data-name="akun"> <i class="fa-solid fa-user"></i> <span>Akun</span> </a>
+        <a href="faq.html" data-name="faq">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>FAQ</span>
+        </a>
     </div>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dashboardLink = document.getElementById('dashboard-link');
-
-            dashboardLink.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-                if (loggedIn) {
-                    window.location.href = 'DASHBOARD/index.html';
-                } else {
-                    window.location.href = 'login.html';
-                }
-            });
-        });
-    </script>
     <script>
         const waNumber = "6287877566677";
         let now = new Date();
@@ -782,7 +870,7 @@
         } else {
             greeting = "Selamat malam";
         }
-        let message = `${greeting}, Sampah Bijak by Syafiq Bamazruk. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
+        let message = `${greeting}, Sampah Bijak by Skinfa Developers. Saya ingin Bertanya Seputar Sampah Bijak Cerdas`;
         document.getElementById("waLink").addEventListener("click", function(e) {
             e.preventDefault();
             let waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
