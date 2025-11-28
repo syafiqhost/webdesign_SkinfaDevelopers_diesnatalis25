@@ -15,7 +15,7 @@
     --bs-red: #dc3545;
     --bs-orange: #fd7e14;
     --bs-yellow: #ffc107;
-    --bs-green: #198754;
+    --bs-green: #6bcc0e;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
     --bs-black: #000;
@@ -33,7 +33,7 @@
     --bs-gray-900: #212529;
     --bs-primary: #0d6efd;
     --bs-secondary: #6c757d;
-    --bs-success: #198754;
+    --bs-success: #6bcc0e;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
     --bs-danger: #dc3545;
@@ -3276,8 +3276,8 @@ fieldset:disabled .btn {
 
 .btn-success {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #198754;
-    --bs-btn-border-color: #198754;
+    --bs-btn-bg: #6bcc0e;
+    --bs-btn-border-color: #6bcc0e;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #157347;
     --bs-btn-hover-border-color: #146c43;
@@ -3287,8 +3287,8 @@ fieldset:disabled .btn {
     --bs-btn-active-border-color: #13653f;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #198754;
-    --bs-btn-disabled-border-color: #198754
+    --bs-btn-disabled-bg: #6bcc0e;
+    --bs-btn-disabled-border-color: #6bcc0e
 }
 
 .btn-info {
@@ -3411,19 +3411,19 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-success {
-    --bs-btn-color: #198754;
-    --bs-btn-border-color: #198754;
+    --bs-btn-color: #6bcc0e;
+    --bs-btn-border-color: #6bcc0e;
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #198754;
-    --bs-btn-hover-border-color: #198754;
+    --bs-btn-hover-bg: #6bcc0e;
+    --bs-btn-hover-border-color: #6bcc0e;
     --bs-btn-focus-shadow-rgb: 25, 135, 84;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #198754;
-    --bs-btn-active-border-color: #198754;
+    --bs-btn-active-bg: #6bcc0e;
+    --bs-btn-active-border-color: #6bcc0e;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #198754;
+    --bs-btn-disabled-color: #6bcc0e;
     --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: #198754;
+    --bs-btn-disabled-border-color: #6bcc0e;
     --bs-gradient: none
 }
 
@@ -7497,7 +7497,7 @@ fieldset:disabled .btn {
 }
 
 .link-success {
-    color: #198754!important
+    color: #6bcc0e!important
 }
 
 .link-success:focus,
