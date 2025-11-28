@@ -54,7 +54,7 @@
                 response: "Nama perusahaan kami adalah SampahBijak dibuat oleh Skinfa Developers dalam Partisipasi Lomba Web Design Intechfest."
             }, {
                 keywords: ["layanan", "apa layanan", "produk", "jenis produk"],
-                response: "Kami menyediakan layanan edukasi Sampah Bijak, perencanaan keuangan, serta tips menabung dan investasi."
+                response: "Kami menyediakan layanan edukasi Sampah Bijak, dengan Fitur & Ebook menarik, serta tips menabung dan investasi."
             }, {
                 keywords: ["alamat", "lokasi", "dimana perusahaan", "letak", "jalan"],
                 response: "Kami berlokasi di Jl Sechmagelung Kejaksan Kota Cirebon Jawa Barat."
